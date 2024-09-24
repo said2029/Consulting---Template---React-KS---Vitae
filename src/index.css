@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "figtree-bold";
+  src: url("/assets/css/fonts/Figtree - fonts/Figtree-Bold.ttf");
+}
+@font-face {
+  font-family: "Figtree-BlackItalic";
+  src: url("/assets/css/fonts/Figtree - fonts/Figtree-BlackItalic.ttf");
+}
+@font-face {
+  font-family: "Figtree-ExtraBold";
+  src: url("/assets/css/fonts/Figtree - fonts/Figtree-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Figtree-ExtraBoldItalic";
+  src: url("/assets/css/fonts/Figtree - fonts/Figtree-ExtraBoldItalic.ttf");
+}
+@font-face {
+  font-family: "Figtree-Regular";
+  src: url("/assets/css/fonts/Figtree - fonts/Figtree-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Figtree-Italic";
+  src: url("/assets/css/fonts/Figtree - fonts/Figtree-Italic.ttf");
+}
+@font-face {
+  font-family: "Figtree-Light";
+  src: url("/assets/css/fonts/Figtree - fonts/Figtree-Light.ttf");
+}
+@font-face {
+  font-family: "Figtree-Medium";
+  src: url("/assets/css/fonts/Figtree-Medium.ttf");
+}
+@font-face {
+  font-family: "Figtree-Regular";
+  src: url("/assets/css/fonts/Figtree-Regular.ttf");
+}
+@font-face {
+  font-family: "Figtree-SemiBold";
+  src: url("/assets/css/fonts/Figtree-SemiBold.ttf");
+}
+
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -58,11 +102,13 @@
   }
 }
 
-* {
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
+ @apply font-figtree-medium
+} */
+
 @layer base {
   * {
     @apply border-border;

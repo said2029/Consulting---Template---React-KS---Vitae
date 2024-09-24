@@ -51,6 +51,18 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
+      padding: {
+        main: "170px",
+      },
+      fontFamily: {
+        "figtree-bold": ['"figtree-bold"', "sans-serif"],
+        "figtree-regular": ['"Figtree-Regular"', "sans-serif"],
+        "figtree-extrabold": ['"Figtree-ExtraBold"', "sans-serif"],
+        "figtree-italic": ['"Figtree-Italic"', "sans-serif"],
+        "figtree-light": ['"Figtree-Light"', "sans-serif"],
+        "figtree-medium": ['"Figtree-Medium"', "sans-serif"],
+        "figtree-semibold": ['"Figtree-SemiBold"', "sans-serif"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
