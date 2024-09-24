@@ -126,10 +126,10 @@
   }
   100% {
     translate: 0 0px;
-
   }
 }
 
+
 .container_1 {
-  @apply px-[16px] md:px-[90px] lg:px-[160px];
+  @apply px-[16px] md:px-[90px] lg:px-[30px] xl:px-[160px];
 }

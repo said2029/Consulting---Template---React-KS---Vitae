@@ -8,6 +8,62 @@ import {
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import clsx from "clsx";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
+const Card_Home_Items = () => {
+  const [HoverCard, setHover] = useState(false);
+  return (
+    <div
+      onMouseLeave={() => {
+        setHover(false);
+      }}
+      onMouseEnter={() => {
+        setHover(true);
+      }}
+      className="Card_home_element_nav relative overflow-hidden rounded-md shadow-md cursor-pointer"
+    >
+      <div className="pointer-events-none">
+        <img src="assets/img/all-images/demo-img1.png" alt="" />
+      </div>
+
+      <motion.div
+        variants={{
+          normal: { opacity: 0, y: "-34px" },
+          hover: { opacity: 1, y: 0 },
+        }}
+        initial="normal"
+        animate={HoverCard ? "hover" : "normal"}
+        transition={{ duration: 0.5, ease: "circInOut" }}
+        className="text-nowrap w-full h-full flex flex-col justify-center items-center absolute top-0 mx-auto z-10"
+      >
+        <a className="header-btn1" href="index.html">
+          Multi Page{" "}
+          <span>
+            <i className="fa-solid fa-arrow-right" />
+          </span>
+        </a>
+        <div className="space16" />
+        <a className="header-btn1" href="single-index1.html" target="_blank">
+          One Page{" "}
+          <span>
+            <i className="fa-solid fa-arrow-right" />
+          </span>
+        </a>
+      </motion.div>
+
+      <motion.div
+        variants={{
+          normal: { opacity: 0, scale:"50%" },
+          hover: { opacity: 1, scale:"100%" },
+        }}
+        initial="normal"
+        animate={HoverCard ? "hover" : "normal"}
+        transition={{ duration: 0.2, ease: "linear" }}
+        className="bg-black/85 absolute w-full h-full top-0"
+      ></motion.div>
+    </div>
+  );
+};
 
 export default function NavBar() {
   const { scrollY } = useScroll();
@@ -23,7 +79,6 @@ export default function NavBar() {
           "bg-white": ValueScroll > 50,
           navBar_animation: ValueScroll > 50,
         })}
-
       >
         <nav className="w-full items-center flex justify-between ">
           <div className="site-logo">
@@ -34,11 +89,15 @@ export default function NavBar() {
 
           <ul className="flex font-semibold text-[18px] justify-center opacity-90 gap-6  items-center flex-grow">
             <li>
-              <HoverCard openDelay={0}>
+              <HoverCard closeDelay={0.6} openDelay={0}>
                 <HoverCardTrigger className="flex cursor-pointer items-center justify-center gap-1">
                   Home <ChevronDown strokeWidth={1.25} />
                 </HoverCardTrigger>
-                <HoverCardContent>marodfsd</HoverCardContent>
+                <HoverCardContent className="w-[70em] bg-white overflow-y-scroll mx-8 gap-3 grid grid-cols-5 z-40">
+                  {Array.from({ length: 10 }).map(() => (
+                    <Card_Home_Items />
+                  ))}
+                </HoverCardContent>
               </HoverCard>
             </li>
             <li>
