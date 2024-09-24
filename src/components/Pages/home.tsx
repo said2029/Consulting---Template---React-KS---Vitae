@@ -1,7 +1,9 @@
 import Footer from "../globle/footer";
 import NavBar from "../globle/navBar";
+import AutoPlay from "embla-carousel-autoplay";
 import HeroSection from "../Home_com/HeroSection";
 import Reloader from "../Reloader";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
 export default function Home() {
   return (
@@ -594,157 +596,120 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div
-                className="col-lg-8 m-auto"
-                data-aos="fade-up"
-                data-aos-duration={1000}
-              >
-                <div className="testimonials-slider-area owl-carousel">
-                  <div className="testimonial-boxarea">
-                    <div className="row">
-                      <div className="col-lg-5">
-                        <div className="pera">
-                          <p>
-                            "Working with SEOC has been a game-changer for our
-                            business. Their expertise in SEO and digital
-                            marketing has helped us achieve remarkable results
-                            and significantly increase our online visibility.
-                          </p>
-                          <div className="space100" />
-                          <div className="space30" />
-                          <div className="list-area">
-                            <div className="list">
-                              <ul>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                              </ul>
-                              <a href="team.html">John Doe</a>
-                            </div>
-                            <img src="assets/img/icons/google.svg" alt="" />
+            <Carousel
+              plugins={[
+                AutoPlay({
+                  delay: 2000,
+                  
+                }),
+              ]}
+              opts={{
+                loop: true,
+
+              }}
+            >
+              <CarouselContent className="space-x-11">
+                <CarouselItem className="md:basis-1/2 lg:basis-1/2 overflow-hidden border border-primary rounded-xl">
+                  <div className="flex flex-col-reverse lg:flex-row h-fit gap-3">
+                    <div className="w-full h-full flex flex-col justify-between py-[12px]">
+                      <div className="flex flex-col justify-between h-full">
+                        <p>
+                          "Working with SEOC has been a game-changer for our
+                          business. Their expertise in SEO and digital marketing
+                          has helped us achieve remarkable results and
+                          significantly increase our online visibility.
+                        </p>
+
+                        <div className="flex w-fit justify-between px-0 ">
+                          <div className="flex flex-col">
+                            <ul className="flex text-primary">
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                            </ul>
+                            <a href="/team" className="font-semibold">
+                              John Doe
+                            </a>
                           </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-7">
-                        <div className="images">
-                          <img
-                            src="assets/img/all-images/testimonial-img1.png"
-                            alt=""
-                          />
+                          <img src="assets/img/icons/google.svg" alt="" />
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="testimonial-boxarea">
-                    <div className="row">
-                      <div className="col-lg-5">
-                        <div className="pera">
-                          <p>
-                            "Working with SEOC has been a game-changer for our
-                            business. Their expertise in SEO and digital
-                            marketing has helped us achieve remarkable results
-                            and significantly increase our online visibility.
-                          </p>
-                          <div className="space100" />
-                          <div className="space30" />
-                          <div className="list-area">
-                            <div className="list">
-                              <ul>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                              </ul>
-                              <a href="team.html">John Doe</a>
-                            </div>
-                            <img src="assets/img/icons/google.svg" alt="" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-7">
-                        <div className="images">
-                          <img
-                            src="assets/img/all-images/testimonial-img2.png"
-                            alt=""
-                          />
-                        </div>
+                    <div className="col-lg-7 h-full object-cover">
+                      <div className="w-full">
+                        <img
+                        className="w-full h-full object-cover"
+                          src="assets/img/all-images/testimonial-img1.png"
+                          alt=""
+                        />
                       </div>
                     </div>
                   </div>
-                  <div className="testimonial-boxarea">
-                    <div className="row">
-                      <div className="col-lg-5">
-                        <div className="pera">
-                          <p>
-                            "Working with SEOC has been a game-changer for our
-                            business. Their expertise in SEO and digital
-                            marketing has helped us achieve remarkable results
-                            and significantly increase our online visibility.
-                          </p>
-                          <div className="space100" />
-                          <div className="space30" />
-                          <div className="list-area">
-                            <div className="list">
-                              <ul>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                                <li>
-                                  <i className="fa-solid fa-star" />
-                                </li>
-                              </ul>
-                              <a href="team.html">John Doe</a>
-                            </div>
-                            <img src="assets/img/icons/google.svg" alt="" />
+                </CarouselItem>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/2 overflow-hidden border border-primary rounded-xl">
+                  <div className="flex flex-col-reverse lg:flex-row h-fit gap-3">
+                    <div className="w-full h-full flex flex-col justify-between py-[12px]">
+                      <div className="flex flex-col justify-between h-full">
+                        <p>
+                          "Working with SEOC has been a game-changer for our
+                          business. Their expertise in SEO and digital marketing
+                          has helped us achieve remarkable results and
+                          significantly increase our online visibility.
+                        </p>
+
+                        <div className="flex w-fit justify-between px-0 ">
+                          <div className="flex flex-col">
+                            <ul className="flex text-primary">
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                              <li>
+                                <i className="fa-solid fa-star" />
+                              </li>
+                            </ul>
+                            <a href="/team" className="font-semibold">
+                              John Doe
+                            </a>
                           </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-7">
-                        <div className="images">
-                          <img
-                            src="assets/img/all-images/testimonial-img2.png"
-                            alt=""
-                          />
+                          <img src="assets/img/icons/google.svg" alt="" />
                         </div>
                       </div>
                     </div>
+                    <div className="col-lg-7 h-full object-cover">
+                      <div className="w-full">
+                        <img
+                        className="w-full h-full object-cover"
+                          src="assets/img/all-images/testimonial-img1.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
+                </CarouselItem>
+
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
         {/*===== TESTIMONIAL AREA ENDS =======*/}
