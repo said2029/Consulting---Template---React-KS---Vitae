@@ -1,8 +1,10 @@
-
 export default function Logo() {
   return (
-    <a href={"/"}  className="site-logo">
-      <img className="w-[19em]" src="assets/img/logo/logo1.png" alt="" />
-    </a>
+    <div className="mobile-logo">
+      "dfgdf"
+      <a  href="/">
+        <img src="assets/img/logo/logo1.png" alt="" />
+      </a>
+    </div>
   );
 }

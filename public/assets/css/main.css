@@ -4634,7 +4634,7 @@ Location:
   z-index: 1;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 160px 0 0;
+  @apply pt-[0px] md:pt-[160px]
 }
 .hero1-section-area .elements1 {
   position: absolute;

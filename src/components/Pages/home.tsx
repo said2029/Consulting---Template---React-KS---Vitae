@@ -1,4 +1,6 @@
+import Footer from "../globle/footer";
 import NavBar from "../globle/navBar";
+import HeroSection from "../Home_com/HeroSection";
 import Reloader from "../Reloader";
 
 export default function Home() {
@@ -27,107 +29,7 @@ export default function Home() {
       {/*=====HEADER END =======*/}
 
       {/*===== HERO AREA STARTS =======*/}
-      <div
-        className="hero1-section-area"
-        style={{ backgroundImage: "url(assets/img/bg/header-bg1.png)" }}
-      >
-        <img
-          src="assets/img/elements/elements1.png"
-          alt=""
-          className="elements1 aniamtion-key-1"
-        />
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6">
-              <div className="header-main-content heading1">
-                <h5 className="flex items-center">
-                  <img src="assets/img/icons/logo-icons.svg" alt="" />
-                  <span> Top #1 SEO &amp; Marketing Agency</span>
-                </h5>
-                <h1 className="text-anime-style-3">
-                  Elevate Your Brand With Expert SEO &amp; Digital Marketing
-                </h1>
-                <p data-aos="fade-left" data-aos-duration={1000}>
-                  Welcome to SEOC where we specialize in revolutionizing your
-                  online <br className="d-lg-block d-none" /> presence through
-                  expert SEO and digital marketing solutions.{" "}
-                </p>
-                <div
-                  className="btn-area"
-                  data-aos="fade-left"
-                  data-aos-duration={1200}
-                >
-                  <a href="contact.html" className="header-btn1">
-                    Start Ranking Now{" "}
-                    <span>
-                      <i className="fa-solid fa-arrow-right" />
-                    </span>
-                  </a>
-                  <a href="contact.html" className="header-btn2">
-                    Contact Now{" "}
-                    <span>
-                      <i className="fa-solid fa-arrow-right" />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="header-images-area">
-                <div className="main-images-area">
-                  <div className="img1">
-                    <img
-                      src="assets/img/all-images/header-img1.png"
-                      alt=""
-                      data-aos="zoom-in"
-                      data-aos-duration={1000}
-                    />
-                  </div>
-                  <div className="img2">
-                    <img src="assets/img/bg/header-imgbg.png" alt="" />
-                  </div>
-                  <div className="icons-area">
-                    <img
-                      src="assets/img/icons/sound-icons1.svg"
-                      alt=""
-                      className="sound-icons1 aniamtion-key-1"
-                    />
-                    <img
-                      src="assets/img/icons/lite-icons1.svg"
-                      alt=""
-                      className="lite-icons1 aniamtion-key-1"
-                    />
-                  </div>
-                  <div className="auhtor-icons">
-                    <img
-                      src="assets/img/elements/elements2.png"
-                      alt=""
-                      className="elements2"
-                    />
-                    <img
-                      src="assets/img/elements/elements3.png"
-                      alt=""
-                      className="elements3"
-                    />
-                  </div>
-                  <div className="auhtor-images">
-                    <img
-                      src="assets/img/all-images/header-author-img1.png"
-                      alt=""
-                      className="header-author-img1 aniamtion-key-2"
-                    />
-                    <img
-                      src="assets/img/all-images/header-author-img2.png"
-                      alt=""
-                      className="header-author-img2 aniamtion-key-2"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeroSection />
       {/*===== HERO AREA ENDS =======*/}
       {/*===== TESTIMONIAL AREA STARTS =======*/}
       <div className="slider-section-area sp5">
@@ -162,7 +64,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/*===== TESTIMONIAL AREA ENDS =======*/}
       <div
         className="all-section-bg"
@@ -268,13 +169,11 @@ export default function Home() {
               <div className="col-lg-12">
                 <div className="service-all-boxes-area">
                   <div
-                    className="service-boxarea"
+                    className="service-boxarea flex flex-col items-center justify-between"
                     data-aos="zoom-in"
                     data-aos-duration={800}
                   >
-                    <a href="/service1">
-                      Search Engine Optimization ( SEO)
-                    </a>
+                    <a href="/service1">Search Engine Optimization ( SEO)</a>
                     <div className="space40" />
                     <img src="assets/img/icons/service-icon1.svg" alt="" />
                     <div className="space40" />
@@ -285,7 +184,7 @@ export default function Home() {
                     </p>
                   </div>
                   <div
-                    className="service-boxarea box2"
+                    className="service-boxarea box2  flex flex-col items-center justify-between"
                     data-aos="zoom-in"
                     data-aos-duration={1000}
                   >
@@ -300,7 +199,7 @@ export default function Home() {
                     </p>
                   </div>
                   <div
-                    className="service-boxarea box3"
+                    className="service-boxarea box3  flex flex-col items-center justify-between"
                     data-aos="zoom-in"
                     data-aos-duration={1200}
                   >
@@ -315,7 +214,7 @@ export default function Home() {
                     </p>
                   </div>
                   <div
-                    className="service-boxarea box4"
+                    className="service-boxarea box4  flex flex-col items-center justify-between"
                     data-aos="zoom-in"
                     data-aos-duration={1400}
                   >
@@ -850,7 +749,6 @@ export default function Home() {
         </div>
         {/*===== TESTIMONIAL AREA ENDS =======*/}
 
-
         {/*===== BLOG AREA STARTS =======*/}
         <div className="blog1-scetion-area">
           <div className="container">
@@ -1046,7 +944,11 @@ export default function Home() {
                   <div className="space32" />
                   <div className="contact-auhtor-box">
                     <div className="icons relative">
-                      <img className="absolute -translate-x-1/2 bottom-1/2 top-1/2 m-auto left-1/2 right-1/2" src="assets/img/icons/location2.svg" alt="" />
+                      <img
+                        className="absolute -translate-x-1/2 bottom-1/2 top-1/2 m-auto left-1/2 right-1/2"
+                        src="assets/img/icons/location2.svg"
+                        alt=""
+                      />
                     </div>
                     <div className="content">
                       <h4>Our Location</h4>
@@ -1060,7 +962,11 @@ export default function Home() {
                   <div className="space40" />
                   <div className="contact-auhtor-box">
                     <div className="icons relative">
-                      <img className="absolute -translate-x-1/2 bottom-1/2 top-1/2 m-auto left-1/2 right-1/2" src="assets/img/icons/phone2.svg" alt="" />
+                      <img
+                        className="absolute -translate-x-1/2 bottom-1/2 top-1/2 m-auto left-1/2 right-1/2"
+                        src="assets/img/icons/phone2.svg"
+                        alt=""
+                      />
                     </div>
                     <div className="content">
                       <h4>Phone Number</h4>
@@ -1074,7 +980,11 @@ export default function Home() {
                   <div className="space40" />
                   <div className="contact-auhtor-box">
                     <div className="icons relative">
-                      <img className="absolute -translate-x-1/2 bottom-1/2 top-1/2 m-auto left-1/2 right-1/2" src="assets/img/icons/email2.svg" alt="" />
+                      <img
+                        className="absolute -translate-x-1/2 bottom-1/2 top-1/2 m-auto left-1/2 right-1/2"
+                        src="assets/img/icons/email2.svg"
+                        alt=""
+                      />
                     </div>
                     <div className="content">
                       <h4>Email Address</h4>
@@ -1209,136 +1119,7 @@ export default function Home() {
         </div>
         {/*===== CTA AREA ENDS =======*/}
         {/*===== FOOTER AREA STARTS =======*/}
-        <div className="footer1-section-area">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-3 col-md-6">
-                <div className="footer-logo-area">
-                  <img src="assets/img/logo/logo1.png" alt="" />
-                  <p>
-                    By optimizing content, leveraging relevant keywords, and
-                    adhering to best practices, businesses can secure prominent
-                    position (SEO)
-                  </p>
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <img src="assets/img/icons/facebook.svg" alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="assets/img/icons/instagram.svg" alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="assets/img/icons/linkedin.svg" alt="" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="assets/img/icons/youtube.svg" alt="" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-6">
-                <div className="footer-logo-area1">
-                  <h3>About Link</h3>
-                  <ul>
-                    <li>
-                      <a href="blog.html">Our Blog</a>
-                    </li>
-                    <li>
-                      <a href="/about">About Us</a>
-                    </li>
-                    <li>
-                      <a href="/service1">Services</a>
-                    </li>
-                    <li>
-                      <a href="case.html">Marketing</a>
-                    </li>
-                    <li>
-                      <a href="testimonials.html">Testimonials</a>
-                    </li>
-                    <li>
-                      <a href="contact.html">Contact Us</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6">
-                <div className="footer-logo-area2">
-                  <h3>Get in touch</h3>
-                  <ul>
-                    <li>
-                      <a href="mailto.html">
-                        <img src="assets/img/icons/email.svg" alt="" />
-                        <span>Infoseoc@gmail.com</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="assets/img/icons/location.svg" alt="" />
-                        <span>
-                          8708 Technology Forest{" "}
-                          <br className="d-lg-block d-none" /> Pl Suite 125 -G,
-                          The <br className="d-lg-block d-none" /> Woodlands, TX
-                          773
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="tel:123-456-7890">
-                        <img src="assets/img/icons/phone.svg" alt="" />
-                        <span>123-456-7890</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="footer-logo-area3">
-                  <h3>Subscribe Our Newsletter</h3>
-                  <form action="#">
-                    <input type="text" placeholder="Enter Your email" />
-                    <button className="header-btn1">
-                      {" "}
-                      Subscribe{" "}
-                      <span>
-                        <i className="fa-solid fa-arrow-right" />
-                      </span>
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div className="space80 d-lg-block d-none" />
-            <div className="space40 d-lg-none d-block" />
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="copyright-area">
-                  <div className="pera">
-                    <p>ⓒCopyright 2024 SEOC . All rights reserved</p>
-                  </div>
-                  <ul>
-                    <li>
-                      <a href="#">Terms &amp; Conditions</a>
-                    </li>
-                    <li>
-                      <a href="#" className="m-0">
-                        {" "}
-                        Privacy Policy{" "}
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Footer />
         {/*===== FOOTER AREA ENDS =======*/}
       </div>
     </>
