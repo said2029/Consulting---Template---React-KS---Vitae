@@ -1,16 +1,28 @@
 import { ChevronDown, Search } from "lucide-react";
 import Logo from "./Logo";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { useMotionValueEvent, useScroll } from "framer-motion";
+import clsx from "clsx";
+import { useState } from "react";
 
 export default function NavBar() {
+  const { scrollY } = useScroll();
+  const [ValueScroll, setValueScroll] = useState(0);
+  useMotionValueEvent(scrollY, "change", (value) => {
+    console.log(value);
+    setValueScroll(value);
+  });
   return (
-    <header className="w-full z-10 fixed top-0 p-main py-[16px]">
+    <header
+      className={clsx("w-full z-10 fixed top-0 p-main py-[16px]", {
+        "bg-white": ValueScroll > 100,
+      })}
+    >
       <nav className="w-full items-center flex justify-evenly gap-32">
         <div>
           <Logo />
@@ -25,27 +37,94 @@ export default function NavBar() {
             </HoverCard>
           </li>
           <li>
-            <Link to={"/about"}>About</Link>
+            <a href={"/about"}>About</a>
           </li>
-          <li>Services </li>
-          <li>Blogs </li>
+          <li>
+            <HoverCard openDelay={0}>
+              <HoverCardTrigger className="flex cursor-pointer items-center justify-center gap-1">Services <ChevronDown strokeWidth={1.25} /></HoverCardTrigger>
+              <HoverCardContent>
+                <ul className=" flex flex-col gap-2">
+                  <li className="hover:border-s-4 transition-all border-primary px-3">
+                    <a href="/service1">Service One</a>
+                  </li>
+                  <li className="hover:border-s-4 transition-all border-primary px-3">
+                    <a href="/service2">Service Two</a>
+                  </li>
+                  <li className="hover:border-s-4 transition-all border-primary px-3">
+                    <a href="/service3">Service three</a>
+                  </li>
+                  <li className="hover:border-s-4 transition-all border-primary px-3">
+                    <a href="/service4">Service Four</a>
+                  </li>
+                  <li className="hover:border-s-4 transition-all border-primary px-3">
+                    <a href="/service5">Service Five</a>
+                  </li>
+    
+                </ul>
+              </HoverCardContent>
+            </HoverCard>
+          </li>
+          <li>
+            <HoverCard openDelay={0}>
+              <HoverCardTrigger className="flex cursor-pointer items-center justify-center gap-1">Blogs <ChevronDown strokeWidth={1.25} /></HoverCardTrigger>
+              <HoverCardContent>
+                <ul className=" flex flex-col gap-2">
+                  <li className="hover:border-s-4 transition-all border-primary px-3">
+                    <a href="/blog">Blog One</a>
+                  </li>
+                  <li className="hover:border-s-4 transition-all border-primary px-3">
+                    <a href="/blog-left">Blog Left</a>
+                  </li>
+                  <li className="hover:border-s-4 transition-all border-primary px-3">
+                    <a href="/blog-right">Blog Right</a>
+                  </li>
+                  <li className="hover:border-s-4 transition-all border-primary px-3">
+                    <a href="/blog-single">Blog Single</a>
+                  </li>
+                </ul>
+              </HoverCardContent>
+            </HoverCard>
+          </li>
           <li>Pages</li>
-          <li>Contact Us</li>
+          <li><a href="/contact" >Contact Us</a> </li>
         </ul>
-        <div className="flex items-center text-white">
-          <Button variant={"ghost"}>
-            <Search className="text-primary" />
-          </Button>
-          <Button
-            size={"lg"}
-            className="rounded-full h-[4em] transition-all hover:-translate-y-2 hover:[&_img]:rotate-180 space-x-2 flex justify-between text-white bg-gradient-to-r from-primary to-primary-foreground"
-          >
-            <span className="text-[18px] font-bold">Free Consultation </span>
-            <img
-              className="w-8 bg-white rounded-full p-2"
-              src="/assets/img/icons/arrow.svg"
-            />
-          </Button>
+        <div className="flex gap-3 items-center text-white">
+          <Sheet>
+            <SheetTrigger>
+              <Search className="text-primary" />
+            </SheetTrigger>
+            <SheetContent
+              className="h-[50%] flex justify-center items-center px-main"
+              side={"top"}
+            >
+              <div className="w-full flex">
+                <form role="search" className="w-full flex">
+                  <input
+                    type="search"
+                    className="w-full text-3xl font-semibold"
+                    placeholder="Search …"
+                    defaultValue=""
+                    name="s"
+                  />
+                  <button type="submit" className="search-submit">
+                    <img src="assets/img/icons/search-icons1.svg" alt="" />
+                  </button>
+                </form>
+              </div>
+            </SheetContent>
+          </Sheet>
+
+          <div className=" flex text-nowrap">
+            <div className="search-icon header__search header-search-btn">
+              <img src="assets/img/icons/search-icons1.svg" alt="" />
+            </div>
+            <a href="/contact" className="header-btn1">
+              Free Consultation{" "}
+              <span>
+                <i className="fa-solid fa-arrow-right" />
+              </span>
+            </a>
+          </div>
         </div>
       </nav>
     </header>

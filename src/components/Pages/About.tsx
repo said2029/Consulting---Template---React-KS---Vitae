@@ -1,18 +1,13 @@
 import React from "react";
 import NavBar from "../globle/navBar";
+import Reloader from "../Reloader";
+import Footer from "../globle/footer";
 
 export default function About() {
   return (
     <>
       {/*===== PRELOADER STARTS =======*/}
-      <div className="preloader">
-        <div className="loading-container">
-          <div className="loading" />
-          <div id="loading-icon">
-            <img src="assets/img/logo/preloader.png" alt="" />
-          </div>
-        </div>
-      </div>
+      <Reloader />
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
       <div className="paginacontainer">
@@ -37,7 +32,7 @@ export default function About() {
           <div className="col-12">
             <div className="mobile-header-elements">
               <div className="mobile-logo">
-                <a href="index.html">
+                <a href="/">
                   <img src="assets/img/logo/logo1.png" alt="" />
                 </a>
               </div>
@@ -66,7 +61,7 @@ export default function About() {
                   <a href="#">Multiple Page</a>
                   <ul className="sub-menu">
                     <li>
-                      <a href="index.html">Home One</a>
+                      <a href="/">Home One</a>
                     </li>
                     <li>
                       <a href="index2.html">Home Two</a>
@@ -155,25 +150,25 @@ export default function About() {
               </ul>
             </li>
             <li>
-              <a href="about.html">About</a>
+              <a href="/about">About</a>
             </li>
             <li>
               <a href="features.html">Services</a>
               <ul className="sub-menu">
                 <li>
-                  <a href="service1.html">Service One</a>
+                  <a href="/service1">Service One</a>
                 </li>
                 <li>
-                  <a href="service2.html">Service Two</a>
+                  <a href="/service2">Service Two</a>
                 </li>
                 <li>
-                  <a href="service3.html">Service Three</a>
+                  <a href="/service3">Service Three</a>
                 </li>
                 <li>
-                  <a href="service4.html">Service Four</a>
+                  <a href="/service4">Service Four</a>
                 </li>
                 <li>
-                  <a href="service5.html">Service Five</a>
+                  <a href="/service5">Service Five</a>
                 </li>
               </ul>
             </li>
@@ -184,13 +179,13 @@ export default function About() {
                   <a href="blog.html">Blog One</a>
                 </li>
                 <li>
-                  <a href="blog-left.html">Blog Left</a>
+                  <a href="/blog-left">Blog Left</a>
                 </li>
                 <li>
-                  <a href="blog-right.html">Blog Right</a>
+                  <a href="/blog-right">Blog Right</a>
                 </li>
                 <li>
-                  <a href="blog-single.html">Blog Single</a>
+                  <a href="/blog-single">Blog Single</a>
                 </li>
               </ul>
             </li>
@@ -201,10 +196,10 @@ export default function About() {
                   <a href="case.html">Case Study One</a>
                 </li>
                 <li>
-                  <a href="case-single.html">Case Study Single</a>
+                  <a href="/case-single">Case Study Single</a>
                 </li>
                 <li>
-                  <a href="team.html">Our Team</a>
+                  <a href="/team">Our Team</a>
                 </li>
                 <li>
                   <a href="pricing.html">Pricing Plan</a>
@@ -221,11 +216,11 @@ export default function About() {
               </ul>
             </li>
             <li>
-              <a href="contact.html">Contact Us</a>
+              <a href="/contact">Contact Us</a>
             </li>
           </ul>
           <div className="allmobilesection">
-            <a href="contact.html" className="header-btn1">
+            <a href="/contact" className="header-btn1">
               Get Started{" "}
               <span>
                 <i className="fa-solid fa-arrow-right" />
@@ -322,7 +317,7 @@ export default function About() {
             <div className="col-lg-3 m-auto">
               <div className="about-inner-header heading9 text-center">
                 <h1>About Us</h1>
-                <a href="index.html">
+                <a href="/">
                   Home <i className="fa-solid fa-angle-right" />{" "}
                   <span>About Us</span>
                 </a>
@@ -351,7 +346,7 @@ export default function About() {
             <div className="col-lg-5">
               <div className="about-content-area heading2">
                 <div className="arrow-circle">
-                  <a href="about.html">
+                  <a href="/about">
                     <img
                       src="assets/img/elements/elements4.png"
                       alt=""
@@ -371,7 +366,7 @@ export default function About() {
                   innovative strategies the digital landscape.
                 </p>
                 <div className="btn-area">
-                  <a href="about.html" className="header-btn1">
+                  <a href="/about" className="header-btn1">
                     Learn More
                     <span>
                       <i className="fa-solid fa-arrow-right" />
@@ -464,7 +459,7 @@ export default function About() {
                     <img src="assets/img/icons/works-icons8.svg" alt="" />
                   </div>
                   <div className="content">
-                    <a href="case-single.html">Customized Solutions</a>
+                    <a href="/case-single">Customized Solutions</a>
                     <p>
                       We believe that one size does not fit all when it comes to
                       digital marketing. That's why we take the time to
@@ -478,7 +473,7 @@ export default function About() {
                     <img src="assets/img/icons/works-icons9.svg" alt="" />
                   </div>
                   <div className="content">
-                    <a href="case-single.html">Dedicated Support</a>
+                    <a href="/case-single">Dedicated Support</a>
                     <p>
                       Your success is our top priority. That's why provide
                       dedicated support and guidance every step of the way to
@@ -556,7 +551,7 @@ export default function About() {
                 </div>
                 <div className="content-area">
                   <h5>Our Value</h5>
-                  <a href="service1.html" className="text">
+                  <a href="/service1" className="text">
                     Explore Our Unique Value Proposition &amp; How We Drive
                     Business Growth
                   </a>
@@ -566,7 +561,7 @@ export default function About() {
                     personalized approach to every project we undertake.
                   </p>
                   <div className="btn-area">
-                    <a href="service1.html" className="header-btn1">
+                    <a href="/service1" className="header-btn1">
                       Learn More{" "}
                       <span>
                         <i className="fa-solid fa-arrow-right" />
@@ -575,7 +570,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="arrow-area">
-                  <a href="service1.html">
+                  <a href="/service1">
                     <i className="fa-solid fa-arrow-right" />
                   </a>
                 </div>
@@ -587,13 +582,13 @@ export default function About() {
                   <div className="col-lg-12 col-md-6">
                     <div className="service2-auhtor-boxarea">
                       <div className="arrow">
-                        <a href="service1.html">
+                        <a href="/service1">
                           <i className="fa-solid fa-arrow-right" />
                         </a>
                       </div>
                       <div className="content-area">
                         <h5>Our Mission</h5>
-                        <a href="service1.html">
+                        <a href="/service1">
                           We strive to be more than just a service provider; we
                           aim to be trusted SEOC{" "}
                         </a>
@@ -608,13 +603,13 @@ export default function About() {
                   <div className="col-lg-12 col-md-6">
                     <div className="service2-auhtor2-boxarea">
                       <div className="arrow">
-                        <a href="service1.html">
+                        <a href="/service1">
                           <i className="fa-solid fa-arrow-right" />
                         </a>
                       </div>
                       <div className="content-area">
                         <h5>Our Vision</h5>
-                        <a href="service1.html">
+                        <a href="/service1">
                           We aspire to create a world where every business owner
                           feels empowered
                         </a>
@@ -697,12 +692,12 @@ export default function About() {
                   <div className="col-lg-6 col-md-6">
                     <div className="history-box-content">
                       <h5>2015</h5>
-                      <a href="service1.html">Inception and Founding</a>
+                      <a href="/service1">Inception and Founding</a>
                       <p>
                         SEOC was founded with a vision to revolutionize the
                         digital marketing industry and provide innovation.
                       </p>
-                      <a href="service1.html" className="readmore">
+                      <a href="/service1" className="readmore">
                         Read More <i className="fa-solid fa-arrow-right" />
                       </a>
                     </div>
@@ -710,12 +705,12 @@ export default function About() {
                   <div className="col-lg-6 col-md-6">
                     <div className="history-box-content">
                       <h5>2016</h5>
-                      <a href="service1.html">Expansion and Growth</a>
+                      <a href="/service1">Expansion and Growth</a>
                       <p>
                         The team expanded to include additional members with
                         diverse skill sets and expertise allowing us.
                       </p>
-                      <a href="service1.html" className="readmore">
+                      <a href="/service1" className="readmore">
                         Read More <i className="fa-solid fa-arrow-right" />
                       </a>
                     </div>
@@ -723,12 +718,12 @@ export default function About() {
                   <div className="col-lg-6 col-md-6">
                     <div className="history-box-content">
                       <h5>2017</h5>
-                      <a href="service1.html">Recognition and Awards</a>
+                      <a href="/service1">Recognition and Awards</a>
                       <p>
                         We were honored to recognized as a leader in the digital
                         marketing space and received accolades customer.
                       </p>
-                      <a href="service1.html" className="readmore">
+                      <a href="/service1" className="readmore">
                         Read More <i className="fa-solid fa-arrow-right" />
                       </a>
                     </div>
@@ -736,12 +731,12 @@ export default function About() {
                   <div className="col-lg-6 col-md-6">
                     <div className="history-box-content">
                       <h5>2018</h5>
-                      <a href="service1.html">Launch of New Services</a>
+                      <a href="/service1">Launch of New Services</a>
                       <p>
                         Building on our success, SEOC expanded our service
                         offerings to better meet the evolving needs.{" "}
                       </p>
-                      <a href="service1.html" className="readmore">
+                      <a href="/service1" className="readmore">
                         Read More <i className="fa-solid fa-arrow-right" />
                       </a>
                     </div>
@@ -749,12 +744,12 @@ export default function About() {
                   <div className="col-lg-6 col-md-6">
                     <div className="history-box-content">
                       <h5>2019</h5>
-                      <a href="service1.html">Strategic Partnerships </a>
+                      <a href="/service1">Strategic Partnerships </a>
                       <p>
                         SEOC formed strategic partnerships and collaborations
                         with industry leaders and technology providers.{" "}
                       </p>
-                      <a href="service1.html" className="readmore">
+                      <a href="/service1" className="readmore">
                         Read More <i className="fa-solid fa-arrow-right" />
                       </a>
                     </div>
@@ -762,12 +757,12 @@ export default function About() {
                   <div className="col-lg-6 col-md-6">
                     <div className="history-box-content">
                       <h5>2020</h5>
-                      <a href="service1.html">Continued Growth Success</a>
+                      <a href="/service1">Continued Growth Success</a>
                       <p>
                         2020 continued to experience steady growth and success,
                         despite ongoing challenges in external environment.
                       </p>
-                      <a href="service1.html" className="readmore">
+                      <a href="/service1" className="readmore">
                         Read More <i className="fa-solid fa-arrow-right" />
                       </a>
                     </div>
@@ -893,7 +888,7 @@ export default function About() {
                   </li>
                 </ul>
                 <div className="content">
-                  <a href="team.html">John Doe</a>
+                  <a href="/team">John Doe</a>
                   <p>CEO &amp; Founder</p>
                 </div>
               </div>
@@ -926,7 +921,7 @@ export default function About() {
                   </li>
                 </ul>
                 <div className="content">
-                  <a href="team.html">Jane Smith</a>
+                  <a href="/team">Jane Smith</a>
                   <p>Digital Marketing Officer</p>
                 </div>
               </div>
@@ -959,7 +954,7 @@ export default function About() {
                   </li>
                 </ul>
                 <div className="content">
-                  <a href="team.html">Sarah Thompson </a>
+                  <a href="/team">Sarah Thompson </a>
                   <p>Web Designer</p>
                 </div>
               </div>
@@ -992,7 +987,7 @@ export default function About() {
                   </li>
                 </ul>
                 <div className="content">
-                  <a href="team.html">David Garcia</a>
+                  <a href="/team">David Garcia</a>
                   <p>Content Writer</p>
                 </div>
               </div>
@@ -1064,7 +1059,7 @@ export default function About() {
                                 <i className="fa-solid fa-star" />
                               </li>
                             </ul>
-                            <a href="team.html">John Doe</a>
+                            <a href="/team">John Doe</a>
                           </div>
                           <img src="assets/img/icons/google.svg" alt="" />
                         </div>
@@ -1111,7 +1106,7 @@ export default function About() {
                                 <i className="fa-solid fa-star" />
                               </li>
                             </ul>
-                            <a href="team.html">John Doe</a>
+                            <a href="/team">John Doe</a>
                           </div>
                           <img src="assets/img/icons/google.svg" alt="" />
                         </div>
@@ -1158,7 +1153,7 @@ export default function About() {
                                 <i className="fa-solid fa-star" />
                               </li>
                             </ul>
-                            <a href="team.html">John Doe</a>
+                            <a href="/team">John Doe</a>
                           </div>
                           <img src="assets/img/icons/google.svg" alt="" />
                         </div>
@@ -1206,7 +1201,7 @@ export default function About() {
                   targeted traffic, enhance user experience,
                 </p>
                 <div className="btn-area text-center">
-                  <a href="contact.html" className="header-btn1">
+                  <a href="/contact" className="header-btn1">
                     Free Consultation{" "}
                     <span>
                       <i className="fa-solid fa-arrow-right" />
@@ -1220,136 +1215,7 @@ export default function About() {
       </div>
       {/*===== CTA AREA ENDS =======*/}
       {/*===== FOOTER AREA STARTS =======*/}
-      <div className="footer1-section-area">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3 col-md-6">
-              <div className="footer-logo-area">
-                <img src="assets/img/logo/logo1.png" alt="" />
-                <p>
-                  By optimizing content, leveraging relevant keywords, and
-                  adhering to best practices, businesses can secure prominent
-                  position (SEO)
-                </p>
-                <ul>
-                  <li>
-                    <a href="#">
-                      <img src="assets/img/icons/facebook.svg" alt="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="assets/img/icons/instagram.svg" alt="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="assets/img/icons/linkedin.svg" alt="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="assets/img/icons/youtube.svg" alt="" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-2 col-md-6">
-              <div className="footer-logo-area1">
-                <h3>About Link</h3>
-                <ul>
-                  <li>
-                    <a href="blog.html">Our Blog</a>
-                  </li>
-                  <li>
-                    <a href="about.html">About Us</a>
-                  </li>
-                  <li>
-                    <a href="service1.html">Services</a>
-                  </li>
-                  <li>
-                    <a href="case.html">Marketing</a>
-                  </li>
-                  <li>
-                    <a href="testimonials.html">Testimonials</a>
-                  </li>
-                  <li>
-                    <a href="contact.html">Contact Us</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className="footer-logo-area2">
-                <h3>Get in touch</h3>
-                <ul>
-                  <li>
-                    <a href="mailto.html">
-                      <img src="assets/img/icons/email.svg" alt="" />
-                      <span>Infoseoc@gmail.com</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="assets/img/icons/location.svg" alt="" />
-                      <span>
-                        8708 Technology Forest{" "}
-                        <br className="d-lg-block d-none" /> Pl Suite 125 -G,
-                        The <br className="d-lg-block d-none" /> Woodlands, TX
-                        773
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="tel:123-456-7890">
-                      <img src="assets/img/icons/phone.svg" alt="" />
-                      <span>123-456-7890</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="footer-logo-area3">
-                <h3>Subscribe Our Newsletter</h3>
-                <form action="#">
-                  <input type="text" placeholder="Enter Your email" />
-                  <button className="header-btn1">
-                    {" "}
-                    Subscribe{" "}
-                    <span>
-                      <i className="fa-solid fa-arrow-right" />
-                    </span>
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div className="space80 d-lg-block d-none" />
-          <div className="space40 d-lg-none d-block" />
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="copyright-area">
-                <div className="pera">
-                  <p>ⓒCopyright 2024 SEOC . All rights reserved</p>
-                </div>
-                <ul>
-                  <li>
-                    <a href="#">Terms &amp; Conditions</a>
-                  </li>
-                  <li>
-                    <a href="#" className="m-0">
-                      {" "}
-                      Privacy Policy{" "}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<Footer/>
       {/*===== FOOTER AREA ENDS =======*/}
     </>
   );

@@ -8,7 +8,7 @@ export default function HeroSection() {
     <div className="w-full relative pt-36 bg-no-repeat bg-cover bg-[url('/assets/img/bg/header-bg1.png')]">
       <div className="px-main grid place-items-center grid-cols-2  place-content-start ">
         <section className="flex flex-col gap-5">
-          <div className="flex bg-[#4e2fda27] px-3 font-medium text-[16px] py-1 bg-opacity-50 backdrop-blur-lg w-fit gap-1 items-center justify-center text-primary rounded-md ">
+          <div className="bg-[#4e2fda27] px-3 font-medium text-[16px] py-1 bg-opacity-50 backdrop-blur-lg  w-fit gap-1 items-center flex  justify-center text-primary rounded-md ">
             <img src="/assets/img/icons/logo-icons.svg" alt="" />
             <h3>Top #1 SEO & Marketing Agency</h3>
           </div>
