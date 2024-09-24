@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <div className="footer1-section-area">
-      <div className="container">
+      <div className="container_1">
         <div className="row">
           <div className="col-lg-3 col-md-6">
             <div className="footer-logo-area">

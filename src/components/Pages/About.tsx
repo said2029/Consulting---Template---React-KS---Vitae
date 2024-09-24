@@ -10,7 +10,7 @@ export default function About() {
       <Reloader />
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
-      <div className="paginacontainer">
+      <div className="paginacontainer_1">
         <div className="progress-wrap">
           <svg
             className="progress-circle svg-content"
@@ -28,7 +28,7 @@ export default function About() {
       {/*=====HEADER END =======*/}
       {/*===== MOBILE HEADER STARTS =======*/}
       <div className="mobile-header mobile-haeder1 d-block d-lg-none">
-        <div className="container-fluid">
+        <div className="container_1-fluid">
           <div className="col-12">
             <div className="mobile-header-elements">
               <div className="mobile-logo">
@@ -312,7 +312,7 @@ export default function About() {
           alt=""
           className="star2 keyframe5"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-3 m-auto">
               <div className="about-inner-header heading9 text-center">
@@ -329,7 +329,7 @@ export default function About() {
       {/*===== HERO AREA ENDS =======*/}
       {/*===== ABOUT AREA STARTS =======*/}
       <div className="about1-section-area sp6 bg-white">
-        <div className="container">
+        <div className="container_1">
           <div className="row align-items-center">
             <div className="col-lg-4">
               <div className="about-images">
@@ -394,7 +394,7 @@ export default function About() {
       <div className="space60" />
       {/*===== TESTIMONIAL AREA STARTS =======*/}
       <div className="slider-section-area slider-inner sp5">
-        <div className="container">
+        <div className="container_1">
           <div className="row align-items-center">
             <div className="col-lg-2">
               <div className="sldier-head">
@@ -428,7 +428,7 @@ export default function About() {
       {/*===== TESTIMONIAL AREA ENDS =======*/}
       {/*===== WORK AREA STARTS =======*/}
       <div className="works-inner-section-area sp1">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-6">
               <div className="works-header-area heading2">
@@ -516,7 +516,7 @@ export default function About() {
       {/*===== WORK AREA ENDS =======*/}
       {/*===== SERVICE AREA STARTS =======*/}
       <div className="service2-section-area sp1 bg2">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12 m-auto">
               <div className="service2-header heading2 text-center">
@@ -630,7 +630,7 @@ export default function About() {
       {/*===== SERVICE AREA ENDS =======*/}
       {/*===== HISTORY AREA STARTS =======*/}
       <div className="history-inner-section-area">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="history-header-area text-center heading2">
@@ -786,7 +786,7 @@ export default function About() {
           alt=""
           className="cta-bg2 aniamtion-key-1"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-3 m-auto">
               <div className="skills-header text-center heading2">
@@ -850,7 +850,7 @@ export default function About() {
       {/*===== SKILLS AREA ENDS =======*/}
       {/*===== TEAM AREA STARTS =======*/}
       <div className="team-inner-section-area sp2">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-6 m-auto">
               <div className="team2-header-area text-center heading2">
@@ -998,7 +998,7 @@ export default function About() {
       {/*===== TEAM AREA ENDS =======*/}
       {/*===== TESTIMONIAL AREA STARTS =======*/}
       <div className="testimonial1-section-area sp1 bg2">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12 m-auto">
               <div className="testimonial-header heading2 text-center">
@@ -1187,7 +1187,7 @@ export default function About() {
           alt=""
           className="cta-bg2 aniamtion-key-1"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12 m-auto">
               <div className="cta-header-area text-center sp4 heading2">

@@ -12,7 +12,7 @@ export default function Home() {
       <Reloader />
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
-      <div className="paginacontainer">
+      <div className="pagina container_1 ">
         <div className="progress-wrap">
           <svg
             className="progress-circle svg-content"
@@ -35,7 +35,7 @@ export default function Home() {
       {/*===== HERO AREA ENDS =======*/}
       {/*===== TESTIMONIAL AREA STARTS =======*/}
       <div className="slider-section-area sp5">
-        <div className="container">
+        <div className=" container_1 ">
           <div className="row align-items-center">
             <div className="col-lg-2">
               <div className="sldier-head">
@@ -66,6 +66,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       {/*===== TESTIMONIAL AREA ENDS =======*/}
       <div
         className="all-section-bg"
@@ -77,7 +78,7 @@ export default function Home() {
       >
         {/*===== ABOUT AREA STARTS =======*/}
         <div className="about1-section-area sp6 bg-white">
-          <div className="container">
+          <div className=" container_1 ">
             <div className="row align-items-center">
               <div className="col-lg-4">
                 <div className="about-images">
@@ -140,8 +141,10 @@ export default function Home() {
         </div>
         {/*===== ABOUT AREA ENDS =======*/}
         {/*===== SERVICE AREA STARTS =======*/}
+
+        
         <div className="service1-section-area sp9">
-          <div className="container">
+          <div className=" container_1 ">
             <div className="row">
               <div className="col-lg-12 m-auto">
                 <div className="service-header-area heading2 text-center">
@@ -235,10 +238,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+
         {/*===== SERVICE AREA ENDS =======*/}
         {/*===== SERVICE AREA STARTS =======*/}
         <div className="service2-section-area sp6">
-          <div className="container">
+          <div className=" container_1 ">
             <div className="row">
               <div className="col-lg-12 m-auto">
                 <div className="service2-header heading2 text-center">
@@ -368,7 +373,7 @@ export default function Home() {
         {/*===== SERVICE AREA ENDS =======*/}
         {/*===== CASE AREA STARTS =======*/}
         <div className="case1-section-area">
-          <div className="container">
+          <div className=" container_1 ">
             <div className="row">
               <div className="col-lg-12 m-auto">
                 <div className="case-header-area heading2 text-center">
@@ -609,10 +614,10 @@ export default function Home() {
               }}
             >
               <CarouselContent className="space-x-11">
-                <CarouselItem className="md:basis-1/2 lg:basis-1/2 overflow-hidden border border-primary rounded-xl">
-                  <div className="flex flex-col-reverse lg:flex-row h-fit gap-3">
+                <CarouselItem className="md:basis-1/2 lg:basis-1/2 lg:h-[300px] overflow-hidden border border-primary rounded-xl">
+                  <div className="flex flex-col-reverse lg:flex-row h-full gap-3">
                     <div className="w-full h-full flex flex-col justify-between py-[12px]">
-                      <div className="flex flex-col justify-between h-full">
+                      <div className="flex flex-col justify-between h-full px-10">
                         <p>
                           "Working with SEOC has been a game-changer for our
                           business. Their expertise in SEO and digital marketing
@@ -658,10 +663,10 @@ export default function Home() {
                     </div>
                   </div>
                 </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/2 overflow-hidden border border-primary rounded-xl">
-                  <div className="flex flex-col-reverse lg:flex-row h-fit gap-3">
+                <CarouselItem className="md:basis-1/2 lg:basis-1/2 lg:h-[300px] overflow-hidden border border-primary rounded-xl">
+                  <div className="flex flex-col-reverse lg:flex-row h-full gap-3">
                     <div className="w-full h-full flex flex-col justify-between py-[12px]">
-                      <div className="flex flex-col justify-between h-full">
+                      <div className="flex flex-col justify-between h-full px-10">
                         <p>
                           "Working with SEOC has been a game-changer for our
                           business. Their expertise in SEO and digital marketing
@@ -707,6 +712,7 @@ export default function Home() {
                     </div>
                   </div>
                 </CarouselItem>
+
 
               </CarouselContent>
             </Carousel>
@@ -716,7 +722,7 @@ export default function Home() {
 
         {/*===== BLOG AREA STARTS =======*/}
         <div className="blog1-scetion-area">
-          <div className="container">
+          <div className=" container_1 ">
             <div className="row">
               <div className="col-lg-12 m-auto">
                 <div className="blog-hedaer-area heading2 text-center">
@@ -868,7 +874,7 @@ export default function Home() {
         {/*===== BLOG AREA ENDS =======*/}
         {/*===== CONTACT AREA STARTS =======*/}
         <div className="contact1-section-area sp6">
-          <div className="container">
+          <div className=" container_1 ">
             <div className="row">
               <div className="col-lg-12 m-auto">
                 <div className="contact-header-area text-center heading2">
@@ -1051,7 +1057,7 @@ export default function Home() {
             alt=""
             className="cta-bg2 aniamtion-key-1"
           />
-          <div className="container">
+          <div className=" container_1 ">
             <div className="row">
               <div className="col-lg-12 m-auto">
                 <div className="cta-header-area text-center sp4 heading2">
@@ -1070,7 +1076,7 @@ export default function Home() {
                     data-aos="fade-up"
                     data-aos-duration={1200}
                   >
-                    <a href="contact.html" className="header-btn1">
+                    <a href="/contact" className="header-btn1">
                       Free Consultation{" "}
                       <span>
                         <i className="fa-solid fa-arrow-right" />
@@ -1087,6 +1093,8 @@ export default function Home() {
         <Footer />
         {/*===== FOOTER AREA ENDS =======*/}
       </div>
+      
+      
     </>
   );
 }

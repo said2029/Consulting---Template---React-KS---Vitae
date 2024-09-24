@@ -6,7 +6,7 @@ export default function Service_page_3() {
     <>
       {/*===== PRELOADER STARTS =======*/}
       <div className="preloader">
-        <div className="loading-container">
+        <div className="loading-container_1">
           <div className="loading" />
           <div id="loading-icon">
             <img src="assets/img/logo/preloader.png" alt="" />
@@ -15,7 +15,7 @@ export default function Service_page_3() {
       </div>
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
-      <div className="paginacontainer">
+      <div className="paginacontainer_1">
         <div className="progress-wrap">
           <svg
             className="progress-circle svg-content"
@@ -52,7 +52,7 @@ export default function Service_page_3() {
           alt=""
           className="star2 keyframe5"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="about-inner-header heading9 text-center">
@@ -69,7 +69,7 @@ export default function Service_page_3() {
       {/*===== HERO AREA ENDS =======*/}
       {/*===== HISTORY AREA STARTS =======*/}
       <div className="history-inner-section-area  history3 sp1">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="history-header-area text-center heading2">
@@ -215,7 +215,7 @@ export default function Service_page_3() {
       {/*===== HISTORY AREA ENDS =======*/}
       {/*===== TESTIMONIAL AREA STARTS =======*/}
       <div className="slider-section-area slider-inner sp5">
-        <div className="container">
+        <div className="container_1">
           <div className="row align-items-center">
             <div className="col-lg-2">
               <div className="sldier-head">
@@ -249,7 +249,7 @@ export default function Service_page_3() {
       {/*===== TESTIMONIAL AREA ENDS =======*/}
       {/*===== CASE AREA STARTS =======*/}
       <div className="case1-section-area sp1">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12 m-auto">
               <div className="case-header-area heading2 text-center">
@@ -402,7 +402,7 @@ export default function Service_page_3() {
       {/*===== CASE AREA ENDS =======*/}
       {/*===== PRICING AREA STARTS =======*/}
       <div className="pricing-inner-section-area sp1 bg2">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-4 m-auto">
               <div className="pricing-header heading2 text-center">
@@ -631,7 +631,7 @@ export default function Service_page_3() {
           alt=""
           className="cta-bg2 aniamtion-key-1"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="cta-header-area text-center sp4 heading2">
@@ -686,7 +686,7 @@ export default function Service_page_3() {
       {/*===== CTA AREA ENDS =======*/}
       {/* analysis-area-start */}
       <section className="analysis-area sp1">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="analysis-inner-section text-center heading2">
@@ -1009,7 +1009,7 @@ export default function Service_page_3() {
           alt=""
           className="cta-bg2 aniamtion-key-1"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-6 m-auto">
               <div className="choose-header-area text-center heading2">
@@ -1186,7 +1186,7 @@ export default function Service_page_3() {
       {/*===== CHOOSE AREA ENDS =======*/}
       {/*===== TEAM AREA STARTS =======*/}
       <div className="team-inner-section-area sp1">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-6 m-auto">
               <div className="team2-header-area text-center heading2">
@@ -1334,7 +1334,7 @@ export default function Service_page_3() {
       {/*===== TEAM AREA ENDS =======*/}
       {/*===== BLOG AREA STARTS =======*/}
       <div className="blog1-scetion-area sp1 bg2">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12 m-auto">
               <div className="blog-hedaer-area heading2 text-center">
@@ -1467,7 +1467,7 @@ export default function Service_page_3() {
           alt=""
           className="cta-bg2 aniamtion-key-1"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12 m-auto">
               <div className="cta-header-area text-center sp4 heading2">

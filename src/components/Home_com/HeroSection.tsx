@@ -9,7 +9,7 @@ export default function HeroSection() {
         alt=""
         className="elements1 aniamtion-key-1"
       />
-      <div className="container">
+      <div className="container_1">
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="header-main-content heading1">
@@ -30,13 +30,13 @@ export default function HeroSection() {
                 data-aos="fade-left"
                 data-aos-duration={1200}
               >
-                <a href="contact.html" className="header-btn1">
+                <a href="/contact" className="header-btn1">
                   Start Ranking Now{" "}
                   <span>
                     <i className="fa-solid fa-arrow-right" />
                   </span>
                 </a>
-                <a href="contact.html" className="header-btn2">
+                <a href="/contact" className="header-btn2">
                   Contact Now{" "}
                   <span>
                     <i className="fa-solid fa-arrow-right" />

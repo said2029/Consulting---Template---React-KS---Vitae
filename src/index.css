@@ -44,8 +44,6 @@
   src: url("/assets/css/fonts/Figtree-SemiBold.ttf");
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -54,8 +52,8 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: #4E2FDA;
-    --primary-foreground: #4E2FDA;
+    --primary: #4e2fda;
+    --primary-foreground: #4e2fda;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
@@ -116,4 +114,22 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.navBar_animation {
+  animation: FlipNav 0.7s ease-in-out forwards;
+}
+
+@keyframes FlipNav {
+  0% {
+    translate: 0 -100%;
+  }
+  100% {
+    translate: 0 0px;
+
+  }
+}
+
+.container_1 {
+  @apply px-[16px] md:px-[90px] lg:px-[160px];
 }

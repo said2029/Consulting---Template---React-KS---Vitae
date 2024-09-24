@@ -7,7 +7,7 @@ export default function Contact() {
     <>
       {/*===== PRELOADER STARTS =======*/}
       <div className="preloader">
-        <div className="loading-container">
+        <div className="loading-container_1">
           <div className="loading" />
           <div id="loading-icon">
             <img src="assets/img/logo/preloader.png" alt="" />
@@ -16,7 +16,7 @@ export default function Contact() {
       </div>
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
-      <div className="paginacontainer">
+      <div className="paginacontainer_1">
         <div className="progress-wrap">
           <svg
             className="progress-circle svg-content"
@@ -52,7 +52,7 @@ export default function Contact() {
           alt=""
           className="star2 keyframe5"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="about-inner-header heading9 text-center">
@@ -69,7 +69,7 @@ export default function Contact() {
       {/*===== HERO AREA ENDS =======*/}
       {/*===== CONTACT AREA STARTS =======*/}
       <div className="contact-main-inner-area sp1">
-        <div className="container">
+        <div className="container_1">
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="heading2 contact-header">
@@ -176,7 +176,7 @@ export default function Contact() {
         </div>
       </div>
       <div className="location-section-area sp2 bg2">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-4 m-auto">
               <div className="location-header text-center heading2">
@@ -285,7 +285,7 @@ export default function Contact() {
           alt=""
           className="cta-bg2 aniamtion-key-1"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12 m-auto">
               <div className="cta-header-area text-center sp4 heading2">

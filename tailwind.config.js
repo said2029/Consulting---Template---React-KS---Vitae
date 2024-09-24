@@ -52,7 +52,7 @@ export default {
         },
       },
       padding: {
-        main: "120px",
+        main: "150px",
       },
       fontFamily: {
         "figtree-bold": ['"figtree-bold"', "sans-serif"],

@@ -19,12 +19,11 @@ export default function NavBar() {
   return (
     <>
       <header
-        className={clsx(
-          "hidden w-screen lg:block z-10 fixed top-0 py-[16px] px-[12px] 2xl:px-main",
-          {
-            "bg-white": ValueScroll > 100,
-          }
-        )}
+        className={clsx("hidden w-screen lg:block z-10 py-3 fixed px-main", {
+          "bg-white": ValueScroll > 50,
+          navBar_animation: ValueScroll > 50,
+        })}
+
       >
         <nav className="w-full items-center flex justify-between ">
           <div className="site-logo">
@@ -142,7 +141,7 @@ export default function NavBar() {
       {/* mobile */}
 
       <div className="py-3 fixed top-0 z-10 bg-white w-screen lg:hidden">
-        <div className="container-fluid">
+        <div className="container_1-fluid">
           <div className="col-12">
             <div className="mobile-header-elements">
               <div className="mobile-logo">

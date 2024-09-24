@@ -7,7 +7,7 @@ export default function Service_page_1() {
     <>
       {/*===== PRELOADER STARTS =======*/}
       <div className="preloader">
-        <div className="loading-container">
+        <div className="loading-container_1">
           <div className="loading" />
           <div id="loading-icon">
             <img src="assets/img/logo/preloader.png" alt="" />
@@ -16,7 +16,7 @@ export default function Service_page_1() {
       </div>
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
-      <div className="paginacontainer">
+      <div className="paginacontainer_1">
         <div className="progress-wrap">
           <svg
             className="progress-circle svg-content"
@@ -54,7 +54,7 @@ export default function Service_page_1() {
           alt=""
           className="star2 keyframe5"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-5 m-auto">
               <div className="about-inner-header heading9 text-center">
@@ -71,7 +71,7 @@ export default function Service_page_1() {
       {/*===== HERO AREA ENDS =======*/}
       {/*===== SERVICE AREA STARTS =======*/}
       <div className="service1-section-area sp2">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12">
               <div className="service-all-boxes-area1">
@@ -186,7 +186,7 @@ export default function Service_page_1() {
       {/*===== SERVICE AREA ENDS =======*/}
       {/*===== WORK AREA STARTS =======*/}
       <div className="works-inner-section-area sp10">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-6">
               <div className="works-header-area heading2">
@@ -284,7 +284,7 @@ export default function Service_page_1() {
           alt=""
           className="cta-bg2 aniamtion-key-1"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-3 m-auto">
               <div className="skills-header text-center heading2">
@@ -348,7 +348,7 @@ export default function Service_page_1() {
       {/*===== SKILLS AREA ENDS =======*/}
       {/*===== TEAM AREA STARTS =======*/}
       <div className="team-inner-section-area sp2">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-6 m-auto">
               <div className="team2-header-area text-center heading2">
@@ -506,7 +506,7 @@ export default function Service_page_1() {
           alt=""
           className="cta-bg2 aniamtion-key-1"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12 m-auto">
               <div className="cta-header-area text-center sp4 heading2">

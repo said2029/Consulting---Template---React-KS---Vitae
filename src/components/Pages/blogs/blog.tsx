@@ -7,7 +7,7 @@ export default function Blogs_1() {
     <>
       {/*===== PRELOADER STARTS =======*/}
       <div className="preloader">
-        <div className="loading-container">
+        <div className="loading-container_1">
           <div className="loading" />
           <div id="loading-icon">
             <img src="assets/img/logo/preloader.png" alt="" />
@@ -16,7 +16,7 @@ export default function Blogs_1() {
       </div>
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
-      <div className="paginacontainer">
+      <div className="paginacontainer_1">
         <div className="progress-wrap">
           <svg
             className="progress-circle svg-content"
@@ -53,7 +53,7 @@ export default function Blogs_1() {
           alt=""
           className="star2 keyframe5"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="about-inner-header heading9 text-center">
@@ -70,7 +70,7 @@ export default function Blogs_1() {
       {/*===== HERO AREA ENDS =======*/}
       {/*===== BLOG AREA STARTS =======*/}
       <div className="blog-top-area sp1">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12">
               <div className="blog-top-boxarea">
@@ -123,7 +123,7 @@ export default function Blogs_1() {
         </div>
       </div>
       <div className="blog1-scetion-area sp1 bg2">
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-4 col-md-6">
               <div className="blog-author-boxarea">
@@ -500,7 +500,7 @@ export default function Blogs_1() {
           alt=""
           className="cta-bg2 aniamtion-key-1"
         />
-        <div className="container">
+        <div className="container_1">
           <div className="row">
             <div className="col-lg-12 m-auto">
               <div className="cta-header-area text-center sp4 heading2">
