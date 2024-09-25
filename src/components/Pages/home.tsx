@@ -4,6 +4,7 @@ import AutoPlay from "embla-carousel-autoplay";
 import HeroSection from "../Home_com/HeroSection";
 import Reloader from "../Reloader";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import Brand_Scroll from "../globle/brand";
 
 export default function Home() {
   return (
@@ -35,7 +36,8 @@ export default function Home() {
       {/*===== HERO AREA ENDS =======*/}
       {/*===== TESTIMONIAL AREA STARTS =======*/}
       <div className="slider-section-area sp5">
-        <div className=" container_1 ">
+      <Brand_Scroll/>
+        {/* <div className=" container_1 ">
           <div className="row align-items-center">
             <div className="col-lg-2">
               <div className="sldier-head">
@@ -64,7 +66,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/*===== TESTIMONIAL AREA ENDS =======*/}

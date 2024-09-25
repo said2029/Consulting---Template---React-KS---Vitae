@@ -1,5 +1,10 @@
 import { ChevronDown } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import {
   HoverCard,
   HoverCardContent,
@@ -9,6 +14,12 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import clsx from "clsx";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 const Card_Home_Items = () => {
   const [HoverCard, setHover] = useState(false);
@@ -36,7 +47,7 @@ const Card_Home_Items = () => {
         transition={{ duration: 0.5, ease: "circInOut" }}
         className="text-nowrap w-full h-full flex flex-col justify-center items-center absolute top-0 mx-auto z-10"
       >
-        <a className="header-btn1" href="index.html">
+        <a className="header-btn1" href="/">
           Multi Page{" "}
           <span>
             <i className="fa-solid fa-arrow-right" />
@@ -53,8 +64,8 @@ const Card_Home_Items = () => {
 
       <motion.div
         variants={{
-          normal: { opacity: 0, scale:"50%" },
-          hover: { opacity: 1, scale:"100%" },
+          normal: { opacity: 0, scale: "50%" },
+          hover: { opacity: 1, scale: "100%" },
         }}
         initial="normal"
         animate={HoverCard ? "hover" : "normal"}
@@ -199,7 +210,7 @@ export default function NavBar() {
       </header>
       {/* mobile */}
 
-      <div className="py-3 fixed top-0 z-10 bg-white w-screen lg:hidden">
+      <div className="py-3 w-full px-3 fixed top-0 z-10 bg-white lg:hidden">
         <div className="container_1-fluid">
           <div className="col-12">
             <div className="mobile-header-elements">
@@ -208,9 +219,115 @@ export default function NavBar() {
                   <img src="assets/img/logo/logo1.png" alt="" />
                 </a>
               </div>
-              <div className="mobile-nav-icon dots-menu">
-                <i className="fa-solid fa-bars" />
-              </div>
+              <Sheet>
+                <SheetTrigger>
+                  <div className="mobile-nav-icon dots-menu">
+                    <i className="fa-solid fa-bars" />
+                  </div>
+                </SheetTrigger>
+                <SheetContent
+                  side={"left"}
+                  className="w-full overflow-y-scroll"
+                >
+                  <SheetHeader>
+                    <div className="logosicon-area">
+                      <div className="logos">
+                        <img src="assets/img/logo/logo1.png" alt="" />
+                      </div>
+                    </div>
+                  </SheetHeader>
+                  <div>
+                    <section>
+                      <Accordion className="space-y-0" type="single">
+                        <AccordionItem value="Home-1">
+                          <AccordionTrigger className="font-medium text-xl">
+                            Home
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            Yes. It adheres to the WAI-ARIA design pattern.
+                          </AccordionContent>
+                        </AccordionItem>
+                        <a className="font-medium text-xl">About</a>
+                        <AccordionItem value="service-1">
+                          <AccordionTrigger className="font-medium text-xl">
+                            Service
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            Yes. It adheres to the WAI-ARIA design pattern.
+                          </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="blogs-1">
+                          <AccordionTrigger className="font-medium text-xl">
+                            Blogs
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            Yes. It adheres to the WAI-ARIA design pattern.
+                          </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="pages-1">
+                          <AccordionTrigger className="font-medium text-xl">
+                            Pages
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            Yes. It adheres to the WAI-ARIA design pattern.
+                          </AccordionContent>
+                        </AccordionItem>
+                        <a className="font-medium text-xl">Contact Us</a>
+                      </Accordion>
+                    </section>
+                  </div>
+
+                  <div className="p-2 flex flex-col justify-center mt-4">
+                    <a
+                      href="/contact"
+                      className="header-btn1 w-full flex items-center justify-center"
+                    >
+                      Get Started
+                      <span>
+                        <i className="fa-solid fa-arrow-right" />
+                      </span>
+                    </a>
+                    {/* Contact Info */}
+                    <div className="mt-3">
+                      <h1 className="font-bold text-2xl">Contact Info</h1>
+                      <div className="mt-2 flex flex-col gap-2 font-semibold">
+                        <a href="" className="space-x-2">
+                          <i className="fa-solid fa-phone-volume"></i>
+                          <span>info@example.com</span>
+                        </a>
+                        <a href="" className="space-x-2">
+                          <i className="fa-solid fa-envelope"></i>
+                          <span>+3(924)4596512</span>
+                        </a>
+                        <a href="" className="space-x-2">
+                          <i className="fa-solid fa-phone-volume"></i>
+                          <span>+3(924)4596512</span>
+                        </a>
+                      </div>
+                    </div>
+                    {/* Our Location */}
+                    <div className="mt-3">
+                      <h1 className="font-bold  text-2xl">Our Location</h1>
+                      <a className="mt-2 flex flex-col gap-2 font-semibold">
+                        55 East Birchwood Ave.Brooklyn, New York 11201,United
+                        States
+                      </a>
+                    </div>
+                    {/* Social Links */}
+                    <div className="mt-3">
+                      <h1 className="font-bold  text-2xl">Social Links</h1>
+                      <div className="mt-3">
+                        <a
+                          href="/contact"
+                          className="header-btn1 text-primary hover:text-white h-[2.40em] bg-white outline-[2px] outline outline-primary w-fit flex items-center justify-center"
+                        >
+                          <i className="fa-brands fa-facebook-f" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>

@@ -40,7 +40,7 @@ export default function Footer() {
               <h3>About Link</h3>
               <ul>
                 <li>
-                  <a href="blog.html">Our Blog</a>
+                  <a href="/blog">Our Blog</a>
                 </li>
                 <li>
                   <a href="/about">About Us</a>
@@ -49,13 +49,13 @@ export default function Footer() {
                   <a href="/service1">Services</a>
                 </li>
                 <li>
-                  <a href="case.html">Marketing</a>
+                  <a href="/case">Marketing</a>
                 </li>
                 <li>
-                  <a href="testimonials.html">Testimonials</a>
+                  <a href="/testimonials">Testimonials</a>
                 </li>
                 <li>
-                  <a href="contact.html">Contact Us</a>
+                  <a href="/contact">Contact Us</a>
                 </li>
               </ul>
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
               <h3>Get in touch</h3>
               <ul>
                 <li>
-                  <a href="mailto.html">
+                  <a href="mailto">
                     <img src="assets/img/icons/email.svg" alt="" />
                     <span>Infoseoc@gmail.com</span>
                   </a>
