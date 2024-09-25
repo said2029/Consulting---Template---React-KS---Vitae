@@ -71,11 +71,16 @@ export default {
             height: "0",
           },
         },
+        moveUpDown: {
+          "0%, 100%": { transform: "translateY(0)" }, // Start and end at the same position
+          "50%": { transform: "translateY(-40px)" }, // Move up by 20px at 50%
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         slow_spin: "spin 4s linear infinite forwards",
+        moveUpDown: "moveUpDown 4s linear infinite forwards",
       },
     },
   },

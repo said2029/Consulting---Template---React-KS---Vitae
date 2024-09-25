@@ -1,19 +1,13 @@
 
 import NavBar from "../globle/navBar";
 import Footer from "../globle/footer";
+import Reloader from "../Reloader";
 
 export default function Contact() {
   return (
     <>
       {/*===== PRELOADER STARTS =======*/}
-      <div className="preloader">
-        <div className="loading-container_1">
-          <div className="loading" />
-          <div id="loading-icon">
-            <img src="assets/img/logo/preloader.png" alt="" />
-          </div>
-        </div>
-      </div>
+      <Reloader />
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
       <div className="paginacontainer_1">

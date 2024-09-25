@@ -1,19 +1,13 @@
 import Footer from "@/components/globle/footer";
 import NavBar from "@/components/globle/navBar";
+import Reloader from "@/components/Reloader";
 
 
 export default function Blog() {
   return (
     <>
       {/*===== PRELOADER STARTS =======*/}
-      <div className="preloader">
-        <div className="loading-container_1">
-          <div className="loading" />
-          <div id="loading-icon">
-            <img src="assets/img/logo/preloader.png" alt="" />
-          </div>
-        </div>
-      </div>
+      <Reloader />
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
       <div className="paginacontainer_1">
