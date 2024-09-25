@@ -1,4 +1,4 @@
-import React from "react";
+
 import NavBar from "../globle/navBar";
 import Reloader from "../Reloader";
 import Footer from "../globle/footer";
