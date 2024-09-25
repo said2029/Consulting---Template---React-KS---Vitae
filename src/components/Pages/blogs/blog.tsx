@@ -2,7 +2,7 @@ import Footer from "@/components/globle/footer";
 import NavBar from "@/components/globle/navBar";
 
 
-export default function Blogs_1() {
+export default function Blog() {
   return (
     <>
       {/*===== PRELOADER STARTS =======*/}

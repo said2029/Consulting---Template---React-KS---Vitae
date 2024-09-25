@@ -619,7 +619,7 @@ export default function Home() {
                 <CarouselItem className="md:basis-1/2 lg:basis-1/2 lg:h-[300px] overflow-hidden border border-primary rounded-xl">
                   <div className="flex flex-col-reverse lg:flex-row h-full gap-3">
                     <div className="w-full h-full flex flex-col justify-between py-[12px]">
-                      <div className="flex flex-col justify-between h-full px-10">
+                      <div className="flex flex-col justify-between h-full">
                         <p>
                           "Working with SEOC has been a game-changer for our
                           business. Their expertise in SEO and digital marketing
@@ -654,7 +654,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-7 h-full object-cover">
+                    <div className="col-lg-7 place-self-center h-full object-cover">
                       <div className="w-full">
                         <img
                         className="w-full h-full object-cover"
