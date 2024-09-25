@@ -19,11 +19,11 @@ export default function Brand_Scroll() {
           }}
           className="w-full"
         >
-          <CarouselContent className="flex items-center">
+          <CarouselContent className="flex items-center gap-2">
             {Array.from({ length: 10 }).map(() => {
               return Array.from({ length: 5 }).map((_, index) => {
                 return (
-                  <CarouselItem className="basis-[35%] lg:basis-[20%]">
+                  <CarouselItem className="basis-[35%] lg:basis-32">
                     <img
                       className="pointer-events-none w-full"
                       alt={`brand-img${index}`}
