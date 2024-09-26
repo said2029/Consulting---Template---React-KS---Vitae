@@ -2,7 +2,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 export default function What_Our_Clients() {
   return (
-    <div className="container_1 mt-24 flex flex-col justify-center items-center w-full">
+    <div className="container_1 mt-24 overflow-hidden flex flex-col justify-center items-center w-full">
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-bold">What Our Clients Say</h1>
         <p className="font-semibold opacity-70">

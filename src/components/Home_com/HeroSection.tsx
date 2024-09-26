@@ -7,7 +7,7 @@ const Text_Variants = {
 
 export default function HeroSection() {
   return (
-    <div className="w-full text-center flex gap-8 items-center container_1 justify-center bg-cover relative flex-col pt-28 h-[400px] lg:h-[550px] bg-no-repeat bg-[url('/assets/img/bg/header-bg1.png')]">
+    <div className="w-screen overflow-hidden text-center flex gap-8 items-center container_1 justify-center bg-cover relative flex-col pt-28 h-[400px] lg:h-[550px] bg-no-repeat bg-[url('/assets/img/bg/header-bg1.png')]">
       <motion.h1
         variants={Text_Variants}
         initial="ini"
@@ -69,7 +69,7 @@ export default function HeroSection() {
         initial="ini"
         animate="anim"
         transition={{ stiffness: 120, type: "spring", delay: 0.7 }}
-        className="absolute h-[500px] w-[500px]"
+        className="absolute  h-[500px] w-[500px]"
       >
         <img
           className="w-full h-full"
@@ -106,6 +106,7 @@ export default function HeroSection() {
         src="\assets\img\bg\cta-bg5.png"
         alt=""
       />
+
     </div>
   );
 }

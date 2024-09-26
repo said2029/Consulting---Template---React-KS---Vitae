@@ -12,7 +12,7 @@ const variantsText: Variants = {
 
 export default function About_Us_Section() {
   return (
-    <div className="container_1 relative w-full h-fit place-content-center lg:h-[500px] flex flex-col lg:flex-row gap-10 lg:gap-36 mt-28">
+    <div className="container_1 overflow-hidden relative w-full h-fit place-content-center lg:h-[500px] flex flex-col lg:flex-row gap-10 lg:gap-36 mt-28">
       <section className="grid grid-cols-2 gap-2 w-fit flex-shrink-0">
         <div className="w-64 h-[500px] gap-2 flex flex-col">
           <div className="w-full h-[12em] flex gap-2 justify-between">
