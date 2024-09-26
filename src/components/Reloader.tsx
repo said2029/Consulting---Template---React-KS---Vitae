@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 export default function Reloader() {
   const [isLoading, setLoading] = useState(true);
-
-  useEffect(() => {
-    document.body.classList.add("stop-scrolling");
-  }, []);
 
   return (
     <>

@@ -147,7 +147,13 @@ export default function NavBar() {
       </header>
       {/* mobile */}
 
-      <div className="py-3 w-full px-3 fixed top-0 z-10 bg-white lg:hidden">
+      <div className={clsx(
+          "w-screen container_1 z-50 py-3 px-3 fixed top-0 lg:hidden",
+          {
+            "bg-white": ValueScroll > 50,
+            navBar_animation: ValueScroll > 50,
+          }
+        )}>
         <div className="container_1-fluid">
           <div className="col-12">
             <div className="mobile-header-elements">
