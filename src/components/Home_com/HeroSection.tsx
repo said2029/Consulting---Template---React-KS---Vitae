@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 const Text_Variants = {
-  ini: { opacity: 0, y: 90 },
-  anim: { opacity: 1, y: 1 },
+  ini: { opacity: 0, scale: 10 },
+  anim: { opacity: 1, scale: 1 },
 };
 
 export default function HeroSection() {
@@ -12,34 +12,38 @@ export default function HeroSection() {
         variants={Text_Variants}
         initial="ini"
         animate="anim"
-        transition={{ duration: 1, delay: 0.4 }}
+        transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
         className="text-4xl lg:text-5xl z-10 font-extrabold"
       >
         We Are a <span className="text-primary">Consulting</span> Agency
       </motion.h1>
 
       <motion.h3
-        variants={Text_Variants}
+        variants={{
+          ini: { opacity: 0, scale: 0 },
+          anim: { opacity: 1, scale: 1 },
+        }}
         initial="ini"
         animate="anim"
-        transition={{ duration: 1, delay: 0.6 }}
+        transition={{ type: "spring", delay: 0.5, ease: "easeInOut" }}
         className="font-semibold text-[20px]"
       >
         Helping businesses achieve greater success.
       </motion.h3>
 
       <motion.a
-        variants={Text_Variants}
+        variants={{
+          ini: { opacity: 0, scale: 0 },
+          anim: { opacity: 1, scale: 1 },
+        }}
         initial="ini"
         animate="anim"
-        transition={{ duration: 1, delay: 0.7 }}
-        href=""
-        className="text-white h-[50px] bg-gradient-to-r from-primary to-primary-foreground w-fit flex items-center cursor-pointer z-20 px-8 rounded-full"
+        transition={{ type: "spring", delay: 0.8, ease: "easeInOut" }}
+        href="/contact"
+        className="text-white h-[50px] bg-gradient-to-r from-primary to-primary-foreground w-fit flex items-center cursor-pointer z-30 px-8 rounded-full"
       >
         Get Started
       </motion.a>
-
-
 
       <motion.div
         variants={{

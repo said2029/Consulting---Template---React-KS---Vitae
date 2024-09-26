@@ -7,6 +7,7 @@ const variantsText: Variants = {
     opacity: 1,
     x: 0,
   },
+  hover: { y: 10 },
 };
 
 export default function About_Us_Section() {
@@ -26,7 +27,9 @@ export default function About_Us_Section() {
               variants={{
                 initial: { opacity: 0, y: 200 },
                 animate: { opacity: 1, y: 0 },
+                hover: { y: 10 },
               }}
+              whileHover={"hover"}
               whileInView={"animate"}
               initial="initial"
               transition={{ duration: 1 }}
@@ -45,7 +48,9 @@ export default function About_Us_Section() {
             variants={{
               initial: { opacity: 0, y: 200 },
               animate: { opacity: 1, y: 0 },
+              hover: { y: 10 },
             }}
+            whileHover={"hover"}
             whileInView={"animate"}
             initial="initial"
             transition={{ duration: 1, delay: 0.4 }}
@@ -72,9 +77,11 @@ export default function About_Us_Section() {
             variants={{
               initial: { opacity: 0, y: 200 },
               animate: { opacity: 1, y: 0 },
+              hover: { y: 10 },
             }}
             whileInView={"animate"}
             initial="initial"
+            whileHover={"hover"}
             transition={{ duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
             className="h-56 w-full overflow-hidden rounded-md"
@@ -164,7 +171,7 @@ export default function About_Us_Section() {
       {/* effect  */}
       <motion.img
         variants={{
-          initial: { opacity: 0, x: 200,rotateZ:"-90deg" },
+          initial: { opacity: 0, x: 200, rotateZ: "-90deg" },
           animate: { opacity: 1, x: 0 },
         }}
         whileInView={"animate"}
@@ -174,10 +181,22 @@ export default function About_Us_Section() {
         src="/assets/img/bg/inner-bg1.png"
         alt=""
       />
+      {/* <motion.img
+        variants={{
+          initial: { opacity: 0, x: 200,rotateY:"380deg" },
+          animate: { opacity: 1, x: 0 },
+        }}
+        whileInView={"animate"}
+        initial="initial"
+        transition={{ type: "spring", stiffness: 120 }}
+        className="absolute right-0 h-full object-cove -rotate-90 -z-30"
+        src="/assets/img/bg/header-bg6.png"
+        alt=""
+      /> */}
 
       <motion.img
         variants={{
-          initial: { opacity: 0, x: -200,rotateZ:"90deg" },
+          initial: { opacity: 0, x: -200, rotateZ: "90deg" },
           animate: { opacity: 1, x: 0 },
         }}
         whileInView={"animate"}
@@ -187,7 +206,6 @@ export default function About_Us_Section() {
         src="/assets/img/bg/inner-bg1.png"
         alt=""
       />
-
     </div>
   );
 }

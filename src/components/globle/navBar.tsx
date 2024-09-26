@@ -9,73 +9,17 @@ import clsx from "clsx";
 import { useState } from "react";
 import { Button } from "../ui/button";
 
-// const Card_Home_Items = () => {
-//   const [HoverCard, setHover] = useState(false);
-//   return (
-//     <div
-//       onMouseLeave={() => {
-//         setHover(false);
-//       }}
-//       onMouseEnter={() => {
-//         setHover(true);
-//       }}
-//       className="Card_home_element_nav relative overflow-hidden rounded-md shadow-md cursor-pointer"
-//     >
-//       <div className="pointer-events-none">
-//         <img src="assets/img/all-images/demo-img1.png" alt="" />
-//       </div>
-
-//       <motion.div
-//         variants={{
-//           normal: { opacity: 0, y: "-34px" },
-//           hover: { opacity: 1, y: 0 },
-//         }}
-//         initial="normal"
-//         animate={HoverCard ? "hover" : "normal"}
-//         transition={{ duration: 0.5, ease: "circInOut" }}
-//         className="text-nowrap w-full h-full flex flex-col justify-center items-center absolute top-0 mx-auto z-10"
-//       >
-//         <a className="header-btn1" href="/">
-//           Multi Page{" "}
-//           <span>
-//             <i className="fa-solid fa-arrow-right" />
-//           </span>
-//         </a>
-//         <div className="space16" />
-//         <a className="header-btn1" href="single-index1.html" target="_blank">
-//           One Page{" "}
-//           <span>
-//             <i className="fa-solid fa-arrow-right" />
-//           </span>
-//         </a>
-//       </motion.div>
-
-//       <motion.div
-//         variants={{
-//           normal: { opacity: 0, scale: "50%" },
-//           hover: { opacity: 1, scale: "100%" },
-//         }}
-//         initial="normal"
-//         animate={HoverCard ? "hover" : "normal"}
-//         transition={{ duration: 0.2, ease: "linear" }}
-//         className="bg-black/85 absolute w-full h-full top-0"
-//       ></motion.div>
-//     </div>
-//   );
-// };
-
 export default function NavBar() {
   const { scrollY } = useScroll();
   const [ValueScroll, setValueScroll] = useState(0);
   useMotionValueEvent(scrollY, "change", (value) => {
-    console.log(value);
     setValueScroll(value);
   });
   return (
     <>
       <header
         className={clsx(
-          "hidden w-screen container_1 lg:block z-10 py-3 fixed",
+          "hidden w-screen container_1 lg:block z-40 py-3 fixed",
           {
             "bg-white": ValueScroll > 50,
             navBar_animation: ValueScroll > 50,
@@ -148,7 +92,7 @@ export default function NavBar() {
       {/* mobile */}
 
       <div className={clsx(
-          "w-screen container_1 z-50 py-3 px-3 fixed top-0 lg:hidden",
+          "w-screen container_1 z-40 py-3 px-3 fixed top-0 lg:hidden",
           {
             "bg-white": ValueScroll > 50,
             navBar_animation: ValueScroll > 50,

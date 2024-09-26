@@ -32,7 +32,9 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      // mouse Curser
+
+      
+      {/*  mouse Curser */}
       <MouseEffect />
     </>
   );

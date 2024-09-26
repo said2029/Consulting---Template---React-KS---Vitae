@@ -23,7 +23,7 @@ export default function Brand_Scroll() {
             {Array.from({ length: 10 }).map(() => {
               return Array.from({ length: 5 }).map((_, index) => {
                 return (
-                  <CarouselItem className="basis-[35%] lg:basis-32">
+                  <CarouselItem key={index} className="basis-[35%] lg:basis-32">
                     <img
                       className="pointer-events-none w-full"
                       alt={`brand-img${index}`}

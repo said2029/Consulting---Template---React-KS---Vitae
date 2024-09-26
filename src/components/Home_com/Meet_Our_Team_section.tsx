@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Meet_Our_Team_section() {
   return (
     <div className="mt-10 lg:mt-28 flex flex-col lg:flex-row text-white bg bg-[url('/assets/img/bg/header-img9.png')] lg:h-[500px]">
-      <div className="flex gap-4 flex-col justify-center items-center h-full w-full lg:w-[600px] text-center lg:!text-start bg-primary bg-[url('\assets\img\bg\header-bg7.png')] text-white py-4 lg:px-4">
+      <div className="flex gap-4 flex-col justify-center items-center h-full w-full lg:w-[700px] text-center lg:!text-start bg-primary bg-[url('\assets\img\bg\header-bg7.png')] text-white py-4 px-4">
         <h1 className="text-4xl lg:text-5xl font-bold">
           CONTUATIN EXPERTISE! YOU CAN TRUST.
         </h1>
@@ -17,13 +17,14 @@ export default function Meet_Our_Team_section() {
       <div className="w-full h-full  flex justify-evenly items-center  overflow-x-auto">
         {Array.from({ length: 4 }).map((_, i) => (
           <motion.div
+          key={i}
             variants={{
-              initial: { opacity: 0, y: "100%" },
+              initial: { opacity: 0, y: 100},
               animate: { opacity: 1, y: "0" },
             }}
             initial="initial"
             whileInView={"animate"}
-            transition={{ type: "spring", stiffness: 120, delay: 0.2 * i }}
+            transition={{ duration:1, delay: 0.2 * i }}
             viewport={{ once: true }}
           >
             <CardContainer className="inter-var">
