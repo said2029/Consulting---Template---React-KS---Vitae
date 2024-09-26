@@ -70,7 +70,7 @@ export default function Blogs_section() {
   ];
 
   return (
-    <div className="container_1 mt-10 lg:mt-28 w-full flex flex-col items-center justify-between">
+    <div className="container_1 mt-10 lg:mt-28 w-full flex flex-col items-center justify-between sticky">
       <div className="text-center lg:w-1/2 space-y-4">
         <motion.h1
           variants={{

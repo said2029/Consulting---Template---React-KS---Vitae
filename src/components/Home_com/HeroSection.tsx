@@ -7,13 +7,13 @@ const Text_Variants = {
 
 export default function HeroSection() {
   return (
-    <div className="w-screen overflow-hidden text-center flex gap-8 items-center container_1 justify-center bg-cover relative flex-col pt-28 h-[400px] lg:h-[550px] bg-no-repeat bg-[url('/assets/img/bg/header-bg1.png')]">
+    <div className="w-screen overflow-hidden text-center flex gap-8 items-center container_1 justify-center bg-cover relative flex-col pt-28 h-[400px] lg:h-[700px] bg-no-repeat bg-[url('/assets/img/bg/header-bg1.png')]">
       <motion.h1
         variants={Text_Variants}
         initial="ini"
         animate="anim"
         transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
-        className="text-4xl lg:text-5xl z-10 font-extrabold"
+        className="text-4xl lg:text-8xl z-10 font-bold"
       >
         We Are a <span className="text-primary">Consulting</span> Agency
       </motion.h1>
