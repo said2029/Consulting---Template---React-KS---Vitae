@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -76,11 +75,8 @@
   }
 }
 
-
-
 .navBar_animation {
   animation: FlipNav 0.7s ease-in-out forwards;
-
 }
 
 @keyframes FlipNav {
@@ -98,4 +94,10 @@
 .stop-scrolling {
   height: 100% !important;
   overflow: hidden !important;
+}
+
+.Loading_Mask {
+  mask: url("/assets/img/bg/header-bg5.png") center/contain no-repeat,
+    linear-gradient(#000 0 0); /* we need this extra layer for mask-composite */
+  mask-composite: exclude;
 }

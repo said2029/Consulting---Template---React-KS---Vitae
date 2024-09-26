@@ -9,14 +9,27 @@ import Blog from "./components/Pages/blogs/blog.tsx";
 import Home_2 from "./components/Pages/home_2.tsx";
 import WebFont from "webfontloader";
 import MouseEffect from "./components/globle/MouseEffect.tsx";
+import Lenis from "lenis";
 
 export default function App() {
+  const lenis = new Lenis();
+
   useEffect(() => {
+    // font
     WebFont.load({
       google: {
         families: ["Ubuntu", "Kanit", "Roboto"],
       },
     });
+
+    // smoth scrolle
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
   }, []);
 
   return (
@@ -33,7 +46,6 @@ export default function App() {
         </Routes>
       </BrowserRouter>
 
-      
       {/*  mouse Curser */}
       <MouseEffect />
     </>

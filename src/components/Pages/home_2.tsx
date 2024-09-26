@@ -35,36 +35,37 @@ export default function Home_2() {
       <NavBar />
       {/* Hero Section */}
       <HeroSection />
+      <div className="bg-white sticky h-fit w-full pt-3">
+        {/* Services Section */}
 
-      {/* Services Section */}
+        <Services_Section />
 
-      <Services_Section />
+        {/* About Us Section */}
 
-      {/* About Us Section */}
+        <About_Us_Section />
 
-      <About_Us_Section />
+        {/*  Meet Our Team */}
 
-      {/*  Meet Our Team */}
+        <Meet_Our_Team_section />
 
-      <Meet_Our_Team_section />
+        {/* Testimonials Section */}
 
-      {/* Testimonials Section */}
+        <Testimonials_Section />
 
-      <Testimonials_Section />
+        {/* What Our Clients Say */}
 
-      {/* What Our Clients Say */}
+        <What_Our_Clients />
 
-      <What_Our_Clients />
+        {/* blogs */}
 
-      {/* blogs */}
+        <Blogs_section />
 
-      <Blogs_section />
+        {/* Contact */}
+        <Contact_section />
 
-      {/* Contact */}
-      <Contact_section />
-
-      <div className="mt-20">
-        <Footer />
+        <div className="mt-20">
+          <Footer />
+        </div>
       </div>
     </main>
   );
