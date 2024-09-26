@@ -1,20 +1,36 @@
-import Element_up from "../animation/Element_up";
 import { motion } from "framer-motion";
-
 
 export default function Blogs_section() {
   return (
     <div className="container_1 mt-10 lg:mt-28 w-full flex flex-col items-center justify-between">
       <div className="text-center lg:w-1/2 space-y-4">
-        <Element_up transition={{ duration: 1 }}>
-          <h1 className=" text-3xl lg:text-4xl font-bold">
-            Insights & Innovations: Our Latest Blog Posts
-          </h1>
-        </Element_up>
-        <p className="font-semibold opacity-70">
+        <motion.h1
+          variants={{
+            initial: { opacity: 0, y: 30 },
+            animate: { opacity: 1, y: 0 },
+          }}
+          initial="initial"
+          transition={{ duration: 1, ease: "easeInOut" }}
+          whileInView={"animate"}
+          viewport={{ once: true }}
+          className=" text-3xl lg:text-4xl font-bold"
+        >
+          Insights & Innovations: Our Latest Blog Posts
+        </motion.h1>
+        <motion.p
+          variants={{
+            initial: { opacity: 0, y: 30 },
+            animate: { opacity: 1, y: 0 },
+          }}
+          initial="initial"
+          transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
+          whileInView={"animate"}
+          viewport={{ once: true }}
+          className="font-semibold opacity-70"
+        >
           Explore our blog to discover actionable insights, success stories, and
           expert advice that can help drive growth for your business.
-        </p>
+        </motion.p>
       </div>
 
       <div className="mt-10 gap-9 grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">

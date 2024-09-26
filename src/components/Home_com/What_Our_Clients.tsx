@@ -28,7 +28,7 @@ export default function What_Our_Clients() {
             {Array.from({ length: 10 }).map(() => (
               <CarouselItem className="basis-64 px-0 md:basis-1/2 lg:basis-1/2 lg:h-[300px] overflow-hidden border border-primary rounded-xl">
                 <div className="flex !w-full h-full  flex-col-reverse lg:flex-row gap-3">
-                  <div className="w-full h-full flex flex-col justify-between lg:py-[12px] ps-1 md:ps-3">
+                  <div className="w-full h-full flex flex-col justify-between lg:py-[12px] ps-3 md:ps-3">
                     <div className="flex flex-col justify-between h-full">
                       <p>
                         Working with SEOC has been a game-changer for our

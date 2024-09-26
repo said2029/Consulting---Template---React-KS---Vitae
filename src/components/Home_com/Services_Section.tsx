@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 export default function Services_Section() {
   return (
     <div className="w-full container_1 flex flex-col justify-center items-center mt-10 lg:mt-28 ">
@@ -8,9 +9,18 @@ export default function Services_Section() {
           domains.
         </p>
       </div>
-      <div className="flex justify-between w-full items-start gap-4 mt-16 overflow-x-auto">
-        {Array.from({ length: 4 }).map(() => (
-          <section className="flex flex-col w-[200px] items-center justify-center gap-3">
+      <div className="flex justify-between w-full items-start gap-4 mt-16 overflow-y-hidden overflow-x-auto">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <motion.section
+            variants={{
+              init: { opacity: 0, y: 100 },
+              show: { opacity: 1, y: 0 },
+            }}
+            whileInView="show"
+            initial="init"
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.2 * i }}
+            className="flex flex-col w-[200px] items-center justify-center gap-3"
+          >
             <div className="overflow-hidden rounded-full">
               <div className="bg-gray-600 w-44 h-44">
                 <img
@@ -28,7 +38,7 @@ export default function Services_Section() {
             <div className="flex justify-center cursor-pointer transition-all hover:-rotate-12 items-center bg-primary rounded-full text-white p-3">
               <i className="fa-solid fa-arrow-right"></i>
             </div>
-          </section>
+          </motion.section>
         ))}
       </div>
     </div>

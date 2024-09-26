@@ -17,8 +17,6 @@ export default function HeroSection() {
         Get Started
       </Button>
 
-
-
       <motion.div
         variants={{
           ini: { opacity: 0, scale: 0 },
@@ -52,7 +50,31 @@ export default function HeroSection() {
         />
       </motion.div>
 
+      {/* elemants */}
+      <img
+        className="absolute left-0 animate-moveUpDown"
+        src="\assets\img\elements\elements1.png"
+        alt=""
+      />
+      <motion.img
+        variants={{
+          initial: { top: "7rem" },
+          animate: { top: "6rem" },
+        }}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+          
+        }}
+        animate={"animate"}
+        className="absolute w-40 -rotate-45 right-80 top-28  -scale-x-100"
+        src="assets\img\elements\elements2.png"
+        alt=""
+      />
 
+      <img className="absolute top-0 right-0 z-10 pointer-events-none" src="\assets\img\bg\cta-bg5.png" alt="" />
     </div>
   );
 }

@@ -79,8 +79,8 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        slow_spin: "spin 4s linear infinite forwards",
-        moveUpDown: "moveUpDown 4s linear infinite forwards",
+        slow_spin: "spin 40s linear infinite forwards",
+        moveUpDown: "moveUpDown 5s linear infinite forwards",
       },
     },
   },
