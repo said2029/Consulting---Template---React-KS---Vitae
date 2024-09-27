@@ -90,7 +90,7 @@ export default function Services_Section({ indexView }: { indexView: number }) {
                 return <Card card={card} scrollYProgress={scrollYProgress} />;
               })}
             </div>
-            <Button_Hover text="MORE" />
+            <Button_Hover text="services" />
 
             {/* Main title */}
             <motion.h1

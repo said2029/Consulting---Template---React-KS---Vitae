@@ -6,13 +6,13 @@ import {
 } from "framer-motion";
 import Button_Hover from "../globle/Button_Hover";
 
-export default function About_Us_Section({ indexView }: { indexView: number }) {
+export default function Blog_Section({ indexView }: { indexView: number }) {
   const { scrollYProgress } = useScroll();
-  const moveUpMd = useTransform(scrollYProgress, [0, 1], [340, -555]);
+  const moveUpMd = useTransform(scrollYProgress, [0, 1], [700, -555]);
 
   return (
     <AnimatePresence>
-      {indexView >= 2 && (
+      {indexView >= 3 && (
         <motion.div
           variants={{
             initial: { scale: 0, y: "100vh" },
@@ -23,7 +23,7 @@ export default function About_Us_Section({ indexView }: { indexView: number }) {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.7, ease: "easeInOut" }}
-          className="w-full h-[100vh] bg-blue-400 backdrop-blur-xl bg-[url('/assets/img/all-images/case-img21.png')] bg-no-repeat bg-cover sticky top-0 flex justify-center items-center"
+          className="w-full h-[100vh] bg-blue-400 backdrop-blur-xl bg-[url('/assets/img/all-images/case-img15.png')] bg-no-repeat bg-cover sticky top-0 flex justify-center items-center"
         >
           {/* content */}
           <div className="w-full h-full flex justify-start items-center relative backdrop-blur-2xl">
@@ -64,7 +64,7 @@ export default function About_Us_Section({ indexView }: { indexView: number }) {
                 ></motion.div>
               </div>
             </div>
-            <Button_Hover text="about" />
+            <Button_Hover text="blog" />
 
             {/* Main title */}
             <motion.h1

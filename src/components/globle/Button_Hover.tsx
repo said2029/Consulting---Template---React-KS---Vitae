@@ -27,7 +27,7 @@ export default function Button_Hover({ text }: { text: string }) {
       onMouseLeave={() => {
         SetisHover(false);
       }}
-      className="border-2 right-28 text-white border-white rounded-full px-6 text-6xl absolute py-2 flex overflow-hidden cursor-pointer"
+      className="border-2 right-28 text-white border-white rounded-full px-6 text-6xl absolute py-2 flex uppercase overflow-hidden cursor-pointer"
     >
       {text.split("").map((chart, i) => (
         <motion.div
