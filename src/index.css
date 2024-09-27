@@ -63,7 +63,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Kanit";
+  font-family: "Figtree";
 }
 
 @layer base {
@@ -97,7 +97,7 @@
 }
 
 .Loading_Mask {
-  mask: url("/assets/img/bg/header-bg5.png") center/contain no-repeat,
+  mask: url("/assets/img/all-images/testimonial-img5.png") center/contain no-repeat,
     linear-gradient(#000 0 0); /* we need this extra layer for mask-composite */
   mask-composite: exclude;
 }

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import {useState } from "react";
+import { useState } from "react";
 export default function Reloader() {
   const name = "Consulting";
   const [isLoading, setLoading] = useState(true);
@@ -14,13 +14,12 @@ export default function Reloader() {
               maskSize: `0.1%`,
             },
             animate: {
-              maskPosition: `center center`,
               maskSize: `100%`,
             },
           }}
           initial="initial"
           animate="animate"
-          transition={{ duration: 0.8, delay: 3 }}
+          transition={{ duration: 0.8, delay: name.length / 3,ease:"easeInOut" }}
           onAnimationComplete={() => {
             setLoading(false);
           }}
@@ -31,19 +30,18 @@ export default function Reloader() {
               initial: { width: "content-fit" },
               animate: { width: 0 },
             }}
-            transition={{ duration: 0.5, delay: 2.5 }}
+            transition={{ duration: 0.5, delay: name.length / 3.5 }}
             className="h-fit overflow-hidden"
           >
-            <div className="font-bold text-8xl overflow-hidden object-cover text-transparent bg-clip-text bg-gradient-to-r w-fit from-primary to-primary-foreground flex uppercase">
+            <div className="font-bold text-black text-8xl object-cover text-transparent w-full to-primary-foreground flex uppercase">
               {name.split("").map((c, i) => (
                 <motion.div
+                  className="block"
                   variants={{
-                    initial: { y: "200px" },
-                    animate: { y: "0px" },
+                    initial: { y: 200 },
+                    animate: { y: 0 },
                   }}
-                  initial="initial"
-                  animate="animate"
-                  transition={{ duration: 1, delay: 0.1 * i, ease: "linear" }}
+                  transition={{ duration: 1, delay: 0.1 * i }}
                 >
                   {c}
                 </motion.div>

@@ -1,11 +1,22 @@
 import { motion } from "framer-motion";
+import {  useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 export default function Testimonials_Section() {
+  const ref = useRef<HTMLDivElement|any>();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center"],
+  });
+  const MoveUp = useTransform(scrollYProgress, [0, 1], [0, -20]);
+  const Scale = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+  const Opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+  
   return (
-    <div className="container_1 w-full mt-10 lg:mt-28 relative space-y-8">
+    <motion.div  style={{y:MoveUp,opacity:Opacity,scale:Scale}} ref={ref} className="container_1 w-full mt-10 lg:mt-28 relative space-y-8">
       <div className="text-3xl relative font-bold flex gap-10 justify-center ">
-        <h1 className="w-full lg:w-1/2 text-center font-bold  leading-relaxed justify-self-center">
+        <h1 className="w-full lg:w-1/2 text-center font-bold  justify-self-center">
           OUR TRACK RECORD OF CPMLETED{" "}
-          <span className="text-primary underline">CONSULTING</span> PROJECTS.
+          <span className="text-primary">CONSULTING</span> PROJECTS.
         </h1>
 
         <div className="w-52 h-52 absolute right-0 hidden lg:block">
@@ -65,6 +76,6 @@ export default function Testimonials_Section() {
           </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

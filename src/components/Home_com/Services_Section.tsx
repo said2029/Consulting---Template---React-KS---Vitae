@@ -1,7 +1,23 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 export default function Services_Section() {
+  const ref = useRef<HTMLDivElement|any>();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center"],
+  });
+  const value = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+
   return (
-    <div className="w-full container_1 flex flex-col justify-center items-center mt-10 lg:mt-28 ">
+    <motion.div
+      style={{
+        scale: value,
+        y: scrollYProgress,
+        opacity: scrollYProgress,
+      }}
+      ref={ref}
+      className="w-full container_1 flex h-fit flex-col justify-center items-center mt-10 lg:mt-28  overflow-hidden"
+    >
       <div className="text-center">
         <h1 className="text-4xl font-bold">We Offer Consultancy Services</h1>
         <p className="opacity-70 mt-2">
@@ -10,9 +26,9 @@ export default function Services_Section() {
         </p>
       </div>
       <div className="flex justify-between w-full items-start gap-4 mt-16 overflow-y-hidden overflow-x-auto">
-        {Array.from({ length: 4 }).map((_, i) => (
+        {Array.from({ length: 5 }).map((_, i) => (
           <motion.section
-          key={i}
+            key={i}
             variants={{
               init: { opacity: 0, y: 100 },
               show: { opacity: 1, y: 0 },
@@ -42,6 +58,6 @@ export default function Services_Section() {
           </motion.section>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

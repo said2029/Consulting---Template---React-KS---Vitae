@@ -1,9 +1,19 @@
+import { useRef } from "react";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Meet_Our_Team_section() {
+  const ref = useRef<HTMLDivElement|any>();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center"],
+  });
+  const MoveUp = useTransform(scrollYProgress, [0, 1], [0, -20]);
+  const Scale = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+  const Opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+
   return (
-    <div className="mt-10 lg:mt-28 flex flex-col lg:flex-row text-white bg bg-[url('/assets/img/bg/header-img9.png')] lg:h-[500px]">
+    <motion.div style={{y:MoveUp,opacity:Opacity,scale:Scale}} ref={ref} className="mt-10 lg:mt-28 flex flex-col lg:flex-row text-white bg bg-[url('/assets/img/bg/header-img9.png')] lg:h-[500px]">
       <div className="flex gap-4 flex-col justify-center items-center h-full w-full lg:w-[700px] text-center lg:!text-start bg-primary bg-[url('\assets\img\bg\header-bg7.png')] text-white py-4 px-4">
         <h1 className="text-4xl lg:text-5xl font-bold">
           CONTUATIN EXPERTISE! YOU CAN TRUST.
@@ -52,6 +62,6 @@ export default function Meet_Our_Team_section() {
           </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

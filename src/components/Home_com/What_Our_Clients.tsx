@@ -1,8 +1,18 @@
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import { useRef } from "react";
+import { useScroll, useTransform,motion } from "framer-motion";
 export default function What_Our_Clients() {
+  const ref = useRef<HTMLDivElement|any>();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center"],
+  });
+  const MoveUp = useTransform(scrollYProgress, [0, 1], [0, -20]);
+  const Scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const Opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
   return (
-    <div className="container_1 mt-24 overflow-hidden flex flex-col justify-center items-center w-full">
+    <motion.div  style={{y:MoveUp,opacity:Opacity,scale:Scale}} ref={ref} className="container_1 mt-24 overflow-hidden flex flex-col justify-center items-center w-full">
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-bold">What Our Clients Say</h1>
         <p className="font-semibold opacity-70">
@@ -80,6 +90,6 @@ export default function What_Our_Clients() {
         </Carousel>
         {/*===== TESTIMONIAL AREA ENDS =======*/}
       </div>
-    </div>
+    </motion.div>
   );
 }

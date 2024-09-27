@@ -35,13 +35,12 @@ export default function Home_2() {
       <NavBar />
       {/* Hero Section */}
       <HeroSection />
-      <div className="bg-white sticky h-fit w-full pt-3">
+      <div className="bg-white sticky h-fit w-full pt-3 shadow-2xl">
         {/* Services Section */}
 
         <Services_Section />
 
         {/* About Us Section */}
-
         <About_Us_Section />
 
         {/*  Meet Our Team */}
@@ -62,6 +61,7 @@ export default function Home_2() {
 
         {/* Contact */}
         <Contact_section />
+
 
         <div className="mt-20">
           <Footer />

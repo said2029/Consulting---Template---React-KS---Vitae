@@ -18,7 +18,7 @@ export default function App() {
     // font
     WebFont.load({
       google: {
-        families: ["Ubuntu", "Kanit", "Roboto"],
+        families: ["Ubuntu", "Kanit", "Roboto","Figtree"],
       },
     });
 
