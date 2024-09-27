@@ -38,10 +38,10 @@ export default function MouseEffect() {
     <>
       <div
         ref={ref_CoursePointer}
-        className="fixed pointer-events-none top-0 left-0 w-[40px] z-50 h-[40px] border border-primary rounded-full hidden lg:block"
+        className="fixed pointer-events-none top-0 left-0 w-[40px] z-50 h-[40px] border-2 border-white rounded-full hidden lg:block"
       ></div>
       <span
-        className="fixed pointer-events-none top-0 left-0 w-[10px] z-50 h-[10px] border border-primary rounded-full hidden lg:block"
+        className="fixed pointer-events-none top-0 left-0 w-[10px] z-50 h-[10px] border border-white rounded-full hidden lg:block"
         ref={ref_CoursePoint}
       ></span>
     </>

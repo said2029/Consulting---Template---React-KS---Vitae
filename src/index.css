@@ -63,7 +63,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Figtree";
+  font-family: "Poppins";
 }
 .full {
   width: "100vw";
@@ -76,6 +76,14 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.navItems{
+  border-width: 0px;
+  transition: 1ms;
+  border:"1px solid red";
+}
+.navItems:hover{
+  border-width: "100%";
 }
 
 .navBar_animation {
