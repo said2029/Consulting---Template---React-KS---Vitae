@@ -10,6 +10,7 @@ import Home_2 from "./components/Pages/home_2.tsx";
 import WebFont from "webfontloader";
 import MouseEffect from "./components/globle/MouseEffect.tsx";
 import Lenis from "lenis";
+import Home_3 from "./components/Pages/home_3.tsx";
 
 export default function App() {
   const lenis = new Lenis();
@@ -37,7 +38,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route>
-            <Route path="/" element={<Home_2 />} />
+            <Route path="/" element={<Home_3 />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/service" element={<Service_page />} />

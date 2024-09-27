@@ -65,6 +65,9 @@
   box-sizing: border-box;
   font-family: "Figtree";
 }
+.full {
+  width: "100vw";
+}
 
 @layer base {
   * {
@@ -97,7 +100,19 @@
 }
 
 .Loading_Mask {
-  mask: url("/assets/img/all-images/testimonial-img5.png") center/contain no-repeat,
+  mask: url("/assets/img/all-images/testimonial-img5.png") center/contain
+      no-repeat,
     linear-gradient(#000 0 0); /* we need this extra layer for mask-composite */
   mask-composite: exclude;
+}
+
+*::-webkit-scrollbar {
+  @apply w-1;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgb(7, 206, 17);
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+  display: none;
 }

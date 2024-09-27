@@ -14,7 +14,7 @@ export default function Reloader() {
               maskSize: `0.1%`,
             },
             animate: {
-              maskSize: `100%`,
+              maskSize: `200%`,
             },
           }}
           initial="initial"
@@ -23,7 +23,7 @@ export default function Reloader() {
           onAnimationComplete={() => {
             setLoading(false);
           }}
-          className="w-full Loading_Mask fixed z-[9999] top-0 h-[100vh] bg-white flex justify-center items-center"
+          className="w-screen Loading_Mask fixed z-[9999] top-0 h-[100vh] bg-white flex justify-center items-center"
         >
           <motion.div
             variants={{
@@ -33,7 +33,7 @@ export default function Reloader() {
             transition={{ duration: 0.5, delay: name.length / 3.5 }}
             className="h-fit overflow-hidden"
           >
-            <div className="font-bold text-black text-8xl object-cover text-transparent w-full to-primary-foreground flex uppercase">
+            <div className="font-bold text-black text-3xl md:text-5xl lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex uppercase">
               {name.split("").map((c, i) => (
                 <motion.div
                   className="block"

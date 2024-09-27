@@ -6,11 +6,11 @@ export default function What_Our_Clients() {
   const ref = useRef<HTMLDivElement|any>();
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center"],
+    offset: ["start end", "center end"],
   });
   const MoveUp = useTransform(scrollYProgress, [0, 1], [0, -20]);
   const Scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
-  const Opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+  const Opacity = useTransform(scrollYProgress, [0, 1], [0.4, 2]);
   return (
     <motion.div  style={{y:MoveUp,opacity:Opacity,scale:Scale}} ref={ref} className="container_1 mt-24 overflow-hidden flex flex-col justify-center items-center w-full">
       <div className="text-center space-y-4">
