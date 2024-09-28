@@ -47,7 +47,7 @@ export default function App() {
         </Routes>
       </BrowserRouter>
       {/* loading */}
-      <Reloader />
+      {/* <Reloader /> */}
 
       {/*  mouse Curser */}
       <MouseEffect />

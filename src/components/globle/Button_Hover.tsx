@@ -18,7 +18,6 @@ export default function Button_Hover({
         initial: {
           opacity: 0,
           y: 50,
-          rotate: Math.floor(Math.random() * 20) - 20,
         },
         animate: { opacity: 1, y: 0 },
         hover: { rotate: 0 },
@@ -38,7 +37,7 @@ export default function Button_Hover({
         SetisHover(false);
       }}
       className={cn(
-        "border-2 bottom-48 z-50 right-auto lg:bottom-auto lg:right-28 text-white border-white rounded-full px-6 md:text-4xl xl:text-6xl absolute py-2 flex uppercase overflow-hidden cursor-pointer",
+        "border-2 text-white border-white rounded-full px-6 md:text-4xl xl:text-6xl py-2 flex uppercase overflow-hidden cursor-pointer",
         className
       )}
     >

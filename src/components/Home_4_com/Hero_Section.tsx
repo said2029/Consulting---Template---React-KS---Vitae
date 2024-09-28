@@ -37,7 +37,7 @@ export default function Hero_Section() {
         initial="initial"
         animate="animate"
         transition={{ duration: 1, delay: 3.8 }}
-        className="bg-black shadow_Button text-white rounded-full py-4 px-16 shadow-inner "
+        className="shadow_Button text-white rounded-full py-4 px-16 shadow-inner "
       >
         Get Started
       </motion.button>
@@ -50,7 +50,7 @@ export default function Hero_Section() {
         Available now
       </motion.span>
 
-      <div className="shadow_Button w-full h-[5.4rem] bg-black rounded-full flex items-center justify-center overflow-hidden">
+      <div className="shadow_Button w-full h-[5.4rem] rounded-full flex items-center justify-center overflow-hidden">
         <motion.div
           variants={{
             initial: { x: 0 },

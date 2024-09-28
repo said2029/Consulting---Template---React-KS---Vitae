@@ -105,6 +105,7 @@
   box-shadow: 0 2px 2px rgba(0,0,0,.31),inset 0 2px 1px rgba(255,255,255,.5),0 5px 2px rgba(0,0,0,.31) ;
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   transform-style: preserve-3d;
+  background-color: #0d1b2a;
 
 }
 
@@ -118,7 +119,7 @@
 }
 
 .container_1 {
-  @apply px-[16px] md:px-[90px] lg:px-[30px] xl:px-[120px];
+  @apply px-[5px] md:px-[30px] lg:px-[30px] xl:px-[120px];
 }
 .stop-scrolling {
   height: 100% !important;

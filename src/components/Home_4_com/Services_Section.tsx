@@ -28,7 +28,7 @@ export default function Services_Section() {
         tailored to your needs
       </motion.h2>
 
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 place-content-center lg:grid-cols-3 mt-8 gap-28">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 place-content-center lg:grid-cols-3 mt-8 lg:gap-28">
         <motion.div
           variants={variantsUp}
           initial="initial"
