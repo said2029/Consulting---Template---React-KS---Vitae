@@ -1,9 +1,19 @@
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useState } from "react";
-export default function Button_Hover({ text }: { text: string }) {
+export default function Button_Hover({
+  text,
+  className,
+  href = "#",
+}: {
+  text: string;
+  href?: string;
+  className?: string;
+}) {
   const [hover, SetisHover] = useState(false);
   return (
     <motion.a
+      href={href}
       variants={{
         initial: {
           opacity: 0,
@@ -17,7 +27,7 @@ export default function Button_Hover({ text }: { text: string }) {
       animate="animate"
       whileHover={"hover"}
       transition={{
-        type:"spring",
+        type: "spring",
 
         ease: "easeInOut",
       }}
@@ -27,7 +37,10 @@ export default function Button_Hover({ text }: { text: string }) {
       onMouseLeave={() => {
         SetisHover(false);
       }}
-      className="border-2 right-28 text-white border-white rounded-full px-6 text-6xl absolute py-2 flex uppercase overflow-hidden cursor-pointer"
+      className={cn(
+        "border-2 bottom-48 z-50 right-auto lg:bottom-auto lg:right-28 text-white border-white rounded-full px-6 md:text-4xl xl:text-6xl absolute py-2 flex uppercase overflow-hidden cursor-pointer",
+        className
+      )}
     >
       {text.split("").map((chart, i) => (
         <motion.div
@@ -47,7 +60,6 @@ export default function Button_Hover({ text }: { text: string }) {
           transition={{
             duration: 0.4,
             ease: "easeInOut",
-            delay: 0.7 + 0.1 * i,
           }}
         >
           {chart}

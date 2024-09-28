@@ -19,7 +19,11 @@ export default function Reloader() {
           }}
           initial="initial"
           animate="animate"
-          transition={{ duration: 0.8, delay: name.length / 3,ease:"easeInOut" }}
+          transition={{
+            duration: 0.8,
+            delay: name.length / 3,
+            ease: "easeInOut",
+          }}
           onAnimationComplete={() => {
             setLoading(false);
           }}
@@ -36,6 +40,7 @@ export default function Reloader() {
             <div className="font-bold text-black text-3xl md:text-5xl lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex uppercase">
               {name.split("").map((c, i) => (
                 <motion.div
+                  key={i}
                   className="block"
                   variants={{
                     initial: { y: 200 },

@@ -9,7 +9,7 @@ import Blog from "./components/Pages/blogs/blog.tsx";
 import WebFont from "webfontloader";
 import MouseEffect from "./components/globle/MouseEffect.tsx";
 import Lenis from "lenis";
-import Home_3 from "./components/Pages/home_3.tsx";
+import Home_4 from "./components/Pages/Home_4.tsx";
 import Reloader from "./components/Reloader.tsx";
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
     // font
     WebFont.load({
       google: {
-        families: ["Figtree","Poppins"],
+        families: ["Figtree","Poppins","Roboto"],
       },
     });
 
@@ -38,7 +38,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route>
-            <Route path="/" element={<Home_3 />} />
+            <Route path="/" element={<Home_4 />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/service" element={<Service_page />} />

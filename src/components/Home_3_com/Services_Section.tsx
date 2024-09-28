@@ -23,11 +23,6 @@ const CardsContant = [
     desc: "Gain valuable insights with data-driven market research to make informed business decisions.",
     img: "assets/img/all-images/case-img12.png",
   },
-  {
-    title: "Financial Advisory",
-    desc: "Optimize your financial strategies and improve performance with expert guidance",
-    img: "assets/img/all-images/case-img9.png",
-  },
 ];
 
 const Card = ({
@@ -37,9 +32,12 @@ const Card = ({
   scrollYProgress: any;
   card: any;
 }) => {
-
-  const randomeY =useRef(Math.floor(Math.random() * 50) + 50) ;
-  const moveUp = useTransform(scrollYProgress, [0, 1], [randomeY.current, Math.floor(Math.random() * -450) - 600]);
+  const randomeY = useRef(Math.floor(Math.random() * 50) + 50);
+  const moveUp = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [randomeY.current, Math.floor(Math.random() * 20) - 700]
+  );
   return (
     <motion.div
       style={{ y: moveUp }}
@@ -53,9 +51,9 @@ const Card = ({
       initial="initial"
       exit="exit"
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="h-72 w-[230px] bg-white rounded-xl text-black shadow-2xl px-2 py-2 flex flex-col items-center text-center justify-between"
+      className="h-fit md:h-72 w-full md:w-[230px] bg-white rounded-xl text-black shadow-2xl px-2 py-9 lg:py-2 flex gap-3 md:gap-0 flex-col items-center text-center justify-between"
     >
-      <div className="rounded-full w-32 h-32 overflow-hidden">
+      <div className="rounded-full hidden md:block w-32 h-32 overflow-hidden">
         <img className="w-full h-full object-cover" src={card.img} />
       </div>
       <h1 className="text-xl font-bold">{card.title}</h1>
@@ -81,16 +79,16 @@ export default function Services_Section({ indexView }: { indexView: number }) {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.7, ease: "easeInOut" }}
-          className="w-full h-[100vh] bg-blue-400 backdrop-blur-xl bg-[url('/assets/img/all-images/case-img8.png')] bg-no-repeat bg-cover sticky top-0 flex justify-center items-center"
+          className="md:w-full h-[100vh] bg-blue-400 backdrop-blur-xl bg-[url('/assets/img/all-images/case-img8.png')] bg-no-repeat bg-cover sticky top-0 flex justify-center items-center"
         >
           {/* content */}
-          <div className="w-full h-full flex justify-start items-center relative backdrop-blur-2xl">
-            <div className="grid grid-cols-4 lg:ml-28 lg:gap-12">
+          <div className="w-full h-full flex justify-center lg:justify-start items-center relative backdrop-blur-2xl">
+            <div className="grid grid-cols-1 gap-11 px-3 md:grid-cols-3 md:gap-2 lg:px-4 xl:ml-10 xl:gap-7">
               {CardsContant.map((card, index) => {
-                return <Card card={card} scrollYProgress={scrollYProgress} />;
+                return <Card key={index} card={card} scrollYProgress={scrollYProgress} />;
               })}
             </div>
-            <Button_Hover text="services" />
+            <Button_Hover href="/service" text="services" />
 
             {/* Main title */}
             <motion.h1
@@ -101,7 +99,7 @@ export default function Services_Section({ indexView }: { indexView: number }) {
               initial="initial"
               animate="animate"
               transition={{ duration: 0.4, ease: "easeInOut", delay: 0.9 }}
-              className="text-7xl font-thin absolute bottom-4 left-4 uppercase"
+              className="text-4xl lg:text-7xl font-thin absolute bottom-4 left-4 uppercase"
             >
               Our Expertise, Your Growth
             </motion.h1>

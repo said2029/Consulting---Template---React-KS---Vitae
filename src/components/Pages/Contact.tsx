@@ -1,6 +1,6 @@
 
-import NavBar from "../globle/navBar";
 import Footer from "../globle/footer";
+import NavBar from "../Home_3_com/NavBar";
 import Reloader from "../Reloader";
 
 export default function Contact() {

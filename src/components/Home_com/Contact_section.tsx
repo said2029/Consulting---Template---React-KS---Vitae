@@ -82,6 +82,7 @@ export default function Contact_section() {
                   </div>
                 </div>
               </div>
+              
               <div
                 className="col-lg-7"
                 data-aos="zoom-out"

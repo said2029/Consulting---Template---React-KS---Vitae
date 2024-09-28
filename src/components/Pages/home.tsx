@@ -1,10 +1,10 @@
 import Footer from "../globle/footer";
-import NavBar from "../globle/navBar";
 import AutoPlay from "embla-carousel-autoplay";
 import HeroSection from "../Home_com/HeroSection";
 import Reloader from "../Reloader";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Brand_Scroll from "../globle/brand";
+import NavBar from "../Home_3_com/NavBar";
 
 export default function Home() {
   return (

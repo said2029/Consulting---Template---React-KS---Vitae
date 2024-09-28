@@ -23,11 +23,11 @@ export default function Contact_Section({ indexView }: { indexView: number }) {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.7, ease: "easeInOut" }}
-          className="w-full h-[100vh] bg-blue-400 backdrop-blur-xl bg-[url('/assets/img/all-images/case-img15.png')] bg-no-repeat bg-cover sticky top-0 flex justify-center items-center"
+          className="w-full h-[100vh] bg-blue-400 backdrop-blur-xl bg-[url('/assets/img/all-images/blog-img10.png')] bg-no-repeat bg-cover sticky top-0 flex justify-center items-center"
         >
           {/* content */}
-          <div className="w-full h-full flex justify-start items-center relative backdrop-blur-2xl">
-            <div className="grid grid-cols-3 lg:ml-28 lg:gap-12 w-full">
+          <div className="w-full h-full flex justify-center lg:justify-start items-center relative backdrop-blur-2xl">
+            <div className="grid gap-3 px-4 grid-cols-2 lg:grid-cols-3 lg:ml-10 xl:ml-28 lg:gap-12 w-full ">
               <motion.div
                 style={{ y: moveUpMd }}
                 variants={{
@@ -37,34 +37,39 @@ export default function Contact_Section({ indexView }: { indexView: number }) {
                 initial="initial"
                 animate="animate"
                 transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
-                className="col-span-1 h-[400px] rounded-md w-full overflow-hidden bg-slate-200 bg-[url('/assets/img/all-images/testimonial-img10.png')]"
+                className="col-span-full sm:col-span-1 place-self-center h-fit rounded-md w-full overflow-hidden bg-slate-200"
               >
-                <div className="w-full h-full bg-gradient-to-t from-black to-transparent flex items-end p-4">
-                  <h1 className="text-3xl">Empowering Businesses to Succeed</h1>
-                </div>
+                <form className="w-full flex flex-col items-center gap-5 justify-center px-8 py-6 text-black font-thin h-full" action="">
+                  <div className="w-full grid grid-cols-2">
+                    <input
+                      className="place-self-center"
+                      type="text"
+                      placeholder="First name"
+                    />
+                    <input
+                      className="place-self-center"
+                      type="text"
+                      placeholder="Last name"
+                    />
+                  </div>
+                  <div className="w-full grid grid-cols-2">
+                    <input
+                      className="place-self-center"
+                      type="text"
+                      placeholder="Email Address"
+                    />
+                    <input
+                      className="place-self-center"
+                      type="text"
+                      placeholder="Last name"
+                    />
+                  </div>
+                  <textarea className="w-full" rows={5} name="" placeholder="Message" id=""></textarea>
+                </form>
               </motion.div>
-              <div className="col-span-1 h-[400px] grid grid-rows-2 gap-2 w-full">
-                <motion.div
-                  style={{ y: moveUpMd }}
-                  variants={{
-                    initial: { opacity: 0, x: "100vh" },
-                    animate: { opacity: 1, x: 0 },
-                  }}
-                  transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
-                  className="backdrop-blur-3xl bg-white/45 rounded-md"
-                ></motion.div>
-                <motion.div
-                  style={{ y: moveUpMd }}
-                  variants={{
-                    initial: { opacity: 0, x: "100vh" },
-                    animate: { opacity: 1, x: 0 },
-                  }}
-                  transition={{ duration: 0.8, ease: "easeInOut", delay: 0.6 }}
-                  className="bg-red-500/45 backdrop-blur-3xl w-full rounded-md"
-                ></motion.div>
-              </div>
             </div>
-            <Button_Hover text="contact" />
+
+            <Button_Hover href="/contact" text="contact" />
 
             {/* Main title */}
             <motion.h1
@@ -75,9 +80,9 @@ export default function Contact_Section({ indexView }: { indexView: number }) {
               initial="initial"
               animate="animate"
               transition={{ duration: 0.4, ease: "easeInOut", delay: 0.9 }}
-              className="text-7xl font-thin absolute bottom-4 left-4 uppercase"
+              className="text-4xl lg:text-7xl font-thin absolute bottom-4 left-4 uppercase"
             >
-              Empowering Your Business Success
+              Reach Out to Start Transforming Your Business Today
             </motion.h1>
           </div>
         </motion.div>

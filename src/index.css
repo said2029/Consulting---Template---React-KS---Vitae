@@ -63,7 +63,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins";
+  font-family: "Roboto";
 }
 .full {
   width: "100vw";
@@ -77,10 +77,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+.h1{
+  @apply text-[50px] lg:text-[70px] font-bold 
+}
+.h2{
+  @apply text-[30px] lg:text-[50px] font-semibold
+}
+
+
+
 .navItems{
   border-width: 0px;
   transition: 1ms;
   border:"1px solid red";
+  text-shadow: #000 ;
 }
 .navItems:hover{
   border-width: "100%";
@@ -88,6 +99,13 @@
 
 .navBar_animation {
   animation: FlipNav 0.7s ease-in-out forwards;
+}
+
+.shadow_Button{
+  box-shadow: 0 2px 2px rgba(0,0,0,.31),inset 0 2px 1px rgba(255,255,255,.5),0 5px 2px rgba(0,0,0,.31) ;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+
 }
 
 @keyframes FlipNav {
@@ -100,7 +118,7 @@
 }
 
 .container_1 {
-  @apply px-[16px] md:px-[90px] lg:px-[30px] xl:px-[160px];
+  @apply px-[16px] md:px-[90px] lg:px-[30px] xl:px-[120px];
 }
 .stop-scrolling {
   height: 100% !important;

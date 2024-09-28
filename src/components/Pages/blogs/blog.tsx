@@ -1,5 +1,5 @@
 import Footer from "@/components/globle/footer";
-import NavBar from "@/components/globle/navBar";
+import NavBar from "@/components/Home_3_com/NavBar";
 import Reloader from "@/components/Reloader";
 
 
