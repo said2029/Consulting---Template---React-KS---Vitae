@@ -19,8 +19,13 @@ export default function App() {
     // font
     WebFont.load({
       google: {
-        families: ["Figtree","Poppins","Roboto"],
+        families: ["Figtree", "Poppins", "Roboto"],
       },
+    });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
 
     // smoth scrolle
@@ -47,7 +52,7 @@ export default function App() {
         </Routes>
       </BrowserRouter>
       {/* loading */}
-      {/* <Reloader /> */}
+      <Reloader />
 
       {/*  mouse Curser */}
       <MouseEffect />

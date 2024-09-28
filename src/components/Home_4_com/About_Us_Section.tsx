@@ -14,15 +14,15 @@ const variantsUp = {
 
 const ShowText = ({ text }: { text: string }) => {
   return (
-    <h1 className="text-3xl max-w-4xl items-center justify-center lg:text-4xl xl:text-5xl font-bold flex flex-wrap">
+    <h1 className="text-3xl max-w-4xl items-center transition-all justify-center lg:text-4xl xl:text-5xl font-bold flex flex-wrap">
       {text.split("").map((c, index) => {
         if (c == " ") return <div className="w-4"></div>;
         return (
-          <motion.div
+          <motion.span
             variants={{
-              initial: { opacity: 0, x: 30 },
-              show: { opacity: 1, x: 0 },
-              exit: { opacity: 0, y: 30 },
+              initial: { opacity: 0, top: 30 },
+              show: { opacity: 1, top: 0 },
+              exit: { opacity: 0, top: -30 },
             }}
             initial="initial"
             whileInView={"show"}
@@ -32,7 +32,7 @@ const ShowText = ({ text }: { text: string }) => {
             key={index}
           >
             {c}
-          </motion.div>
+          </motion.span>
         );
       })}
     </h1>
@@ -46,9 +46,9 @@ export default function About_Us_Section() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const showCardNumber = useTransform(scrollYProgress, [0, 1], [1, 5]);
+  const showCardNumber = useTransform(scrollYProgress, [0, 1], [1, 4]);
   const moveUp = useTransform(scrollYProgress, [0, 1], [1700, -1000]);
-  const moveUpImages = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const moveUpImages = useTransform(scrollYProgress, [0, 1], [270, -100]);
   const Rotate = useTransform(scrollYProgress, [0, 1], [-50, 60]);
 
   useMotionValueEvent(showCardNumber, "change", (value) => {
@@ -86,7 +86,7 @@ export default function About_Us_Section() {
             style={{ y: moveUp, rotateZ: Rotate }}
             className="absolute"
           >
-            <Button_Hover text="about" />
+            <Button_Hover href="/about" text="about" />
           </motion.div>
 
           <div className="absolute top-1/2 bottom-1/2 my-auto translate-y-44">

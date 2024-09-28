@@ -119,7 +119,7 @@
 }
 
 .container_1 {
-  @apply px-[5px] md:px-[30px] lg:px-[30px] xl:px-[120px];
+  @apply px-[0px] md:px-[30px] lg:px-[30px] xl:px-[120px];
 }
 .stop-scrolling {
   height: 100% !important;
