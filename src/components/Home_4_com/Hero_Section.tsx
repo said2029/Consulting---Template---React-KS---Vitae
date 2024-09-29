@@ -13,7 +13,7 @@ const variantsPup = {
 };
 export default function Hero_Section() {
   return (
-    <div className="flex items-center justify-center px-6 h-[700px] lg:px-20 xl:px-32 flex-col gap-6 text-center">
+    <div className="flex items-center w-screen overflow-hidden justify-center px-6 h-[700px] lg:px-20 xl:px-32 flex-col gap-6 text-center">
       <motion.h1
         variants={variantsPup}
         initial="initial"

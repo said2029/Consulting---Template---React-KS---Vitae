@@ -85,7 +85,7 @@ export default function Blog_Section() {
   return (
     <div
       ref={ref}
-      className="w-full text-white h-[4000px] flex text-center items-center flex-col "
+      className="w-full overflow-hidden text-white h-[2000px] flex text-center items-center flex-col"
     >
       <motion.div
         variants={{
@@ -96,7 +96,7 @@ export default function Blog_Section() {
         }}
         initial="initial"
         whileInView={"animate"}
-        className="sticky top-0 w-full flex flex-col items-center pt-[60px]"
+        className="sticky bg-blue-600 top-0 w-full h-[100vh] flex flex-col items-center pt-[60px]"
       >
         <motion.h2
           variants={variantsUp}
@@ -120,7 +120,7 @@ export default function Blog_Section() {
           industry
         </motion.h2>
 
-        <div className="h-[400px] lg:h-[500px] w-full mt-10 lg:mt-20 grid grid-row-2 overflow-hidden">
+        <div className="h-[400px] lg:h-[500px] absolute top-1/2 bottom-1/2 my-auto w-full mt-10 lg:mt-20 grid grid-row-2 overflow-hidden">
           <motion.div
             style={{ x: to_right }}
             className="w-full py-3 flex gap-2 px-10"

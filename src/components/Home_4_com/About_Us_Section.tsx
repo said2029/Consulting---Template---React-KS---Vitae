@@ -60,7 +60,7 @@ export default function About_Us_Section() {
   });
 
   return (
-    <div ref={ref} className="w-full text-white h-[4000px] ">
+    <div ref={ref} className="w-full text-white h-[1000px] ">
       {/* sticky */}
       <div className="w-full h-[200px] lg:h-[500px] sticky top-0 pt-[60px]">
         <div className="flex flex-col text-center items-center relative h-full w-full">
