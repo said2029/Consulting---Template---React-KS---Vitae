@@ -560,7 +560,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row [&_a]:!flex [&_a]:!items-center [&_a]:!justify-center">
             <div className="col-lg-3 col-md-6">
               <div className="team-boxarea">
                 <div className="img1">
@@ -632,9 +632,9 @@ export default function About() {
                 <div className="img1">
                   <img src="assets/img/all-images/team-img3.png" alt="" />
                 </div>
-                <ul>
-                  <li>
-                    <a href="#">
+                <ul >
+                  <li >
+                    <a  href="#">
                       <img src="assets/img/icons/facebook.svg" alt="" />
                     </a>
                   </li>

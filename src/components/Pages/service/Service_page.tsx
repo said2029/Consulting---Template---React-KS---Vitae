@@ -261,7 +261,6 @@ export default function Service_page() {
         </div>
       </div>
       {/*===== WORK AREA ENDS =======*/}
-
       {/*===== TEAM AREA STARTS =======*/}
       <div className="team-inner-section-area sp2">
         <div className="container_1">
@@ -269,11 +268,11 @@ export default function Service_page() {
             <div className="col-lg-6 m-auto">
               <div className="team2-header-area text-center heading2">
                 <h5>Our Team</h5>
-                <h2 className="text-white">Meet With Our Expert Team</h2>
+                <h2>Meet With Our Expert Team</h2>
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row [&_a]:!flex [&_a]:!items-center [&_a]:!justify-center">
             <div className="col-lg-3 col-md-6">
               <div className="team-boxarea">
                 <div className="img1">
@@ -345,9 +344,9 @@ export default function Service_page() {
                 <div className="img1">
                   <img src="assets/img/all-images/team-img3.png" alt="" />
                 </div>
-                <ul>
-                  <li>
-                    <a href="#">
+                <ul >
+                  <li >
+                    <a  href="#">
                       <img src="assets/img/icons/facebook.svg" alt="" />
                     </a>
                   </li>

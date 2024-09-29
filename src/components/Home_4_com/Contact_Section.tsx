@@ -114,7 +114,7 @@ export default function Contact_Section() {
   return (
     <div
       ref={ref}
-      className="w-full h-[100vh] flex flex-col justify-center items-center relative"
+      className="w-screen overflow-hidden h-[100vh] flex flex-col justify-center items-center relative"
     >
       <div className="flex flex-col bg-[#c63b1e] w-full h-[100vh] items-center justify-center sticky top-0 text-black pt-[50px]">
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 text-[30px] lg:text-[32px] ">
@@ -151,7 +151,7 @@ export default function Contact_Section() {
 
         <motion.div
           style={{ y: moveUp, rotateZ: Rotate }}
-          className="absolute right-1/2 left-1/2 -translate-x-1/4 w-fit mx-auto flex justify-center"
+          className="absolute w-fit mx-auto flex justify-center"
         >
           <Button_Hover href="/contact" text="contact" />
         </motion.div>

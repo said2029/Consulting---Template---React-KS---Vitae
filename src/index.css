@@ -10,8 +10,8 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary_tail: #a33b1e;
-    --primary-foreground: #ce3910;
+    --primary: #db471e;
+    --primary-foreground: #e6704f;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
@@ -37,8 +37,8 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary_tail: #a33b1e;
-    --primary-foreground: #ce3910;
+    --primary_tail: #db471e;
+    --primary-foreground: #e6704f;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;

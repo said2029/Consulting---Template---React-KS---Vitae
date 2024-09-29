@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { MouseEffect } from "./Contact_Section";
+import { useRef } from "react";
 const variantsUp = {
   initial: { opacity: 0, y: 200 },
   show: { opacity: 1, y: 0 },
 };
 export default function About_Section_2() {
+  const ref= useRef(null)
   return (
     <div className="sticky h-[100vh] top-0">
-      <div className="flex flex-col relative items-center justify-between w-full h-full bg-rose-950 text-black">
+      <div ref={ref} className="relative w-full h-full text-black">
         <div className="w-full h-full bg-[#c63b1e] pt-[50px] ">
           <div className="w-full  text-center lg:!text-start h-full font-sans font-semibold flex flex-col justify-evenly sm:justify-between lg:py-3 lg:px-7">
             <motion.p
@@ -33,8 +35,8 @@ export default function About_Section_2() {
             </p>
           </div>
         </div>
-        <div className="absolute top-1/2 bottom-1/2 right-0 m-auto">
-          <MouseEffect />
+        <div className="absolute h-fit top-1/2 bottom-1/2 right-1/2 left-1/2 md:left-auto md:right-24 m-auto">
+          <MouseEffect Ref_perantEffect={ref}/>
         </div>
         <hr className="h-[2px] bg-white w-full border-none top-0 absolute" />
       </div>

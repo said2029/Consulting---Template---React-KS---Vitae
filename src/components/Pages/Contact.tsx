@@ -58,7 +58,7 @@ export default function Contact() {
       </div>
       {/*===== HERO AREA ENDS =======*/}
       {/* ===== CONTACT AREA STARTS =======*/}
-      <div className="contact-main-inner-area sp1">
+    <div className="contact-main-inner-area sp1">
         <div className="container_1">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -75,41 +75,50 @@ export default function Contact() {
                   during business hours.
                 </p>
                 <div className="space32" />
-                <div className="number-address-area py-2">
+                <div className="number-address-area !bg-transparent py-2 ">
                   <div className="phone-number">
-                    <div className="img1 flex items-center justify-center">
+                    <div className="img1 !flex !items-center !justify-center">
                       <img src="assets/img/icons/phone3.svg" alt="" />
                     </div>
                     <div className="content">
-                      <p>Phone Number</p>
-                      <a href="tel:123-456-7890">123-456-7890</a>
+                      <p className="!text-white">Phone Number</p>
+                      <a className="!text-white" href="tel:123-456-7890">123-456-7890</a>
                     </div>
                   </div>
-                  <div className="phone-number m-0">
+                  <div className="phone-number   m-0">
                     <div className="img1 flex items-center justify-center">
                       <img src="assets/img/icons/email3.svg" alt="" />
                     </div>
                     <div className="content">
-                      <p>Email Address</p>
-                      <a href="mailto:Infoseoc@gmail.com">Infoseoc@gmail.com</a>
+                      <p className="!text-white">Email Address</p>
+                      <a className="!text-white" href="mailto:Infoseoc@gmail.com">Infoseoc@gmail.com</a>
                     </div>
                   </div>
                 </div>
                 <div className="space50" />
-                <div className="number-address-area2 py-2">
+
+                <div className="number-address-area2 bg-transparent py-2">
                   <div className="phone-number">
                     <div className="img1 flex items-center justify-center">
                       <img src="assets/img/icons/location3.svg" alt="" />
                     </div>
                     <div className="content">
-                      <a href="#">
+                      <a className="!text-white" href="#">
                         8708 Technology Forest Pl Suite{" "}
                         <br className="d-lg-block d-none" /> 125 -G, The
                         Woodlands, TX 773
                       </a>
                     </div>
                   </div>
-
+                  <div className="phone-number">
+                    <a
+                      href="https://www.google.com/maps/@24.0098057,88.9892437,15z?entry=ttu"
+                      className="map"
+                      target="_blank"
+                    >
+                      View Our Map
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -145,7 +154,7 @@ export default function Contact() {
                   </div>
                   <div className="col-lg-12">
                     <div className="input-area">
-                      <button type="submit" className="header-btn1">
+                      <button type="submit" className="header-btn1 ">
                         Get In Touch{" "}
                         <span>
                           <i className="fa-solid fa-arrow-right" />
@@ -174,7 +183,7 @@ export default function Contact() {
           <div className="row">
             <div className="col-lg-4 col-md-6">
               <div className="location-boxes">
-                <div className="img1">
+                <div className="img1 flex items-center justify-center">
                   <img src="assets/img/icons/location3.svg" alt="" />
                 </div>
                 <div className="space32" />
@@ -197,7 +206,7 @@ export default function Contact() {
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="location-boxes">
-                <div className="img1">
+                <div className="img1 flex items-center justify-center">
                   <img src="assets/img/icons/location3.svg" alt="" />
                 </div>
                 <div className="space32" />
@@ -220,7 +229,7 @@ export default function Contact() {
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="location-boxes">
-                <div className="img1">
+                <div className="img1 flex items-center justify-center">
                   <img src="assets/img/icons/location3.svg" alt="" />
                 </div>
                 <div className="space32" />

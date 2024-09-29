@@ -5,7 +5,7 @@ const variantsPup = {
 };
 function Footer() {
   return (
-    <div className="w-full relative h-[500px] grid grid-cols-3 overflow-hidden bg-[#c63b1e]">
+    <div className="w-full relative h-[500px] grid grid-cols-3 overflow-hidden !text-white bg-[#c63b1e]">
       <div className="my-auto col-span-2 w-full hidden lg:flex flex-col items-center justify-center gap-7 ">
         <motion.h1
           variants={variantsPup}

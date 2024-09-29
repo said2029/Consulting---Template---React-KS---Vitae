@@ -1,12 +1,12 @@
 export default function NavBar() {
   return (
-    <div className="sticky top-0 z-[9999] bg-[rgb(198,59,30)] !text-white">
-      <div className="flex w-screen flex-wrap md:flex-nowrap justify-center sm:justify-between py-2 items-center px-4 md:h-[50px]">
+    <div className="sticky w-screen overflow-hidden top-0 z-[9999] bg-[rgb(198,59,30)] !text-white">
+      <div className="flex w-screen flex-wrap md:flex-nowrap justify-center sm:justify-between gap-1 py-2 items-center px-4 md:h-[50px]">
         <a href="/" className="text-xl text-black font-bold font-[Bungee]">
           LOGO
         </a>
-        <div className="flex items-center justify-center gap-3 text-black  h-full">
-          <ul className="flex justify-center gap-3 mg:gap-4 font-xl uppercase">
+        <div className="flex items-center justify-center sm:gap-3 text-black  h-full">
+          <ul className="flex justify-center gap-3 flex-wrap  mg:gap-4 font-xl uppercase">
             <li>
               <a className="navItem" href="/">
                 Home
