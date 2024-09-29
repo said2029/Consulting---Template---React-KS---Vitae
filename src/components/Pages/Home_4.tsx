@@ -9,14 +9,14 @@ import Services_Section from "../Home_4_com/Services_Section";
 
 export default function Home_4() {
   return (
-    <div className=" text-white bg-[#c63b1e]">
-      <div className="h-fit rounded-[3em] shadow-inner">
+    <div className="text-white bg-[#c63b1e]">
+      <div className="h-fit rounded-[3em]">
         <NavBar />
         <Hero_Section />
         <Services_Section />
         <About_Us_Section />
         <Blog_Section />
-        <div className="w-full h-[600vh]">
+        <div className="w-full h-[200vh]">
           <About_Section_2 />
           <Contact_Section />
           {/* <Contact_Section /> */}

@@ -83,20 +83,9 @@ export default function Blog_Section() {
   const Rotate = useTransform(scrollYProgress, [0, 1], [-50, 30]);
 
   return (
-    <div
-      ref={ref}
-      className="w-full overflow-hidden text-white h-[2000px] flex text-center items-center flex-col"
-    >
-      <motion.div
-        variants={{
-          initial: { y: "-11px" },
-          animate: {
-            y: 0,
-          },
-        }}
-        initial="initial"
-        whileInView={"animate"}
-        className="sticky bg-blue-600 top-0 w-full h-[100vh] flex flex-col items-center pt-[60px]"
+    <div ref={ref} className="w-full h-[4000px]">
+      <div
+        className="sticky top-0 w-full overflow-hidden h-[100vh] flex flex-col items-center pt-[80px] text-center"
       >
         <motion.h2
           variants={variantsUp}
@@ -119,7 +108,7 @@ export default function Blog_Section() {
           Explore the latest trends, strategies, and tips to stay ahead in your
           industry
         </motion.h2>
-
+      
         <div className="h-[400px] lg:h-[500px] absolute top-1/2 bottom-1/2 my-auto w-full mt-10 lg:mt-20 grid grid-row-2 overflow-hidden">
           <motion.div
             style={{ x: to_right }}
@@ -158,14 +147,14 @@ export default function Blog_Section() {
             ))}
           </motion.div>
         </div>
-
+      
         <motion.div
           style={{ x: moveUp, rotateZ: Rotate }}
-          className="absolute top-1/2 bottom-1/2 mt-auto"
+          className="absolute top-1/3 bottom-1/2 mt-auto"
         >
           <Button_Hover href="/blog" text="blog" />
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ const variantsUp = {
 };
 export default function Services_Section() {
   return (
-    <div className="flex justify-center w-screen overflow-hidden text-center items-center flex-col px-6 lg:px-20 xl:px-48">
+    <div className="flex justify-center w-screen overflow-hidden text-center items-center flex-col mt-10 px-6 lg:px-20 xl:px-48">
       <motion.h2
         variants={variantsUp}
         initial="initial"

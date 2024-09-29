@@ -98,17 +98,17 @@ function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="opacity-70 flex flex-col justify-between gap-1">
           <h2 className="text-sm ">
             © 2023 Your_Company_Name. All rights reserved.
           </h2>
-          <div>
+          <div className="mt-2">
             <a href="mailto:info@bemotion.i">info@bemotion.in</a>
-          </div>
-          <div className="flex items-center gap-2">
-            <a href="">Privacy Policy</a>
-            <a href="">Fueled is carbon neutral</a>
+            <div className="flex items-center gap-2">
+              <a href="">Privacy Policy</a>
+              <a href="">Fueled is carbon neutral</a>
+            </div>
           </div>
         </div>
       </div>

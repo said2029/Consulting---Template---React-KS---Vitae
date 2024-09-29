@@ -92,6 +92,7 @@ a:hover {
   padding: 0;
   position: relative;
   transition: 1s;
+  @apply md:py-2
 }
 
 .navItem:after {

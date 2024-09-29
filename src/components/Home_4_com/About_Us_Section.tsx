@@ -50,7 +50,7 @@ export default function About_Us_Section() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const showCardNumber = useTransform(scrollYProgress, [0, 1], [1, 5]);
+  const showCardNumber = useTransform(scrollYProgress, [0, 1], [1, 6]);
   const moveUp = useTransform(scrollYProgress, [0, 1], [1700, -1000]);
   const moveUpImages = useTransform(scrollYProgress, [0, 1], [270, -100]);
   const Rotate = useTransform(scrollYProgress, [0, 1], [-50, 60]);
@@ -60,9 +60,9 @@ export default function About_Us_Section() {
   });
 
   return (
-    <div ref={ref} className="w-full text-white h-[1000px] ">
+    <div ref={ref} className="w-full text-white h-[1200px] ">
       {/* sticky */}
-      <div className="w-full h-[200px] lg:h-[500px] sticky top-0 pt-[60px]">
+      <div className="w-full h-[100px] lg:h-[500px] sticky top-0 pt-[60px]">
         <div className="flex flex-col text-center items-center relative h-full w-full">
           <motion.h2
             variants={variantsUp}
