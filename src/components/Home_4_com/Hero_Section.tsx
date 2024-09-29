@@ -19,7 +19,7 @@ export default function Hero_Section() {
         initial="initial"
         animate="animate"
         transition={{ duration: 1, delay: 3.4 }}
-        className="h1 max-w-4xl scale-y-150 font-sans text-center leading-tight"
+        className="h1 !font-normal max-w-4xl scale-y-150  text-center leading-tight font-['Bungee']"
       >
         Empowering Businesses to Thrive
       </motion.h1>

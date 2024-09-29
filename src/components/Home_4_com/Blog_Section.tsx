@@ -77,14 +77,15 @@ export default function Blog_Section() {
   });
 
   const to_right = useTransform(scrollYProgress, [0, 1], [-2500, 80]);
-  const to_left = useTransform(scrollYProgress, [0, 1], [300, -2300]);
+  const to_left = useTransform(scrollYProgress, [0, 1], [200, -3200]);
+
   const moveUp = useTransform(scrollYProgress, [0, 1], [1700, -1000]);
   const Rotate = useTransform(scrollYProgress, [0, 1], [-50, 30]);
 
   return (
     <div
       ref={ref}
-      className="w-full text-white h-[7000px] flex text-center items-center flex-col z-[999] "
+      className="w-full text-white h-[4000px] flex text-center items-center flex-col "
     >
       <motion.div
         variants={{
@@ -95,7 +96,7 @@ export default function Blog_Section() {
         }}
         initial="initial"
         whileInView={"animate"}
-        className="sticky top-0 w-full flex flex-col items-center pt-4"
+        className="sticky top-0 w-full flex flex-col items-center pt-[60px]"
       >
         <motion.h2
           variants={variantsUp}
@@ -122,12 +123,12 @@ export default function Blog_Section() {
         <div className="h-[400px] lg:h-[500px] w-full mt-10 lg:mt-20 grid grid-row-2 overflow-hidden">
           <motion.div
             style={{ x: to_right }}
-            className="bg-white w-full py-3 flex gap-2 px-10"
+            className="w-full py-3 flex gap-2 px-10"
           >
             {BlogContant.map((item) => (
               <a
                 href={item.link}
-                className={`w-[300px] md:w-[500px] text-white h-full bg-red-500 rounded-lg bg-[url(${item.img})] flex text-start relative overflow-hidden`}
+                className={`w-[300px] md:w-[500px] text-white h-full bg-red-500 rounded-lg bg-[url(${item.img})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
               >
                 <div
                   className={`absolute w-full h-full bg-gradient-to-t from-black to-transparent flex items-end p-3`}
@@ -139,12 +140,12 @@ export default function Blog_Section() {
           </motion.div>
           <motion.div
             style={{ x: to_left }}
-            className="bg-white w-full py-3 flex gap-2 px-10"
+            className="w-full py-3 flex gap-2 px-10"
           >
             {BlogContant.map((item) => (
               <a
                 href={item.link}
-                className={`w-[300px] text-white md:w-[500px] h-full rounded-lg bg-[url(${item.img})] flex text-start relative overflow-hidden`}
+                className={`w-[300px] text-white md:w-[500px] h-full rounded-lg bg-[url(${item.img})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
               >
                 <div
                   className={`absolute w-full h-full bg-gradient-to-t from-black to-transparent flex items-end p-3`}

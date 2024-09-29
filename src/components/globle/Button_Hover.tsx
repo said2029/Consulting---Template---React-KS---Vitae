@@ -37,7 +37,7 @@ export default function Button_Hover({
         SetisHover(false);
       }}
       className={cn(
-        "border-2 text-white border-white rounded-full px-6 md:text-4xl xl:text-6xl py-2 flex uppercase overflow-hidden cursor-pointer",
+        "border-2 text-[#c63b1e]  hover:text-[#c63b1e] border-white bg-white rounded-full font-semibold px-14 md:text-4xl xl:text-5xl py-4 flex uppercase overflow-hidden cursor-pointer",
         className
       )}
     >

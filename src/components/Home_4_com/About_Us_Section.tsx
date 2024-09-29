@@ -16,7 +16,7 @@ const ShowText = ({ text }: { text: string }) => {
   return (
     <h1 className="text-3xl max-w-4xl items-center transition-all justify-center lg:text-4xl xl:text-5xl font-bold flex flex-wrap">
       {text.split("").map((c, index) => {
-        if (c == " ") return <div className="w-4"></div>;
+        if (c == " ") return <div className="w-4 pointer-events-none"></div>;
         return (
           <motion.span
             variants={{
@@ -30,6 +30,7 @@ const ShowText = ({ text }: { text: string }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.1, delay: 0.03 * index }}
             key={index}
+            className="pointer-events-none"
           >
             {c}
           </motion.span>
@@ -46,7 +47,7 @@ export default function About_Us_Section() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const showCardNumber = useTransform(scrollYProgress, [0, 1], [1, 4]);
+  const showCardNumber = useTransform(scrollYProgress, [0, 1], [1, 5]);
   const moveUp = useTransform(scrollYProgress, [0, 1], [1700, -1000]);
   const moveUpImages = useTransform(scrollYProgress, [0, 1], [270, -100]);
   const Rotate = useTransform(scrollYProgress, [0, 1], [-50, 60]);
@@ -56,10 +57,10 @@ export default function About_Us_Section() {
   });
 
   return (
-    <div ref={ref} className="w-full text-white h-[8000px] ">
+    <div ref={ref} className="w-full text-white h-[4000px] ">
       {/* sticky */}
-      <div className="w-full h-[200px]  lg:h-[500px] sticky top-0 pt-11">
-        <div className="flex flex-col text-center  items-center relative h-full w-full">
+      <div className="w-full h-[200px] lg:h-[500px] sticky top-0 pt-[60px]">
+        <div className="flex flex-col text-center items-center relative h-full w-full">
           <motion.h2
             variants={variantsUp}
             initial="initial"
@@ -89,7 +90,7 @@ export default function About_Us_Section() {
             <Button_Hover href="/about" text="about" />
           </motion.div>
 
-          <div className="absolute top-1/2 bottom-1/2 my-auto translate-y-44">
+          <div className="absolute top-1/2 pointer-events-none bottom-1/2 my-auto translate-y-44">
             <AnimatePresence>
               {CardNumber == 1 && (
                 <ShowText text="Proven track record of driving business growth" />
@@ -108,7 +109,7 @@ export default function About_Us_Section() {
           </div>
 
           {/* images */}
-          <motion.div className="w-full h-full hidden md:block" style={{y:moveUpImages}}>
+          <motion.div className="w-full h-full pointer-events-none hidden md:block" style={{y:moveUpImages}}>
             <div className="w-40 bg-red-500 h-40 rounded-2xl absolute -top-40 right-4 shadow-md"><img className="w-full h-full object-cover" src="/assets/img/all-images/post-img1.png"/></div>
             <div className="w-40 bg-red-500 h-40 rounded-2xl absolute -bottom-28 left-4 shadow-md"><img className="w-full h-full object-cover" src="/assets/img/all-images/post-img2.png"/></div>
             <div className="w-28 opacity-70 bg-red-500 h-28 rounded-2xl absolute -top-32 left-40 shadow-md"><img className="w-full h-full object-cover" src="/assets/img/all-images/post-img3.png"/></div>

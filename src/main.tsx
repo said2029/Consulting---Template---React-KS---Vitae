@@ -8,34 +8,28 @@ import Service_page from "./components/Pages/service/Service_page.tsx";
 import Blog from "./components/Pages/blogs/blog.tsx";
 import WebFont from "webfontloader";
 import MouseEffect from "./components/globle/MouseEffect.tsx";
-import Lenis from "lenis";
 import Home_4 from "./components/Pages/Home_4.tsx";
 import Reloader from "./components/Reloader.tsx";
 
 export default function App() {
-  const lenis = new Lenis();
+  // const lenis = new Lenis();
 
   useEffect(() => {
     // font
     WebFont.load({
       google: {
-        families: ["Figtree", "Poppins", "Roboto"],
+        families: ["Roboto","Outfit","Bungee","Rambla"],
       },
-    });
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
     });
 
     // smoth scrolle
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    // function raf(time: number) {
+    //   lenis.raf(time);
+    //   requestAnimationFrame(raf);
+    // }
 
-    requestAnimationFrame(raf);
+    // requestAnimationFrame(raf);
   }, []);
 
   return (
