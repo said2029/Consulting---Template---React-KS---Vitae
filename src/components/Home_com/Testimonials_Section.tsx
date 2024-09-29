@@ -46,7 +46,7 @@ export default function Testimonials_Section() {
       <div className="w-full gap-4 lg:gap-16 grid grid-cols-1  lg:grid-cols-3">
         {Array.from({ length: 3 }).map((_, i) => (
           <motion.div
-            key={i}
+            key={i+1}
             variants={{
               init: { opacity: 0, y: 100 },
               show: { opacity: 1, y: 0 },

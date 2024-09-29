@@ -16,9 +16,13 @@ const ShowText = ({ text }: { text: string }) => {
   return (
     <h1 className="text-3xl max-w-4xl items-center transition-all justify-center lg:text-4xl xl:text-5xl font-bold flex flex-wrap">
       {text.split("").map((c, index) => {
-        if (c == " ") return <div className="w-4 pointer-events-none"></div>;
+        if (c == " ")
+          return (
+            <div key={index + c} className="w-4 pointer-events-none"></div>
+          );
         return (
           <motion.span
+            key={index + c}
             variants={{
               initial: { opacity: 0, top: 30 },
               show: { opacity: 1, top: 0 },
@@ -28,8 +32,7 @@ const ShowText = ({ text }: { text: string }) => {
             whileInView={"show"}
             exit={"exit"}
             viewport={{ once: true }}
-            transition={{ duration: 0.1, delay: 0.03 * index }}
-            key={index}
+            transition={{ duration: 0.1, delay: 0.01 * index }}
             className="pointer-events-none"
           >
             {c}
@@ -109,11 +112,34 @@ export default function About_Us_Section() {
           </div>
 
           {/* images */}
-          <motion.div className="w-full h-full pointer-events-none hidden md:block" style={{y:moveUpImages}}>
-            <div className="w-40 bg-red-500 h-40 rounded-2xl absolute -top-40 right-4 shadow-md"><img className="w-full h-full object-cover" src="/assets/img/all-images/post-img1.png"/></div>
-            <div className="w-40 bg-red-500 h-40 rounded-2xl absolute -bottom-28 left-4 shadow-md"><img className="w-full h-full object-cover" src="/assets/img/all-images/post-img2.png"/></div>
-            <div className="w-28 opacity-70 bg-red-500 h-28 rounded-2xl absolute -top-32 left-40 shadow-md"><img className="w-full h-full object-cover" src="/assets/img/all-images/post-img3.png"/></div>
-            <div className="w-20 bg-red-500 h-20 opacity-65 rounded-2xl absolute -bottom-16 right-40 shadow-md"><img className="w-full h-full object-cover" src="/assets/img/all-images/post-img4.png"/></div>
+          <motion.div
+            className="w-full h-full pointer-events-none hidden md:block"
+            style={{ y: moveUpImages }}
+          >
+            <div className="w-40 bg-red-500 h-40 rounded-2xl absolute -top-40 right-4 shadow-md">
+              <img
+                className="w-full h-full object-cover"
+                src="/assets/img/all-images/post-img1.png"
+              />
+            </div>
+            <div className="w-40 bg-red-500 h-40 rounded-2xl absolute -bottom-28 left-4 shadow-md">
+              <img
+                className="w-full h-full object-cover"
+                src="/assets/img/all-images/post-img2.png"
+              />
+            </div>
+            <div className="w-28 opacity-70 bg-red-500 h-28 rounded-2xl absolute -top-32 left-40 shadow-md">
+              <img
+                className="w-full h-full object-cover"
+                src="/assets/img/all-images/post-img3.png"
+              />
+            </div>
+            <div className="w-20 bg-red-500 h-20 opacity-65 rounded-2xl absolute -bottom-16 right-40 shadow-md">
+              <img
+                className="w-full h-full object-cover"
+                src="/assets/img/all-images/post-img4.png"
+              />
+            </div>
           </motion.div>
         </div>
       </div>

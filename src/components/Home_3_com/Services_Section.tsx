@@ -85,7 +85,7 @@ export default function Services_Section({ indexView }: { indexView: number }) {
           <div className="w-full h-full flex justify-center lg:justify-start items-center relative backdrop-blur-2xl">
             <div className="grid grid-cols-1 gap-11 px-3 md:grid-cols-3 md:gap-2 lg:px-4 xl:ml-10 xl:gap-7">
               {CardsContant.map((card, index) => {
-                return <Card key={index} card={card} scrollYProgress={scrollYProgress} />;
+                return <Card key={card.desc+index} card={card} scrollYProgress={scrollYProgress} />;
               })}
             </div>
             <Button_Hover href="/service" text="services" />

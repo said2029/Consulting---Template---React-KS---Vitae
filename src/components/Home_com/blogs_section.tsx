@@ -111,6 +111,7 @@ export default function Blogs_section() {
               initial: { opacity: 0, y: 200 },
               show: { opacity: 1, y: 0 },
             }}
+            key={i + 1}
             initial="initial"
             whileInView={"show"}
             transition={{

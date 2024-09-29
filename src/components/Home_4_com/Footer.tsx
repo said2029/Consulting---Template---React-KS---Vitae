@@ -5,7 +5,7 @@ const variantsPup = {
 };
 function Footer() {
   return (
-    <div className="w-full relative h-[500px] flex flex-col justify-end items-center overflow-hidden">
+    <div className="w-full relative h-[500px] flex flex-col justify-end items-center overflow-hidden bg-[#c63b1e]">
       <div className="absolute top-24 bottom-1/2 my-auto w-full flex flex-col items-center justify-center gap-7">
         <motion.h1
           variants={variantsPup}
@@ -36,7 +36,7 @@ function Footer() {
           initial="initial"
           whileInView={"animate"}
           transition={{ duration: 1 }}
-          className="flex w-full gap-5 text-white"
+          className="flex w-full flex-wrap gap-2 md:gap-5 text-white"
         >
           <li>
             <a className="text-white" href="/about">

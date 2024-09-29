@@ -1,13 +1,10 @@
-
-import Footer from "../globle/footer";
-import NavBar from "../Home_3_com/NavBar";
-import Reloader from "../Reloader";
+import Footer from "../Home_4_com/Footer";
+import NavBar from "../Home_4_com/NavBar";
 
 export default function Contact() {
   return (
-    <>
+    <div className="bg-[#c63b1e]">
       {/*===== PRELOADER STARTS =======*/}
-      <Reloader />
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
       <div className="paginacontainer_1">
@@ -30,7 +27,6 @@ export default function Contact() {
       <div
         className="about-header-area"
         style={{
-          backgroundImage: "url(assets/img/bg/inner-header.png)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -49,9 +45,9 @@ export default function Contact() {
         <div className="container_1">
           <div className="row">
             <div className="col-lg-8 m-auto">
-              <div className="about-inner-header heading9 text-center">
-                <h1>Contact Us</h1>
-                <a href="/">
+              <div className="about-inner-header heading9 text-center text-white">
+                <h1 className="text-white">Contact Us</h1>
+                <a className="text-white" href="/">
                   Home <i className="fa-solid fa-angle-right" />{" "}
                   <span>Contact Us</span>
                 </a>
@@ -61,14 +57,16 @@ export default function Contact() {
         </div>
       </div>
       {/*===== HERO AREA ENDS =======*/}
-      {/*===== CONTACT AREA STARTS =======*/}
+      {/* ===== CONTACT AREA STARTS =======*/}
       <div className="contact-main-inner-area sp1">
         <div className="container_1">
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="heading2 contact-header">
                 <h5>Contact Us</h5>
-                <h2>Get in Touch with SEOC We Value Your Connection</h2>
+                <h2 className="text-white">
+                  Get in Touch with SEOC We Value Your Connection
+                </h2>
                 <p>
                   Our dedicated team is committed to providing prompt and
                   effective support to ensure your needs are met. We believe in
@@ -77,9 +75,9 @@ export default function Contact() {
                   during business hours.
                 </p>
                 <div className="space32" />
-                <div className="number-address-area">
+                <div className="number-address-area py-2">
                   <div className="phone-number">
-                    <div className="img1">
+                    <div className="img1 flex items-center justify-center">
                       <img src="assets/img/icons/phone3.svg" alt="" />
                     </div>
                     <div className="content">
@@ -88,7 +86,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="phone-number m-0">
-                    <div className="img1">
+                    <div className="img1 flex items-center justify-center">
                       <img src="assets/img/icons/email3.svg" alt="" />
                     </div>
                     <div className="content">
@@ -98,9 +96,9 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="space50" />
-                <div className="number-address-area2">
+                <div className="number-address-area2 py-2">
                   <div className="phone-number">
-                    <div className="img1">
+                    <div className="img1 flex items-center justify-center">
                       <img src="assets/img/icons/location3.svg" alt="" />
                     </div>
                     <div className="content">
@@ -111,15 +109,7 @@ export default function Contact() {
                       </a>
                     </div>
                   </div>
-                  <div className="phone-number">
-                    <a
-                      href="https://www.google.com/maps/@24.0098057,88.9892437,15z?entry=ttu"
-                      className="map"
-                      target="_blank"
-                    >
-                      View Our Map
-                    </a>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -254,63 +244,14 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="mapouter">
-        <div className="gmap_canvas">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4506257.120552435!2d88.67021924228865!3d21.954385721237916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1704088968016!5m2!1sen!2sbd"
-            width={600}
-            height={450}
-            style={{ border: 0 }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-      </div>
-      {/*===== CONTACT AREA ENDS =======*/}
-      {/*===== CTA AREA STARTS =======*/}
-      <div className="cta-section-area">
-        <img
-          src="assets/img/bg/cta-bg1.png"
-          alt=""
-          className="cta-bg1 aniamtion-key-2"
-        />
-        <img
-          src="assets/img/bg/cta-bg2.png"
-          alt=""
-          className="cta-bg2 aniamtion-key-1"
-        />
-        <div className="container_1">
-          <div className="row">
-            <div className="col-lg-12 m-auto">
-              <div className="cta-header-area text-center sp4 heading2">
-                <h2>
-                  Ready To Take Your SEO To <br className="d-md-block d-none" />{" "}
-                  The Next Level
-                </h2>
-                <p>
-                  Effective SEO strategies not only elevate a website's
-                  visibility but also drive <br className="d-md-block d-none" />{" "}
-                  targeted traffic, enhance user experience,
-                </p>
-                <div className="btn-area text-center">
-                  <a href="contact.html" className="header-btn1">
-                    Free Consultation{" "}
-                    <span>
-                      <i className="fa-solid fa-arrow-right" />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/*===== CTA AREA ENDS =======*/}
+
+      {/*===== CONTACT AREA ENDS ======= */}
+
       {/*===== FOOTER AREA STARTS =======*/}
       <Footer />
 
       {/*===== FOOTER AREA ENDS =======*/}
       {/*===== JS SCRIPT LINK =======*/}
-    </>
+    </div>
   );
 }

@@ -28,7 +28,7 @@ export default function Services_Section() {
       <div className="flex justify-between w-full items-start gap-4 mt-16 overflow-y-hidden overflow-x-auto">
         {Array.from({ length: 5 }).map((_, i) => (
           <motion.section
-            key={i}
+            key={i+1}
             variants={{
               init: { opacity: 0, y: 100 },
               show: { opacity: 1, y: 0 },

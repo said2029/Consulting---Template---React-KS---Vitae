@@ -62,8 +62,8 @@ export default function Hero_Section() {
           className="w-fit gap-10 flex items-center"
         >
           {Array.from({ length: 29 }).map(() =>
-            brandImages.map((image) => (
-              <>
+            brandImages.map((image,i) => (
+              <div key={image+i}>
                 <span className="bg-red-400 rounded-full w-3 h-3"></span>
                 <div className="h-fit w-[6rem] flex items-center">
                   <img
@@ -71,7 +71,7 @@ export default function Hero_Section() {
                     src={`/assets/img/elements/${image}`}
                   />
                 </div>
-              </>
+              </div>
             ))
           )}
         </motion.div>

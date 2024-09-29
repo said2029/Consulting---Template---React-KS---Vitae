@@ -12,7 +12,7 @@ export default function Show_text({
     <>
       {text.split("").map((chart, index) => (
         <motion.span
-          key={index}
+          key={index+chart}
           variants={{
             start: { opacity: 0, x: 30 },
             end: { opacity: 1, x: 0 },

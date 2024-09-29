@@ -3,7 +3,7 @@ import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Meet_Our_Team_section() {
-  const ref = useRef<HTMLDivElement|any>();
+  const ref = useRef<HTMLDivElement | any>();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center"],
@@ -13,7 +13,11 @@ export default function Meet_Our_Team_section() {
   const Opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
 
   return (
-    <motion.div style={{y:MoveUp,opacity:Opacity,scale:Scale}} ref={ref} className="mt-10 lg:mt-28 flex flex-col lg:flex-row text-white bg bg-[url('/assets/img/bg/header-img9.png')] lg:h-[500px]">
+    <motion.div
+      style={{ y: MoveUp, opacity: Opacity, scale: Scale }}
+      ref={ref}
+      className="mt-10 lg:mt-28 flex flex-col lg:flex-row text-white bg bg-[url('/assets/img/bg/header-img9.png')] lg:h-[500px]"
+    >
       <div className="flex gap-4 flex-col justify-center items-center h-full w-full lg:w-[700px] text-center lg:!text-start bg-primary bg-[url('\assets\img\bg\header-bg7.png')] text-white py-4 px-4">
         <h1 className="text-4xl lg:text-5xl font-bold">
           CONTUATIN EXPERTISE! YOU CAN TRUST.
@@ -27,14 +31,14 @@ export default function Meet_Our_Team_section() {
       <div className="w-full h-full  flex justify-evenly items-center  overflow-x-auto">
         {Array.from({ length: 4 }).map((_, i) => (
           <motion.div
-          key={i}
+            key={i + 1}
             variants={{
-              initial: { opacity: 0, y: 100},
+              initial: { opacity: 0, y: 100 },
               animate: { opacity: 1, y: "0" },
             }}
             initial="initial"
             whileInView={"animate"}
-            transition={{ duration:1, delay: 0.2 * i }}
+            transition={{ duration: 1, delay: 0.2 * i }}
             viewport={{ once: true }}
           >
             <CardContainer className="inter-var">

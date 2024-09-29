@@ -1,12 +1,9 @@
-import Footer from "@/components/globle/footer";
-import NavBar from "@/components/Home_3_com/NavBar";
-import Reloader from "@/components/Reloader";
+import Footer from "@/components/Home_4_com/Footer";
+import NavBar from "@/components/Home_4_com/NavBar";
 
 export default function Service_page() {
   return (
-    <>
-      {/*===== PRELOADER STARTS =======*/}
-      <Reloader />
+    <div className="bg-[#c63b1e] !text-white">
       {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
       <div className="paginacontainer_1">
@@ -31,7 +28,6 @@ export default function Service_page() {
       <div
         className="about-header-area"
         style={{
-          backgroundImage: "url(assets/img/bg/inner-header.png)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -50,9 +46,9 @@ export default function Service_page() {
         <div className="container_1">
           <div className="row">
             <div className="col-lg-5 m-auto">
-              <div className="about-inner-header heading9 text-center">
-                <h1>Our Best Services</h1>
-                <a href="/">
+              <div className="about-inner-header heading9 text-center !text-white">
+                <h1 className="text-white" >Our Best Services</h1>
+                <a className="text-white" href="/">
                   Home <i className="fa-solid fa-angle-right" />{" "}
                   <span>Services</span>
                 </a>
@@ -184,7 +180,7 @@ export default function Service_page() {
             <div className="col-lg-6">
               <div className="works-header-area heading2">
                 <h5>Why Choose Us</h5>
-                <h2>Experience the Advantage Why We're the Right Choice</h2>
+                <h2 className="text-white">Experience the Advantage Why We're the Right Choice</h2>
                 <p>
                   At SEOC we understand that you have many options when it comes
                   to digital marketing services. So why should you choose us?
@@ -265,80 +261,7 @@ export default function Service_page() {
         </div>
       </div>
       {/*===== WORK AREA ENDS =======*/}
-      {/*===== SKILLS AREA STARTS =======*/}
-      <div className="skills-section-area sp2">
-        <img
-          src="assets/img/bg/cta-bg1.png"
-          alt=""
-          className="cta-bg1 aniamtion-key-2"
-        />
-        <img
-          src="assets/img/bg/cta-bg2.png"
-          alt=""
-          className="cta-bg2 aniamtion-key-1"
-        />
-        <div className="container_1">
-          <div className="row">
-            <div className="col-lg-3 m-auto">
-              <div className="skills-header text-center heading2">
-                <h5>Skills</h5>
-                <h2>Our Skills</h2>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-10 m-auto">
-            <div className="circle-progress-area">
-              <div className="row">
-                <div className="col-lg-3 col-md-6">
-                  <div className="progresbar">
-                    <div className="progressbar">
-                      <div className="circle" data-percent={82}>
-                        <canvas />
-                        <div>82%</div>
-                      </div>
-                    </div>
-                    <p>S M M</p>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6">
-                  <div className="progresbar">
-                    <div className="progressbar">
-                      <div className="circle two" data-percent={49}>
-                        <canvas />
-                        <div>49%</div>
-                      </div>
-                    </div>
-                    <p>P P C</p>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6">
-                  <div className="progresbar">
-                    <div className="progressbar">
-                      <div className="circle three" data-percent={99}>
-                        <canvas />
-                        <div>99%</div>
-                      </div>
-                    </div>
-                    <p>SEO</p>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6">
-                  <div className="progresbar">
-                    <div className="progressbar">
-                      <div className="circle four" data-percent={95}>
-                        <canvas />
-                        <div>95%</div>
-                      </div>
-                    </div>
-                    <p>Digital Marketing</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/*===== SKILLS AREA ENDS =======*/}
+
       {/*===== TEAM AREA STARTS =======*/}
       <div className="team-inner-section-area sp2">
         <div className="container_1">
@@ -346,7 +269,7 @@ export default function Service_page() {
             <div className="col-lg-6 m-auto">
               <div className="team2-header-area text-center heading2">
                 <h5>Our Team</h5>
-                <h2>Meet With Our Expert Team</h2>
+                <h2 className="text-white">Meet With Our Expert Team</h2>
               </div>
             </div>
           </div>
@@ -487,49 +410,11 @@ export default function Service_page() {
         </div>
       </div>
       {/*===== TEAM AREA ENDS =======*/}
-      {/*===== CTA AREA STARTS =======*/}
-      <div className="cta-section-area">
-        <img
-          src="assets/img/bg/cta-bg1.png"
-          alt=""
-          className="cta-bg1 aniamtion-key-2"
-        />
-        <img
-          src="assets/img/bg/cta-bg2.png"
-          alt=""
-          className="cta-bg2 aniamtion-key-1"
-        />
-        <div className="container_1">
-          <div className="row">
-            <div className="col-lg-12 m-auto">
-              <div className="cta-header-area text-center sp4 heading2">
-                <h2>
-                  Ready To Take Your SEO To <br className="d-md-block d-none" />{" "}
-                  The Next Level
-                </h2>
-                <p>
-                  Effective SEO strategies not only elevate a website's
-                  visibility but also drive <br className="d-md-block d-none" />{" "}
-                  targeted traffic, enhance user experience,
-                </p>
-                <div className="btn-area text-center">
-                  <a href="/contact" className="header-btn1">
-                    Free Consultation{" "}
-                    <span>
-                      <i className="fa-solid fa-arrow-right" />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/*===== CTA AREA ENDS =======*/}
+
       {/*===== FOOTER AREA STARTS =======*/}
       <Footer />
       {/*===== FOOTER AREA ENDS =======*/}
       {/*===== JS SCRIPT LINK =======*/}
-    </>
+    </div>
   );
 }

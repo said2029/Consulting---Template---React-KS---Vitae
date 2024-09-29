@@ -1,14 +1,11 @@
-import Footer from "@/components/globle/footer";
-import NavBar from "@/components/Home_3_com/NavBar";
-import Reloader from "@/components/Reloader";
+import Footer from "@/components/Home_4_com/Footer";
+import NavBar from "@/components/Home_4_com/NavBar";
 
 
 export default function Blog() {
   return (
     <>
-      {/*===== PRELOADER STARTS =======*/}
-      <Reloader />
-      {/*===== PRELOADER ENDS =======*/}
+
       {/*===== PROGRESS STARTS=======*/}
       <div className="paginacontainer_1">
         <div className="progress-wrap">

@@ -125,8 +125,9 @@ export default function Blog_Section() {
             style={{ x: to_right }}
             className="w-full py-3 flex gap-2 px-10"
           >
-            {BlogContant.map((item) => (
+            {BlogContant.map((item,i) => (
               <a
+                key={item.link+i}
                 href={item.link}
                 className={`w-[300px] md:w-[500px] text-white h-full bg-red-500 rounded-lg bg-[url(${item.img})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
               >
@@ -142,8 +143,9 @@ export default function Blog_Section() {
             style={{ x: to_left }}
             className="w-full py-3 flex gap-2 px-10"
           >
-            {BlogContant.map((item) => (
+            {BlogContant.map((item, i) => (
               <a
+                key={item.link + i}
                 href={item.link}
                 className={`w-[300px] text-white md:w-[500px] h-full rounded-lg bg-[url(${item.img})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
               >

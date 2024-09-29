@@ -1,11 +1,10 @@
-
-import NavBar from "../Home_3_com/NavBar";
+import Footer from "../Home_4_com/Footer";
+import NavBar from "../Home_4_com/NavBar";
 import Reloader from "../Reloader";
-import Footer from "../globle/footer";
 
 export default function About() {
   return (
-    <>
+    <div className="bg-[#c63b1e] !text-white">
       {/*===== PRELOADER STARTS =======*/}
       <Reloader />
       {/*===== PRELOADER ENDS =======*/}
@@ -27,14 +26,11 @@ export default function About() {
       <NavBar />
       {/*=====HEADER END =======*/}
 
-
-
       {/*===== MOBILE HEADER STARTS =======*/}
       {/*===== HERO AREA STARTS =======*/}
       <div
-        className="about-header-area"
+        className="about-header-area "
         style={{
-          backgroundImage: "url(assets/img/bg/inner-header.png)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -54,8 +50,8 @@ export default function About() {
           <div className="row">
             <div className="col-lg-3 m-auto">
               <div className="about-inner-header heading9 text-center">
-                <h1>About Us</h1>
-                <a href="/">
+                <h1 className="text-white">About Us</h1>
+                <a className="text-white" href="/">
                   Home <i className="fa-solid fa-angle-right" />{" "}
                   <span>About Us</span>
                 </a>
@@ -66,7 +62,7 @@ export default function About() {
       </div>
       {/*===== HERO AREA ENDS =======*/}
       {/*===== ABOUT AREA STARTS =======*/}
-      <div className="about1-section-area sp6 bg-white">
+      <div className="about1-section-area sp6 bg-[#c63b1e] !text-white">
         <div className="container_1">
           <div className="row align-items-center">
             <div className="col-lg-4">
@@ -97,8 +93,8 @@ export default function About() {
                     />
                   </a>
                 </div>
-                <h2>Comprehensive SEO &amp; Digital Marketing Solutions.</h2>
-                <p>
+                <h2 className="text-white">Comprehensive SEO &amp; Digital Marketing Solutions.</h2>
+                <p className="text-white">
                   Welcome to SEOC your trusted partner for comprehensive SEO and
                   digital marketing solutions. With our proven expertise and
                   innovative strategies the digital landscape.
@@ -130,40 +126,7 @@ export default function About() {
       </div>
       {/*===== ABOUT AREA ENDS =======*/}
       <div className="space60" />
-      {/*===== TESTIMONIAL AREA STARTS =======*/}
-      <div className="slider-section-area slider-inner sp5">
-        <div className="container_1">
-          <div className="row align-items-center">
-            <div className="col-lg-2">
-              <div className="sldier-head">
-                <p>
-                  Trusted by <br className="d-lg-block d-none" /> Top Companies
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-10">
-              <div className="slider-images-area owl-carousel">
-                <div className="img1">
-                  <img src="assets/img/elements/brand-img1.png" alt="" />
-                </div>
-                <div className="img1">
-                  <img src="assets/img/elements/brand-img2.png" alt="" />
-                </div>
-                <div className="img1">
-                  <img src="assets/img/elements/brand-img3.png" alt="" />
-                </div>
-                <div className="img1">
-                  <img src="assets/img/elements/brand-img4.png" alt="" />
-                </div>
-                <div className="img1">
-                  <img src="assets/img/elements/brand-img5.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/*===== TESTIMONIAL AREA ENDS =======*/}
+
       {/*===== WORK AREA STARTS =======*/}
       <div className="works-inner-section-area sp1">
         <div className="container_1">
@@ -953,8 +916,8 @@ export default function About() {
       </div>
       {/*===== CTA AREA ENDS =======*/}
       {/*===== FOOTER AREA STARTS =======*/}
-<Footer/>
+      <Footer />
       {/*===== FOOTER AREA ENDS =======*/}
-    </>
+    </div>
   );
 }
