@@ -65,7 +65,7 @@
   box-sizing: border-box;
   font-family: "Roboto";
 }
-a:hover{
+a:hover {
   color: #a7391b;
 }
 .full {
@@ -86,6 +86,27 @@ a:hover{
 }
 .h2 {
   @apply text-[30px] lg:text-[50px] font-semibold;
+}
+.navItem {
+  gap: "10px";
+  padding: 0;
+  position: relative;
+  transition: 1s;
+}
+
+.navItem:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: 1s;
+}
+.navItem:hover:after {
+  width: 100%;
+
 }
 
 .navItems {
@@ -149,7 +170,7 @@ a:hover{
   display: none;
 }
 
-::selection{
+::selection {
   background-color: #000;
   color: #db471e;
 }

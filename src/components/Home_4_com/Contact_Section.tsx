@@ -1,14 +1,98 @@
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button_Hover from "../globle/Button_Hover";
 
+export const MouseEffect = () => {
+  // effect Mouse Move 3D
+  const [mouseValue, setMouseValue] = useState({ x: 0, y: 0 });
+  const Ref_perantEffect = useRef<HTMLElement>(null);
+  const MouseMove = (e: MouseEvent) => {
+    if (Ref_perantEffect.current)
+      setMouseValue({
+        x: e.clientX - Ref_perantEffect.current?.clientWidth,
+        y: e.clientY - Ref_perantEffect.current?.clientHeight/2,
+      });
+  };
+  const Mouseleave = () => {
+    setMouseValue({ x: 0, y: 0 });
+  };
+  useEffect(() => {
+    Ref_perantEffect?.current?.addEventListener("mousemove", MouseMove);
+    Ref_perantEffect?.current?.addEventListener("mouseleave", Mouseleave);
+    return () => {
+      Ref_perantEffect?.current?.removeEventListener("mousemove", MouseMove);
+      Ref_perantEffect?.current?.removeEventListener("mouseleave", Mouseleave);
+    };
+  }, []);
+
+  return (
+    <section
+      ref={Ref_perantEffect}
+      className="h-full relative w-full flex justify-center items-center"
+    >
+      <div className="relative flex items-center justify-center opacity-45 [&_div]:duration-700 [&_div]:transition-all [&_div]:ease-linear">
+        <div
+          className="border absolute border-white/40 w-[9vh] h-[9vh]"
+          style={{
+            willChange: "transform",
+            transform: `translate3d(${mouseValue.x * 0.4}px, ${
+              mouseValue.y * 0.4
+            }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+            transformStyle: "preserve-3d",
+            opacity: 1,
+          }}
+        />
+        <div
+          className="border absolute border-white/40 w-[18vh] h-[18vh]"
+          style={{
+            willChange: "transform",
+            transform: `translate3d(${mouseValue.x * 0.3}px, ${
+              mouseValue.y * 0.3
+            }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+            transformStyle: "preserve-3d",
+            opacity: 1,
+          }}
+        />
+        <div
+          className="border absolute w-[27vh] h-[27vh]"
+          style={{
+            willChange: "transform",
+            transform: `translate3d(${mouseValue.x * 0.2}px, ${
+              mouseValue.y * 0.2
+            }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+            transformStyle: "preserve-3d",
+            opacity: 1,
+          }}
+        />
+        <div
+          className="border absolute border-blue-500 w-[36vh] h-[36vh]"
+          style={{
+            willChange: "transform",
+            transform: `translate3d(${mouseValue.x * 0.1}px, ${
+              mouseValue.y * 0.1
+            }px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+            transformStyle: "preserve-3d",
+            opacity: 1,
+          }}
+        />
+        <div
+          className="border border-white/20 w-[45vh] h-[45vh] "
+          style={{ opacity: 1 }}
+        />
+      </div>
+
+      <hr className="w-full border-none bg-white h-[2px]  absolute" />
+      <hr className="h-full border-none top-0 bg-white w-[2px] absolute" />
+    </section>
+  );
+};
+
 export default function Contact_Section() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-
   const moveUp = useTransform(scrollYProgress, [0, 1], [1000, -500]);
   const Rotate = useTransform(scrollYProgress, [0, 1], [-60, 30]);
   return (
@@ -36,11 +120,8 @@ export default function Contact_Section() {
               the cool kids call it. We just call it common sense though.
             </p>
           </section>
-
-          <section className="h-full relative w-full flex justify-center items-center">
-            <hr className="w-full border-none bg-white h-[2px]  absolute" />
-            <hr className="h-full border-none top-0 bg-white w-[2px] absolute" />
-          </section>
+          {/* Animation move mouse component is in top, hover and ctrl + enter to open */}
+          <MouseEffect />
         </div>
         <hr className="h-[100vh] bg-white w-[2px] border-none top-0 absolute" />
         <hr className="h-[2px] bg-white w-full border-none top-0 absolute" />
