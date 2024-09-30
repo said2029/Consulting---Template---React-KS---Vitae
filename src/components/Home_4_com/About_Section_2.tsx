@@ -35,7 +35,7 @@ export default function About_Section_2() {
             </p>
           </div>
         </div>
-        <div className="absolute h-fit top-1/2 bottom-1/2 right-1/2 left-1/2 md:left-auto md:right-24 m-auto">
+        <div className="absolute h-fit top-1/2 bottom-1/2 right-1/2 left-1/2 md:right-24 m-auto">
           <MouseEffect Ref_perantEffect={ref}/>
         </div>
         <hr className="h-[2px] bg-white w-full border-none top-0 absolute" />
