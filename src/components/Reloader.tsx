@@ -1,8 +1,20 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function Reloader() {
   const name = "Consulting";
   const [isLoading, setLoading] = useState(true);
+  const [isNight, SetisNight] = useState(true);
+  useEffect(() => {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      // dark mode
+      SetisNight(true);
+    } else {
+      SetisNight(false);
+    }
+  }, []);
 
   return (
     <div className="pointer-events-none">
@@ -27,7 +39,9 @@ export default function Reloader() {
           onAnimationComplete={() => {
             setLoading(false);
           }}
-          className="w-screen Loading_Mask fixed z-[9999] top-0 h-[100vh] bg-black flex justify-center items-center"
+          className={`w-screen Loading_Mask fixed z-[9999] top-0 h-[100vh] ${
+            isNight ? "bg-black" : "bg-white"
+          } flex justify-center items-center`}
         >
           <motion.div
             variants={{
@@ -37,7 +51,11 @@ export default function Reloader() {
             transition={{ duration: 0.5, delay: name.length / 3.5 }}
             className="h-fit overflow-hidden"
           >
-            <div className="font-bold text-white text-3xl md:text-5xl lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex uppercase">
+            <div
+              className={`font-bold  ${
+                isNight ? "text-white" : "text-black"
+              } f text-3xl md:text-5xl lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex uppercase`}
+            >
               {name.split("").map((c, i) => (
                 <motion.div
                   key={i}

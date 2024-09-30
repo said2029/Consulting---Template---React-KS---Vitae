@@ -18,7 +18,7 @@ export default function Hero_Section() {
         variants={variantsPup}
         initial="initial"
         animate="animate"
-        transition={{ duration: 1, delay: 3.4 }}
+        transition={{ duration: 1}}
         className="h1 !font-normal max-w-4xl scale-y-150  text-center leading-tight font-['Bungee']"
       >
         Empowering Businesses to Thrive
@@ -27,7 +27,7 @@ export default function Hero_Section() {
         variants={variantsPup}
         initial="initial"
         animate="animate"
-        transition={{ duration: 1, delay: 3.7 }}
+        transition={{ duration: 1}}
         className="text-[24px]"
       >
         Tailored strategies and actionable insights to drive growth and success.
@@ -36,7 +36,7 @@ export default function Hero_Section() {
         variants={variantsPup}
         initial="initial"
         animate="animate"
-        transition={{ duration: 1, delay: 3.8 }}
+        transition={{ duration: 1 }}
         className="shadow_Button text-white rounded-full py-4 px-16 shadow-inner "
       >
         Get Started
@@ -45,7 +45,7 @@ export default function Hero_Section() {
         variants={variantsPup}
         initial="initial"
         animate="animate"
-        transition={{ duration: 1, delay: 4 }}
+        transition={{ duration: 1}}
       >
         Available now
       </motion.span>

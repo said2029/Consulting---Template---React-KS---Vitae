@@ -51,7 +51,7 @@ export const MouseEffect = ({
   return (
     <div className="relative flex items-center justify-center opacity-45 [&_div]:duration-700 [&_div]:transition-all [&_div]:ease-linear">
       <div
-        className="border absolute border-white/40 w-[9vh] h-[9vh]"
+        className="border rounded-full absolute border-white/40 w-[9vh] h-[9vh]"
         style={{
           willChange: "transform",
           transform: `translate3d(${mouseValue.x * 0.4}px, ${
@@ -62,7 +62,7 @@ export const MouseEffect = ({
         }}
       />
       <div
-        className="border absolute border-white/40 w-[18vh] h-[18vh]"
+        className="border rounded-full  absolute border-white/40 w-[18vh] h-[18vh]"
         style={{
           willChange: "transform",
           transform: `translate3d(${mouseValue.x * 0.3}px, ${
@@ -73,7 +73,7 @@ export const MouseEffect = ({
         }}
       />
       <div
-        className="border absolute w-[27vh] h-[27vh]"
+        className="border rounded-full  absolute w-[27vh] h-[27vh]"
         style={{
           willChange: "transform",
           transform: `translate3d(${mouseValue.x * 0.2}px, ${
@@ -84,7 +84,7 @@ export const MouseEffect = ({
         }}
       />
       <div
-        className="border absolute border-blue-500 w-[36vh] h-[36vh]"
+        className="border rounded-full  absolute border-blue-500 w-[36vh] h-[36vh]"
         style={{
           willChange: "transform",
           transform: `translate3d(${mouseValue.x * 0.1}px, ${
@@ -95,7 +95,7 @@ export const MouseEffect = ({
         }}
       />
       <div
-        className="border border-white/20 w-[45vh] h-[45vh] "
+        className="border rounded-full  border-white/20 w-[45vh] h-[45vh] "
         style={{ opacity: 1 }}
       />
     </div>

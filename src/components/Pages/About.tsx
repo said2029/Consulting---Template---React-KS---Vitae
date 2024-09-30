@@ -1,13 +1,9 @@
 import Footer from "../Home_4_com/Footer";
 import NavBar from "../Home_4_com/NavBar";
-import Reloader from "../Reloader";
 
 export default function About() {
   return (
     <div className="bg-[#c63b1e] !text-white">
-      {/*===== PRELOADER STARTS =======*/}
-      <Reloader />
-      {/*===== PRELOADER ENDS =======*/}
       {/*===== PROGRESS STARTS=======*/}
       <div className="paginacontainer_1">
         <div className="progress-wrap">
