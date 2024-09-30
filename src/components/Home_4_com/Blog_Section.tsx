@@ -103,7 +103,7 @@ export default function Blog_Section() {
           whileInView={"show"}
           transition={{ duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-[18px] lg:text-[24px] max-w-3xl"
+          className="text-[18px] lg:text-[24px] max-w-3xl hidden"
         >
           Explore the latest trends, strategies, and tips to stay ahead in your
           industry
@@ -147,13 +147,13 @@ export default function Blog_Section() {
             ))}
           </motion.div>
         </div>
-      
         <motion.div
           style={{ x: moveUp, rotateZ: Rotate }}
           className="absolute top-1/3 bottom-1/2 mt-auto"
         >
           <Button_Hover href="/blog" text="blog" />
         </motion.div>
+      
       </div>
     </div>
   );
