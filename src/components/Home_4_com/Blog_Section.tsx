@@ -109,7 +109,7 @@ export default function Blog_Section() {
           industry
         </motion.h2>
       
-        <div className="h-[400px] lg:h-[500px] absolute bottom-36 sm:top-1/2 sm:bottom-1/2 my-auto w-full mt-10 lg:mt-20 grid grid-row-2 overflow-hidden">
+        <div className="h-[400px] lg:h-[500px] absolute top-1/2 bottom-1/2 md:bottom-44 my-auto w-full grid grid-row-2 overflow-hidden">
           <motion.div
             style={{ x: to_right }}
             className="w-full py-3 flex gap-2 px-10"

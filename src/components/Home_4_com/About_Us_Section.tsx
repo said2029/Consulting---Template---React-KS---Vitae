@@ -122,13 +122,31 @@ export default function About_Us_Section() {
                 src="/assets/img/all-images/post-img1.png"
               />
             </div>
+            <div className="w-40 bg-red-500 h-40 rounded-2xl absolute -bottom-80 right-60 shadow-md">
+              <img
+                className="w-full h-full object-cover"
+                src="/assets/img/all-images/post-img1.png"
+              />
+            </div>
             <div className="w-40 bg-red-500 h-40 rounded-2xl absolute -bottom-28 left-4 shadow-md">
               <img
                 className="w-full h-full object-cover"
                 src="/assets/img/all-images/post-img2.png"
               />
             </div>
+            <div className="w-40 bg-red-500 h-40 rounded-2xl absolute -top-44 left-96 shadow-md">
+              <img
+                className="w-full h-full object-cover"
+                src="/assets/img/all-images/post-img2.png"
+              />
+            </div>
             <div className="w-28 opacity-70 bg-red-500 h-28 rounded-2xl absolute -top-32 left-40 shadow-md">
+              <img
+                className="w-full h-full object-cover"
+                src="/assets/img/all-images/post-img3.png"
+              />
+            </div>
+            <div className="w-28 opacity-70 bg-red-500 h-28 rounded-2xl absolute -bottom-44 left-96 shadow-md">
               <img
                 className="w-full h-full object-cover"
                 src="/assets/img/all-images/post-img3.png"
