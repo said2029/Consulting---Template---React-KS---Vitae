@@ -14,43 +14,52 @@ const variantsPup = {
   animate: { opacity: 1, y: 0 },
 };
 
-const HeroEmpowe = () => {
+const HeroWorld = ({ world, index }: { world: string; index: number }) => {
   const [hover, setHover] = useState(false);
   return (
-    <motion.h1
-      variants={variantsPup}
-      initial="initial"
-      animate="animate"
-      transition={{ duration: 1 }}
+    <div
+      key={world + index}
       onMouseEnter={() => {
         setHover(true);
       }}
       onMouseLeave={() => {
         setHover(false);
       }}
-      className="flex max-w-4xl scale-y-150 justify-center text-center flex-wrap"
     >
-      {"Empowering Businesses to Thrive".split("").map((world, i) => {
-        if (world === " ") return <span key={world + i} className="w-4"></span>;
-        return (
-          <motion.span
-            key={i + world}
-            variants={{
-              initial: { y: 0 },
-              animate: { y: [0, -50, 0] },
-            }}
-            initial="initial"
-            animate={hover ? "animate" : "initial"}
-            transition={{
-              duration: 0.2,
-              ease: "easeOut",
-              delay: 0.1 * i,
-            }}
-            className="h1 !font-normal leading-tight font-['Bungee']"
-          >
-            {world}
-          </motion.span>
-        );
+      {world.split("").map((c, index) => (
+        <motion.span
+          key={index + c}
+          variants={{
+            initial: { y: 0 },
+            animate: { y: [0, -50, 0] },
+          }}
+          initial="initial"
+          animate={hover ? "animate" : "initial"}
+          transition={{
+            duration: 0.4,
+            ease: "easeInOut",
+            delay: 0.1 * index,
+          }}
+          className="h1 !font-normal inline-block leading-tight font-['Bungee']"
+        >
+          {c}
+        </motion.span>
+      ))}
+    </div>
+  );
+};
+
+const HeroEmpowe = () => {
+  return (
+    <motion.h1
+      variants={variantsPup}
+      initial="initial"
+      animate="animate"
+      transition={{ duration: 1 }}
+      className="flex max-w-4xl scale-y-150 gap-2 justify-center text-center flex-wrap"
+    >
+      {"Empowering Businesses to Thrive".split(" ").map((world, i) => {
+        return <HeroWorld index={i} world={world} />;
       })}
     </motion.h1>
   );
