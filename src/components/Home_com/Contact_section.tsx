@@ -122,15 +122,12 @@ export default function Contact_Section() {
   const moveUp = useTransform(scrollYProgress, [0, 1], [1000, -400]);
   const Rotate = useTransform(scrollYProgress, [0, 1], [-60, 30]);
   return (
-    <div ref={ref}  className="w-screen h-[500vh]">
-      <div ref={ref2} className="flex flex-col bg-[#c63b1e] sticky top-0 w-full h-[100vh] items-center justify-center text-black pt-[50px]">
+    <div ref={ref} className="w-screen h-[500vh]">
+      <div
+        ref={ref2}
+        className="flex flex-col bg-[#c63b1e] sticky top-0 w-full h-[100vh] items-center justify-center text-black pt-[50px]"
+      >
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 text-[30px] lg:text-[32px]">
-          {/* Animation move mouse component is in top, hover and ctrl + enter to open */}
-          <section className="h-full relative w-full flex justify-center items-center">
-            <MouseEffect Ref_perantEffect={ref2} />
-            <hr className="w-full border-none bg-white h-[2px]  absolute" />
-            <hr className="h-full border-none top-0 bg-white w-[2px] absolute" />
-          </section>
           <section className="h-ful flex flex-col relative justify-between w-full px-3 py-5">
             <div className="">
               <h1 className="text-white text-xl font-semibold opacity-30 ">
@@ -148,6 +145,12 @@ export default function Contact_Section() {
               know what to do. Just by looking. Intuitive design, that s what
               the cool kids call it. We just call it common sense though.
             </p>
+          </section>
+          {/* Animation move mouse component is in top, hover and ctrl + enter to open */}
+          <section className="h-full relative w-full flex justify-center items-center">
+            <MouseEffect Ref_perantEffect={ref2} />
+            <hr className="w-full border-none bg-white h-[2px]  absolute" />
+            <hr className="h-full border-none top-0 bg-white w-[2px] absolute" />
           </section>
         </div>
 
