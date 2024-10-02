@@ -25,7 +25,7 @@ export default function About_Us_Section() {
   return (
     <div
       ref={ref}
-      className="container_1 relative w-full h-fit place-content-center lg:h-[500px] flex flex-col lg:flex-row gap-10 lg:gap-36 mt-28"
+      className="container_1 relative w-screen overflow-hidden h-fit place-content-center lg:h-[500px] flex flex-col lg:flex-row gap-10 lg:gap-36 mt-28"
     >
       <section className="grid grid-cols-2 gap-2 w-fit flex-shrink-0">
         <div className="w-64 h-[500px] gap-2 flex flex-col">
@@ -105,7 +105,7 @@ export default function About_Us_Section() {
         </div>
       </section>
 
-      <section className="w-fit h-full flex-shrink flex flex-col items-center lg:items-start justify-center  text-center lg:!text-start">
+      <section className="w-fit h-full flex-shrink flex flex-col items-center lg:items-start justify-center text-center lg:!text-start">
         <motion.div
           style={{ y: lg }}
           className="space-y-3"
@@ -177,7 +177,7 @@ export default function About_Us_Section() {
           </div>
         </motion.div>
 
-        <Button_Hover className="!py-1 !px-5 " href="/about" text="About" />
+        <Button_Hover className="py-4 !px-16 lg:!py-1 lg:!px-5 " href="/about" text="About" />
       </section>
 
       {/* effect  */}

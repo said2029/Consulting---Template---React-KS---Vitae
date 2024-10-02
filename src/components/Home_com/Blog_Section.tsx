@@ -83,8 +83,8 @@ export default function Blog_Section() {
   const Rotate = useTransform(scrollYProgress, [0, 1], [-50, 80]);
 
   return (
-    <div ref={ref} className="w-full h-[4000px]">
-      <div className="sticky top-0 w-full overflow-hidden h-[100vh] flex flex-col items-center pt-[130px] sm:pt-[60px] text-center">
+    <div ref={ref} className="w-full relative h-[4000px]">
+      <div className="sticky top-0 w-screen overflow-hidden h-[100vh] flex flex-col items-center pt-[130px] sm:pt-[60px] text-center">
         <motion.h2
           variants={variantsUp}
           initial="initial"
@@ -95,7 +95,7 @@ export default function Blog_Section() {
         >
           Stay Informed with Expert Insights
         </motion.h2>
-        <motion.h2
+        {/* <motion.h2
           variants={variantsUp}
           initial="initial"
           whileInView={"show"}
@@ -105,9 +105,9 @@ export default function Blog_Section() {
         >
           Explore the latest trends, strategies, and tips to stay ahead in your
           industry
-        </motion.h2>
+        </motion.h2> */}
 
-        <div className="h-[400px] lg:h-[500px] absolute top-1/2 bottom-1/2 md:bottom-44 my-auto w-full grid grid-row-2 overflow-hidden">
+        <div className="h-[400px] lg:h-[500px] absolute top-1/2 sm:bottom-1/2 bottom-16  md:bottom-44 my-auto w-full grid grid-row-2 overflow-hidden">
           <div className="h-[400px] lg:h-[500px] relative my-auto w-full grid grid-row-2 overflow-hidden">
             <motion.div
               style={{ x: to_right }}

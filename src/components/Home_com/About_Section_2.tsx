@@ -9,7 +9,7 @@ export default function About_Section_2() {
   const ref= useRef(null)
   return (
     <div className="sticky h-[100vh] top-0">
-      <div ref={ref} className="relative w-full h-full text-black">
+      <div ref={ref} className="relative overflow-hidden w-screen h-full text-black">
         <div className="w-full h-full bg-[#c63b1e] pt-[50px] ">
           <div className="w-full  text-center lg:!text-start h-full font-sans font-semibold flex flex-col justify-evenly sm:justify-between lg:py-3 lg:px-7">
             <motion.p

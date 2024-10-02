@@ -40,7 +40,7 @@ const HeroWorld = ({ world, index }: { world: string; index: number }) => {
             ease: "easeInOut",
             delay: 0.1 * index,
           }}
-          className="h1 !font-normal inline-block leading-tight font-['Bungee']"
+          className="text-3xl sm:text-6xl xl:text-6xl !font-normal inline-block leading-tight font-['Bungee']"
         >
           {c}
         </motion.span>

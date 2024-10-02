@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 export default function Reloader() {
@@ -17,7 +18,9 @@ export default function Reloader() {
   }, []);
 
   return (
-    <div className="pointer-events-none">
+    <div className={clsx("pointer-events-none w-screen  z-[9999] fixed top-0 h-[100vh] bg-black",{
+      "hidden":!isLoading
+    })}>
       {isLoading && (
         <motion.div
           variants={{
@@ -38,7 +41,7 @@ export default function Reloader() {
           onAnimationComplete={() => {
             setLoading(false);
           }}
-          className={`w-screen fixed z-[9999] top-0 h-[100vh] ${
+          className={`w-screen fixed  top-0 h-[100vh] ${
             isNight ? "bg-black" : "bg-white"
           } flex justify-center items-center`}
         >
@@ -46,7 +49,7 @@ export default function Reloader() {
             <div
               className={`font-bold  ${
                 isNight ? "text-white" : "text-black"
-              } f text-3xl md:text-5xl text-center lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex justify-center items-center uppercase`}
+              } text-2xl sm:text-3xl md:text-5xl text-center lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex justify-center items-center uppercase`}
             >
               {name.split("").map((c, i) => {
                 if (c === " ") return <span className="w-7" />;

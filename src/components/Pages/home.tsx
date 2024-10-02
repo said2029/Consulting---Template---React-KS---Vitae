@@ -10,7 +10,7 @@ import Services_Section from "../Home_com/Services_Section";
 export default function Home_4() {
   return (
     <div className="text-white bg-[#c63b1e]">
-      <div className="h-fit rounded-[3em]">
+      <div className="h-fit">
         <NavBar />
         <Hero_Section />
         <Services_Section />
