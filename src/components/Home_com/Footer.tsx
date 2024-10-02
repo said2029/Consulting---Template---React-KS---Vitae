@@ -44,59 +44,59 @@ function Footer() {
               className="flex w-full gap-2 justify-between md:gap-5 text-white"
             >
               <li>
-                <a className="text-white" href="/about">
+                <Link className="text-white" to="/about">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-white" href="/service">
+                <Link className="text-white" to="/service">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-white" href="/blog">
+                <Link className="text-white" to="/blog">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="text-white" href="/contact">
+                <Link className="text-white" to="/contact">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </motion.ul>
             <div className="w-full grid grid-cols-2 mt-10 md:mt-10">
               <ul className="flex flex-col gap-3">
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
               </ul>
               <ul className="flex flex-col gap-2">
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
                 <li className="navItem">
-                  <a href="">Lorem_ipsum</a>
+                  <Link to="">Lorem_ipsum</Link>
                 </li>
               </ul>
             </div>
@@ -109,8 +109,8 @@ function Footer() {
             <div className="mt-2">
               <a href="mailto:info@bemotion.i">info@bemotion.in</a>
               <div className="flex items-center gap-2">
-                <a href="">Privacy Policy</a>
-                <a href="">Fueled is carbon neutral</a>
+                <Link to="">Privacy Policy</Link>
+                <Link to="">Fueled is carbon neutral</Link>
               </div>
             </div>
           </div>
@@ -128,24 +128,24 @@ function Footer() {
           className="flex gap-2 md:gap-5 text-white"
         >
           <li>
-            <a className="text-white" href="/about">
+            <Link className="text-white" to="/about">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="text-white" href="/service">
+            <Link className="text-white" to="/service">
               Services
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="text-white" href="/blog">
+            <Link className="text-white" to="/blog">
               Blog
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="text-white" href="/contact">
+            <Link className="text-white" to="/contact">
               Contact Us
-            </a>
+            </Link>
           </li>
         </motion.ul>
         <motion.ul
@@ -159,14 +159,14 @@ function Footer() {
           className="flex gap-2 md:gap-5 text-white"
         >
           <li>
-            <a className="text-white" href="/about">
+            <Link className="text-white" to="/about">
               Privacy Policy
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="text-white" href="/service">
+            <Link className="text-white" to="/service">
               Privacy Policy
-            </a>
+            </Link>
           </li>
         </motion.ul>
       </div>
