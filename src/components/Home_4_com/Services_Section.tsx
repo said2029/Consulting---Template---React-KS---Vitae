@@ -50,6 +50,7 @@ const CoreValuesComponent = ({ images }: { images: Array<string> }) => {
     </div>
   );
 };
+
 export default function Services_Section() {
   return (
     <div className="flex justify-center w-screen overflow-hidden text-center items-center flex-col py-7 mt-10 px-6 lg:px-20 xl:px-48">

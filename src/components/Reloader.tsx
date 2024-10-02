@@ -42,12 +42,8 @@ export default function Reloader() {
             isNight ? "bg-black" : "bg-white"
           } flex justify-center items-center`}
         >
-          <motion.div
-            variants={{
-              initial: { width: "content-fit" },
-              animate: { width: 0 },
-            }}
-            transition={{ duration: 0.5, delay: name.length * 0.2 }}
+          <div
+
             className="h-fit overflow-hidden"
           >
             <div
@@ -72,7 +68,7 @@ export default function Reloader() {
                 );
               })}
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       )}
     </div>
