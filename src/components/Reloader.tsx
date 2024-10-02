@@ -18,9 +18,14 @@ export default function Reloader() {
   }, []);
 
   return (
-    <div className={clsx("pointer-events-none w-screen  z-[9999] fixed top-0 h-[100vh]",{
-      "hidden":!isLoading
-    })}>
+    <div
+      className={clsx(
+        "pointer-events-none w-screen  z-[9999] fixed top-0 h-[100vh]",
+        {
+          hidden: !isLoading,
+        }
+      )}
+    >
       {isLoading && (
         <motion.div
           variants={{
@@ -41,7 +46,7 @@ export default function Reloader() {
           onAnimationComplete={() => {
             setLoading(false);
           }}
-          className={`w-screen fixed  top-0 h-[100vh] ${
+          className={`w-screen fixed top-0 h-[100vh] ${
             isNight ? "bg-black" : "bg-white"
           } flex justify-center items-center`}
         >
@@ -49,22 +54,27 @@ export default function Reloader() {
             <div
               className={`font-bold  ${
                 isNight ? "text-white" : "text-black"
-              } text-2xl sm:text-3xl md:text-5xl text-center lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex justify-center items-center uppercase`}
+              } text-xl  px-5 sm:text-3xl md:text-5xl text-center lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex justify-center gap-2 md:!gap-3 lg:!gap-4 xl:!gap-10  flex-wrap items-center uppercase`}
             >
-              {name.split("").map((c, i) => {
-                if (c === " ") return <span className="w-7" />;
+              {name.split(" ").map((word) => {
                 return (
-                  <motion.div
-                    key={i}
-                    className="block"
-                    variants={{
-                      initial: { y: 200 },
-                      animate: { y: 0 },
-                    }}
-                    transition={{ duration: 1, delay: 0.04 * i }}
-                  >
-                    {c}
-                  </motion.div>
+                  <div className="inline-block flex">
+                    {word.split("").map((c, index) => {
+                      return (
+                        <motion.div
+                          key={index}
+                          className="block"
+                          variants={{
+                            initial: { y: 200 },
+                            animate: { y: 0 },
+                          }}
+                          transition={{ duration: 1, delay: 0.04 * index }}
+                        >
+                          {c}
+                        </motion.div>
+                      );
+                    })}
+                  </div>
                 );
               })}
             </div>

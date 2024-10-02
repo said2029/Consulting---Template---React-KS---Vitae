@@ -11,26 +11,25 @@ import MouseEffect from "./components/globle/MouseEffect.tsx";
 import Home from "./components/Pages/Home.tsx";
 import Get_started from "./components/Pages/get_started.tsx";
 import Reloader from "./components/Reloader.tsx";
+import Lenis from "lenis";
 
 export default function App() {
-  // const lenis = new Lenis();
+  const lenis = new Lenis();
 
   useEffect(() => {
+    // smoth scrolle
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
     // font
     WebFont.load({
       google: {
-        families: ["Roboto","Outfit","Bungee","Rambla"],
+        families: ["Roboto", "Outfit", "Bungee", "Rambla"],
       },
     });
-
-    // smoth scrolle
-
-    // function raf(time: number) {
-    //   lenis.raf(time);
-    //   requestAnimationFrame(raf);
-    // }
-
-    // requestAnimationFrame(raf);
   }, []);
 
   return (

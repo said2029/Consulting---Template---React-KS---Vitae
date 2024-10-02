@@ -75,7 +75,7 @@ export default function Services_Section() {
         whileInView={"show"}
         transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
-        className="text-[24px] max-w-3xl"
+        className="text-[16px] md:text-[24px] max-w-3xl"
       >
         From business strategy to digital transformation, we offer solutions
         tailored to your needs

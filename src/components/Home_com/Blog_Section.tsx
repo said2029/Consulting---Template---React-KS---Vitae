@@ -79,7 +79,7 @@ export default function Blog_Section() {
   const to_right = useTransform(scrollYProgress, [0, 1], [-2500, 80]);
   const to_left = useTransform(scrollYProgress, [0, 1], [200, -3200]);
 
-  const moveUp = useTransform(scrollYProgress, [0, 1], [1700, -1000]);
+  const buttonMove = useTransform(scrollYProgress, [0, 1], [1700, -1000]);
   const Rotate = useTransform(scrollYProgress, [0, 1], [-50, 80]);
 
   return (
@@ -146,7 +146,7 @@ export default function Blog_Section() {
               ))}
             </motion.div>
             <motion.div
-          style={{ x: moveUp, rotateZ: Rotate }}
+          style={{ x: buttonMove, rotateZ: Rotate }}
           className="absolute top-1/3 bottom-1/2 mt-auto"
         >
           <Button_Hover href="/blog" text="blog" />
