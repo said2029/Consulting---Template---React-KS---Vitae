@@ -585,7 +585,7 @@ export default function Service_page_5() {
             <div className="col-lg-6 m-auto">
               <div className="team2-header-area text-center heading2">
                 <h5>Our Team</h5>
-                <h2>Meet With Our Expert Team</h2>
+                <h2 className="text-white">Meet With Our Expert Team</h2>
               </div>
             </div>
           </div>

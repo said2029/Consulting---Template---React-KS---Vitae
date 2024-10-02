@@ -342,7 +342,7 @@ export default function About() {
                   className="star3 keyframe5"
                 />
                 <h5>Our History</h5>
-                <h2>
+                <h2 className="text-white">
                   Our Journey: Charting the <br className="d-lg-block d-none" />{" "}
                   Evolution of SEOC
                 </h2>
@@ -552,7 +552,7 @@ export default function About() {
             <div className="col-lg-6 m-auto">
               <div className="team2-header-area text-center heading2">
                 <h5>Our Team</h5>
-                <h2>Meet With Our Expert Team</h2>
+                <h2 className="text-white">Meet With Our Expert Team</h2>
               </div>
             </div>
           </div>
