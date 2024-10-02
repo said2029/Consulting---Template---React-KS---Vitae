@@ -46,7 +46,8 @@ export default function Get_started() {
         Want to boost sales?
       </h1>
 
-      <Link to={"/contact"}
+      <Link
+        to={"/contact"}
         ref={scope}
         onMouseOver={HandilClick}
         className={`shadow_Button hidden md:block min-w-80 absolute h-fit text-white rounded-full py-4 px-16 shadow-inner m-auto`}
@@ -64,8 +65,8 @@ export default function Get_started() {
 }
 function getRandomPosition() {
   // Get random positions within the page dimensions
-  const randomTop = Math.floor(Math.random() * 99); // Random value between 0 and H
-  const randomLeft = Math.floor(Math.random() * 99); // Random value between 0 and W
+  const randomTop = Math.floor(Math.random() * 100); // Random value between 0 and H
+  const randomLeft = Math.floor(Math.random() * 77); // Random value between 0 and W
 
   return { x: randomTop, y: randomLeft };
 }
