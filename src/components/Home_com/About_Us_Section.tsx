@@ -1,5 +1,6 @@
+import { useScroll, motion, useTransform, Variants } from "framer-motion";
+import Button_Hover from "../globle/Button_Hover";
 import { useRef } from "react";
-import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
 const variantsText: Variants = {
   initial: { opacity: 0, x: 200 },
@@ -11,14 +12,16 @@ const variantsText: Variants = {
 };
 
 export default function About_Us_Section() {
-  const ref = useRef<HTMLDivElement | any>();
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center"],
+    offset: ["start end", "end start"],
   });
+
   const sm = useTransform(scrollYProgress, [0, 1], [0, -60]);
   const md = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const lg = useTransform(scrollYProgress, [0, 1], [0, -140]);
+
   return (
     <div
       ref={ref}
@@ -102,8 +105,11 @@ export default function About_Us_Section() {
         </div>
       </section>
 
-      <section className="w-fit h-full flex-shrink flex flex-col justify-center space-y-6 text-center lg:!text-start">
-        <motion.div style={{y:lg}} className="space-y-3">
+      <section className="w-fit h-full flex-shrink flex flex-col items-center lg:items-start justify-center  text-center lg:!text-start">
+        <motion.div
+          style={{ y: lg }}
+          className="space-y-3"
+        >
           <motion.h1
             variants={variantsText}
             initial="initial"
@@ -127,7 +133,7 @@ export default function About_Us_Section() {
           </motion.p>
         </motion.div>
 
-        <motion.div style={{y:md}}  className="mt-6">
+        <motion.div style={{ y: md }} className="mt-6">
           <motion.h1
             variants={variantsText}
             initial="initial"
@@ -171,9 +177,7 @@ export default function About_Us_Section() {
           </div>
         </motion.div>
 
-        <motion.a style={{y:sm}} className="bg-gradient-to-r from-primary h-[50px] w-fit to-primary-foreground text-white flex items-center justify-center rounded-full px-4">
-          Learn More About
-        </motion.a>
+        <Button_Hover className="!py-1 !px-5 " href="/about" text="About" />
       </section>
 
       {/* effect  */}
@@ -189,19 +193,6 @@ export default function About_Us_Section() {
         src="/assets/img/bg/inner-bg1.png"
         alt=""
       />
-      {/* <motion.img
-        variants={{
-          initial: { opacity: 0, x: 200,rotateY:"380deg" },
-          animate: { opacity: 1, x: 0 },
-        }}
-        whileInView={"animate"}
-        initial="initial"
-        transition={{ type: "spring", stiffness: 120 }}
-        className="absolute right-0 h-full object-cove -rotate-90 -z-30"
-        src="/assets/img/bg/header-bg6.png"
-        alt=""
-      /> */}
-
       <motion.img
         variants={{
           initial: { opacity: 0, x: -200, rotateZ: "90deg" },

@@ -110,7 +110,7 @@ export default function Hero_Section() {
                 <div className="h-fit w-[6rem] flex items-center">
                   <img
                     className="w-full h-full object-cover"
-                    src={`/assets/img/elements/${image}`}
+                    src={`/assets/img/change/${image}`}
                   />
                 </div>
               </div>

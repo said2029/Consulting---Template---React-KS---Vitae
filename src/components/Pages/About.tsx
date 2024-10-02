@@ -1,5 +1,5 @@
-import Footer from "../Home_4_com/Footer";
-import NavBar from "../Home_4_com/NavBar";
+import Footer from "../Home_com/Footer";
+import NavBar from "../Home_com/NavBar";
 
 export default function About() {
   return (

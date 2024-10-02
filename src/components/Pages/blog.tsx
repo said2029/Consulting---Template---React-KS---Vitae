@@ -1,5 +1,5 @@
-import Footer from "@/components/Home_4_com/Footer";
-import NavBar from "@/components/Home_4_com/NavBar";
+import Footer from "@/components/Home_com/Footer";
+import NavBar from "@/components/Home_com/NavBar";
 
 
 export default function Blog() {
