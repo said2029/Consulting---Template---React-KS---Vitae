@@ -5,9 +5,9 @@ const variantsUp = {
   show: { opacity: 1, y: 0 },
 };
 
-const CoreValuesComponent = ({images}:{images:Array<string>}) => {
+const CoreValuesComponent = ({ images }: { images: Array<string> }) => {
   const [hover, setHover] = useState(false);
-  const angleStep = 360 / images.length
+  const angleStep = 360 / images.length;
   return (
     <div
       onMouseEnter={() => {
@@ -16,7 +16,9 @@ const CoreValuesComponent = ({images}:{images:Array<string>}) => {
       onMouseLeave={() => {
         setHover(false);
       }}
-      className={`w-28 h-28 rounded-full bg-red-500 ${hover&&"bg-red-500/75"} flex justify-center items-center relative`}
+      className={`w-28 h-28 rounded-full bg-red-500 ${
+        hover && "bg-red-500/75"
+      } flex justify-center items-center relative`}
     >
       {images.map((_, index) => (
         <motion.div
@@ -38,11 +40,10 @@ const CoreValuesComponent = ({images}:{images:Array<string>}) => {
             transform: `rotate(${index * angleStep}deg) translate(0, 0px)`,
           }}
         >
-          <p>bbbb</p>
           <img
             src={images[index]}
             alt="service"
-            className="w-full h-full overflow-hidden"
+            className="w-full h-full object-cover overflow-hidden"
           />
         </motion.div>
       ))}
@@ -83,7 +84,17 @@ export default function Services_Section() {
           viewport={{ once: true }}
           className="py-8 flex flex-col gap-3 items-center"
         >
-          <CoreValuesComponent images={["","","","","","",""]}/>
+          <CoreValuesComponent
+            images={[
+              "/assets/img/all-images/case-img14.png",
+              "/assets/img/all-images/case-img21.png",
+              "/assets/img/all-images/case-img20.png",
+              "/assets/img/all-images/post-img1.png",
+              "/assets/img/all-images/post-img2.png",
+              "/assets/img/all-images/blog-img10.png",
+              "/assets/img/all-images/blog-img5.png",
+            ]}
+          />
           <p className="font-thin text-xl">
             Business strategy and planning for scalable growth
           </p>
@@ -97,7 +108,17 @@ export default function Services_Section() {
           viewport={{ once: true }}
           className="py-8 flex flex-col gap-3 items-center"
         >
-          <CoreValuesComponent  images={["","","","","","",""]}/>
+          <CoreValuesComponent
+            images={[
+              "/assets/img/all-images/case-img14.png",
+              "/assets/img/all-images/blog-img10.png",
+              "/assets/img/all-images/case-img20.png",
+              "/assets/img/all-images/case-img21.png",
+              "/assets/img/all-images/post-img2.png",
+              "/assets/img/all-images/blog-img5.png",
+              "/assets/img/all-images/post-img1.png",
+            ]}
+          />
           <p className="font-thin text-xl">
             Transform digitally to keep your brand visible and engaging
           </p>
@@ -110,7 +131,17 @@ export default function Services_Section() {
           viewport={{ once: true }}
           className="py-8 flex flex-col gap-3 items-center"
         >
-          <CoreValuesComponent  images={["","","","","","",""]}/>
+          <CoreValuesComponent
+            images={[
+              "/assets/img/all-images/case-img21.png",
+              "/assets/img/all-images/case-img14.png",
+              "/assets/img/all-images/post-img2.png",
+              "/assets/img/all-images/case-img20.png",
+              "/assets/img/all-images/post-img1.png",
+              "/assets/img/all-images/blog-img5.png",
+              "/assets/img/all-images/blog-img10.png",
+            ]}
+          />
 
           <p className="font-thin text-xl">
             Online and Offline sales and Revenue management solution
