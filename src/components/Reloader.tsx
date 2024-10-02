@@ -32,7 +32,7 @@ export default function Reloader() {
           animate="animate"
           transition={{
             duration: 0.8,
-            delay: name.length * 0.25,
+            delay: name.length * 0.13,
             ease: "easeInOut",
           }}
           onAnimationComplete={() => {
@@ -42,10 +42,7 @@ export default function Reloader() {
             isNight ? "bg-black" : "bg-white"
           } flex justify-center items-center`}
         >
-          <div
-
-            className="h-fit overflow-hidden"
-          >
+          <div className="h-fit overflow-hidden">
             <div
               className={`font-bold  ${
                 isNight ? "text-white" : "text-black"
@@ -61,7 +58,7 @@ export default function Reloader() {
                       initial: { y: 200 },
                       animate: { y: 0 },
                     }}
-                    transition={{ duration: 1, delay: 0.1 * i }}
+                    transition={{ duration: 1, delay: 0.04 * i }}
                   >
                     {c}
                   </motion.div>

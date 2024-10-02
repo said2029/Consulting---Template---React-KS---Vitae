@@ -20,6 +20,11 @@ const CoreValuesComponent = ({ images }: { images: Array<string> }) => {
         hover && "bg-red-500/75"
       } flex justify-center items-center relative`}
     >
+      <img
+        className="w-full h-full object-cover rounded-full"
+        src={images[0]}
+        alt=""
+      />
       {images.map((_, index) => (
         <motion.div
           variants={{
@@ -111,10 +116,10 @@ export default function Services_Section() {
         >
           <CoreValuesComponent
             images={[
-              "/assets/img/all-images/case-img14.png",
-              "/assets/img/all-images/blog-img10.png",
               "/assets/img/all-images/case-img20.png",
               "/assets/img/all-images/case-img21.png",
+              "/assets/img/all-images/case-img14.png",
+              "/assets/img/all-images/blog-img10.png",
               "/assets/img/all-images/post-img2.png",
               "/assets/img/all-images/blog-img5.png",
               "/assets/img/all-images/post-img1.png",

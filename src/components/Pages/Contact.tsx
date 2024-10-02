@@ -1,10 +1,7 @@
-import { useState } from "react";
 import Footer from "../Home_com/Footer";
 import NavBar from "../Home_com/NavBar";
-import { motion } from "framer-motion";
 export default function Contact() {
   // show popup
-  const [popup, setPopup] = useState(true);
   return (
     <div className="bg-[#c63b1e]">
       {/*===== PRELOADER STARTS =======*/}
@@ -276,7 +273,7 @@ export default function Contact() {
       {/*===== JS SCRIPT LINK =======*/}
 
       {/* modil */}
-      {popup && (
+      {/* {popup && (
         <div className="fixed hidden md:flex z-50 top-0 bg-black/70 h-[100vh] w-full justify-center items-center">
           <motion.div
             variants={{
@@ -308,7 +305,7 @@ export default function Contact() {
             </motion.button>
           </motion.div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
