@@ -18,21 +18,40 @@ export default function Hero_Section() {
         variants={variantsPup}
         initial="initial"
         animate="animate"
-        transition={{ duration: 1}}
-        className="h1 !font-normal max-w-4xl scale-y-150  text-center leading-tight font-['Bungee']"
+        transition={{ duration: 1 }}
+        className="flex max-w-4xl scale-y-150 justify-center text-center flex-wrap"
       >
-        Empowering Businesses to Thrive
+        {"Empowering Businesses to Thrive".split("").map((world, i) => {
+          if (world === " ") return <span className="w-4"></span>;
+          return (
+            <motion.span
+              key={i + world}
+              variants={variantsPup}
+              initial="initial"
+              animate="animate"
+              transition={{
+                duration: 0.7,
+                ease: "linear",
+                delay: 0.1 * i,
+              }}
+              className="h1 !font-normal leading-tight font-['Bungee']"
+            >
+              {world}
+            </motion.span>
+          );
+        })}
       </motion.h1>
       <motion.p
         variants={variantsPup}
         initial="initial"
         animate="animate"
-        transition={{ duration: 1}}
+        transition={{ duration: 1 }}
         className="text-[24px]"
       >
-        Tailored strategies and actionable insights to drive growth and success.
+        Tailored just for you, crafted for growth—success at every step!
       </motion.p>
-      <motion.button
+      <motion.a
+        href="/Get_Start"
         variants={variantsPup}
         initial="initial"
         animate="animate"
@@ -40,14 +59,14 @@ export default function Hero_Section() {
         className="shadow_Button text-white rounded-full py-4 px-16 shadow-inner "
       >
         Get Started
-      </motion.button>
+      </motion.a>
       <motion.span
         variants={variantsPup}
         initial="initial"
         animate="animate"
-        transition={{ duration: 1}}
+        transition={{ duration: 1 }}
       >
-        Available now
+        Partnered with
       </motion.span>
 
       <div className="shadow_Button w-full h-[5.4rem] rounded-full flex items-center justify-center overflow-hidden">
@@ -62,8 +81,8 @@ export default function Hero_Section() {
           className="w-fit gap-10 flex items-center"
         >
           {Array.from({ length: 29 }).map(() =>
-            brandImages.map((image,i) => (
-              <div key={image+i}>
+            brandImages.map((image, i) => (
+              <div key={image + i}>
                 <span className="bg-red-400 rounded-full w-3 h-3"></span>
                 <div className="h-fit w-[6rem] flex items-center">
                   <img

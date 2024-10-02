@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 export default function Reloader() {
-  const name = "Consulting";
+  const name = "Want to improve your sales?";
   const [isLoading, setLoading] = useState(true);
   const [isNight, SetisNight] = useState(true);
   useEffect(() => {

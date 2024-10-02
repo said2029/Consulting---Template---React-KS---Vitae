@@ -1,11 +1,56 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 const variantsUp = {
   initial: { opacity: 0, y: 200 },
   show: { opacity: 1, y: 0 },
 };
+
+const CoreValuesComponent = ({images}:{images:Array<string>}) => {
+  const [hover, setHover] = useState(false);
+  const angleStep = 360 / images.length
+  return (
+    <div
+      onMouseEnter={() => {
+        setHover(true);
+      }}
+      onMouseLeave={() => {
+        setHover(false);
+      }}
+      className={`w-28 h-28 rounded-full bg-red-500 ${hover&&"bg-red-500/75"} flex justify-center items-center relative`}
+    >
+      {images.map((_, index) => (
+        <motion.div
+          variants={{
+            initial: {
+              opacity: 0,
+              transform: `rotate(${index * angleStep}deg) translate(0, 0px)`,
+            },
+            animate: {
+              opacity: 1,
+              transform: `rotate(${index * angleStep}deg) translate(0, -110px)`,
+            },
+          }}
+          initial="initial"
+          animate={hover ? "animate" : "initial"}
+          key={index}
+          className="absolute w-20 h-20 bg-teal-500 rounded-full transform overflow-hidden"
+          style={{
+            transform: `rotate(${index * angleStep}deg) translate(0, 0px)`,
+          }}
+        >
+          <img
+            src={images[index]}
+            alt="service"
+            className="w-full h-full overflow-hidden"
+          />
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 export default function Services_Section() {
   return (
-    <div className="flex justify-center w-screen overflow-hidden text-center items-center flex-col mt-10 px-6 lg:px-20 xl:px-48">
+    <div className="flex justify-center w-screen overflow-hidden text-center items-center flex-col py-7 mt-10 px-6 lg:px-20 xl:px-48">
       <motion.h2
         variants={variantsUp}
         initial="initial"
@@ -37,11 +82,12 @@ export default function Services_Section() {
           viewport={{ once: true }}
           className="py-8 flex flex-col gap-3 items-center"
         >
-          <div className="w-28 h-28 rounded-full bg-red-500"></div>
+          <CoreValuesComponent images={["","","","","","",""]}/>
           <p className="font-thin text-xl">
-            Business strategy and planning for sustainable growth
+            Business strategy and planning for scalable growth
           </p>
         </motion.div>
+
         <motion.div
           variants={variantsUp}
           initial="initial"
@@ -50,9 +96,9 @@ export default function Services_Section() {
           viewport={{ once: true }}
           className="py-8 flex flex-col gap-3 items-center"
         >
-          <div className="w-28 h-28 rounded-full bg-red-500"></div>
+          <CoreValuesComponent  images={["","","","","","",""]}/>
           <p className="font-thin text-xl">
-            Digital transformation to keep your business competitive
+            Transform digitally to keep your brand visible and engaging
           </p>
         </motion.div>
         <motion.div
@@ -63,9 +109,10 @@ export default function Services_Section() {
           viewport={{ once: true }}
           className="py-8 flex flex-col gap-3 items-center"
         >
-          <div className="w-28 h-28 rounded-full bg-red-500"></div>
+          <CoreValuesComponent  images={["","","","","","",""]}/>
+
           <p className="font-thin text-xl">
-            Financial advisory and solutions for optimized performance
+            Online and Offline sales and Revenue management solution
           </p>
         </motion.div>
       </div>

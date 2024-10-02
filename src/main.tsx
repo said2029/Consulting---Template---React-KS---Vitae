@@ -9,7 +9,7 @@ import Blog from "./components/Pages/blogs/blog.tsx";
 import WebFont from "webfontloader";
 import MouseEffect from "./components/globle/MouseEffect.tsx";
 import Home_4 from "./components/Pages/Home_4.tsx";
-import Reloader from "./components/Reloader.tsx";
+import Get_started from "./components/Pages/get_started.tsx";
 
 export default function App() {
   // const lenis = new Lenis();
@@ -42,11 +42,12 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/service" element={<Service_page />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/Get_Start" element={<Get_started />} />
           </Route>
         </Routes>
       </BrowserRouter>
       {/* loading */}
-      <Reloader />
+      {/* <Reloader /> */}
 
       {/*  mouse Curser */}
       <MouseEffect />
