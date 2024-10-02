@@ -55,11 +55,12 @@ export default function Get_started() {
         {steps[step].text}
       </Link>
 
-      <a
+      <Link
+        to={"/contact"}
         className={`shadow_Button block md:hidden min-w-80 absolute text-white rounded-full py-4 px-16 shadow-inner transform m-auto`}
       >
         Click here to grow!
-      </a>
+      </Link>
     </div>
   );
 }
