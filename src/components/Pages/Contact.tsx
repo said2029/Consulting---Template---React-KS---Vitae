@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Footer from "../Home_4_com/Footer";
 import NavBar from "../Home_4_com/NavBar";
-
+import { motion } from "framer-motion";
 export default function Contact() {
+  // show popup
+  const [popup, setPopup] = useState(true);
   return (
     <div className="bg-[#c63b1e]">
       {/*===== PRELOADER STARTS =======*/}
@@ -51,6 +54,9 @@ export default function Contact() {
                   Home <i className="fa-solid fa-angle-right" />{" "}
                   <span>Contact Us</span>
                 </a>
+                <h1 className="text-white !text-4xl mt-4 font-extralight">
+                  Getting sales is much more difficult then clicking this button
+                </h1>
               </div>
             </div>
           </div>
@@ -58,7 +64,7 @@ export default function Contact() {
       </div>
       {/*===== HERO AREA ENDS =======*/}
       {/* ===== CONTACT AREA STARTS =======*/}
-    <div className="contact-main-inner-area sp1">
+      <div className="contact-main-inner-area sp1">
         <div className="container_1">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -82,7 +88,9 @@ export default function Contact() {
                     </div>
                     <div className="content">
                       <p className="!text-white">Phone Number</p>
-                      <a className="!text-white" href="tel:123-456-7890">123-456-7890</a>
+                      <a className="!text-white" href="tel:123-456-7890">
+                        123-456-7890
+                      </a>
                     </div>
                   </div>
                   <div className="phone-number   m-0">
@@ -91,7 +99,12 @@ export default function Contact() {
                     </div>
                     <div className="content">
                       <p className="!text-white">Email Address</p>
-                      <a className="!text-white" href="mailto:Infoseoc@gmail.com">Infoseoc@gmail.com</a>
+                      <a
+                        className="!text-white"
+                        href="mailto:Infoseoc@gmail.com"
+                      >
+                        Infoseoc@gmail.com
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -261,6 +274,41 @@ export default function Contact() {
 
       {/*===== FOOTER AREA ENDS =======*/}
       {/*===== JS SCRIPT LINK =======*/}
+
+      {/* modil */}
+      {popup && (
+        <div className="fixed hidden md:flex z-50 top-0 bg-black/70 h-[100vh] w-full justify-center items-center">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 300 },
+              visible: { opacity: 1, scale: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate="visible"
+            transition={{ type: "spring", duration: 1 }}
+            className="w-fit h-fit py-8 px-10 rounded-2xl bg-[#db471e] text-white flex justify-center flex-col items-center gap-4"
+          >
+            <h1 className="text-2xl font-bold text-center">
+              Getting sales is much more difficult then clicking this button
+            </h1>
+            <motion.button
+              onClick={() => {
+                setPopup(false);
+              }}
+              variants={{
+                hidden: { opacity: 0, y: 300 },
+                visible: { opacity: 1, scale: 1, y: 0 },
+              }}
+              initial="hidden"
+              animate="visible"
+              transition={{ type: "spring", duration: 1 }}
+              className="shadow_Button text-white font-bold py-3 px-10 rounded-full"
+            >
+              Contact Us Now
+            </motion.button>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }

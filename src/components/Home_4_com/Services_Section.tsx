@@ -33,11 +33,12 @@ const CoreValuesComponent = ({images}:{images:Array<string>}) => {
           initial="initial"
           animate={hover ? "animate" : "initial"}
           key={index}
-          className="absolute w-20 h-20 bg-teal-500 rounded-full transform overflow-hidden"
+          className="absolute w-20 h-20 bg-orange-400 rounded-full flex items-center justify-center transform overflow-hidden"
           style={{
             transform: `rotate(${index * angleStep}deg) translate(0, 0px)`,
           }}
         >
+          <p>bbbb</p>
           <img
             src={images[index]}
             alt="service"

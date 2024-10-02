@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const brandImages = [
   "brand6.png",
@@ -11,36 +13,52 @@ const variantsPup = {
   initial: { opacity: 0, y: 45 },
   animate: { opacity: 1, y: 0 },
 };
+
+const HeroEmpowe = () => {
+  const [hover, setHover] = useState(false);
+  return (
+    <motion.h1
+      variants={variantsPup}
+      initial="initial"
+      animate="animate"
+      transition={{ duration: 1 }}
+      onMouseEnter={() => {
+        setHover(true);
+      }}
+      onMouseLeave={() => {
+        setHover(false);
+      }}
+      className="flex max-w-4xl scale-y-150 justify-center text-center flex-wrap"
+    >
+      {"Empowering Businesses to Thrive".split("").map((world, i) => {
+        if (world === " ") return <span key={world + i} className="w-4"></span>;
+        return (
+          <motion.span
+            key={i + world}
+            variants={{
+              initial: { y: 0 },
+              animate: { y: [0, -50, 0] },
+            }}
+            initial="initial"
+            animate={hover ? "animate" : "initial"}
+            transition={{
+              duration: 0.2,
+              ease: "easeOut",
+              delay: 0.1 * i,
+            }}
+            className="h1 !font-normal leading-tight font-['Bungee']"
+          >
+            {world}
+          </motion.span>
+        );
+      })}
+    </motion.h1>
+  );
+};
 export default function Hero_Section() {
   return (
     <div className="flex items-center w-screen overflow-hidden mt-4 px-6  lg:px-20 xl:px-32 flex-col gap-6 text-center">
-      <motion.h1
-        variants={variantsPup}
-        initial="initial"
-        animate="animate"
-        transition={{ duration: 1 }}
-        className="flex max-w-4xl scale-y-150 justify-center text-center flex-wrap"
-      >
-        {"Empowering Businesses to Thrive".split("").map((world, i) => {
-          if (world === " ") return <span className="w-4"></span>;
-          return (
-            <motion.span
-              key={i + world}
-              variants={variantsPup}
-              initial="initial"
-              animate="animate"
-              transition={{
-                duration: 0.7,
-                ease: "linear",
-                delay: 0.1 * i,
-              }}
-              className="h1 !font-normal leading-tight font-['Bungee']"
-            >
-              {world}
-            </motion.span>
-          );
-        })}
-      </motion.h1>
+      <HeroEmpowe />
       <motion.p
         variants={variantsPup}
         initial="initial"
@@ -50,16 +68,12 @@ export default function Hero_Section() {
       >
         Tailored just for you, crafted for growth—success at every step!
       </motion.p>
-      <motion.a
-        href="/Get_Start"
-        variants={variantsPup}
-        initial="initial"
-        animate="animate"
-        transition={{ duration: 1 }}
+      <Link
+        to="/get_started"
         className="shadow_Button text-white rounded-full py-4 px-16 shadow-inner "
       >
         Get Started
-      </motion.a>
+      </Link>
       <motion.span
         variants={variantsPup}
         initial="initial"

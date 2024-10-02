@@ -22,24 +22,23 @@ export default function Reloader() {
         <motion.div
           variants={{
             initial: {
-              maskPosition: `center center`,
-              maskSize: `0.1%`,
+              y: 0,
             },
             animate: {
-              maskSize: `200%`,
+              y: "-100vh",
             },
           }}
           initial="initial"
           animate="animate"
           transition={{
             duration: 0.8,
-            delay: name.length / 3,
+            delay: name.length * 0.25,
             ease: "easeInOut",
           }}
           onAnimationComplete={() => {
             setLoading(false);
           }}
-          className={`w-screen Loading_Mask fixed z-[9999] top-0 h-[100vh] ${
+          className={`w-screen fixed z-[9999] top-0 h-[100vh] ${
             isNight ? "bg-black" : "bg-white"
           } flex justify-center items-center`}
         >
@@ -48,27 +47,30 @@ export default function Reloader() {
               initial: { width: "content-fit" },
               animate: { width: 0 },
             }}
-            transition={{ duration: 0.5, delay: name.length / 3.5 }}
+            transition={{ duration: 0.5, delay: name.length * 0.2 }}
             className="h-fit overflow-hidden"
           >
             <div
               className={`font-bold  ${
                 isNight ? "text-white" : "text-black"
-              } f text-3xl md:text-5xl lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex uppercase`}
+              } f text-3xl md:text-5xl text-center lg:text-8xl object-cover text-transparent w-full to-primary-foreground flex justify-center items-center uppercase`}
             >
-              {name.split("").map((c, i) => (
-                <motion.div
-                  key={i}
-                  className="block"
-                  variants={{
-                    initial: { y: 200 },
-                    animate: { y: 0 },
-                  }}
-                  transition={{ duration: 1, delay: 0.1 * i }}
-                >
-                  {c}
-                </motion.div>
-              ))}
+              {name.split("").map((c, i) => {
+                if (c === " ") return <span className="w-7" />;
+                return (
+                  <motion.div
+                    key={i}
+                    className="block"
+                    variants={{
+                      initial: { y: 200 },
+                      animate: { y: 0 },
+                    }}
+                    transition={{ duration: 1, delay: 0.1 * i }}
+                  >
+                    {c}
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         </motion.div>

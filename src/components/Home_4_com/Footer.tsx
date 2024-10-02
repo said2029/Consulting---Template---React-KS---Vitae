@@ -1,32 +1,34 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 const variantsPup = {
   initial: { opacity: 0, y: 45 },
   animate: { opacity: 1, y: 0 },
 };
 function Footer() {
   return (
-    <div className="w-full relative  bg-[#c63b1e]">
-      <div className="w-full relative h-[500px] grid grid-cols-3 overflow-hidden !text-white bg-[#c63b1e]">
-        <div className="my-auto col-span-2 w-full hidden lg:flex flex-col items-center justify-center gap-7 ">
+    <div className="w-full relative bg-[#c63b1e]">
+      <div className="w-full relative h-[500px] grid grid-cols-3 overflow-hidden !text-white bg-black">
+        <div className="my-auto col-span-2 w-full h-full hidden relative lg:flex flex-col items-center justify-center gap-7 ">
+          <div className="bg-black opacity-65 absolute top-0 w-full h-full ">
+            <video autoPlay muted loop className="w-full h-full object-cover">
+              <source src="./assets/video.mp4" type="video/mp4"></source>
+            </video>
+          </div>
           <motion.h1
             variants={variantsPup}
             initial="initial"
             whileInView={"animate"}
             transition={{ duration: 1 }}
-            className="text-8xl font-bold text-black "
+            className="text-8xl z-50 font-bold text-black "
           >
-            LOGO
+            <img className="w-72" src="/assets/img/logo.png" />
           </motion.h1>
-          <motion.a
-            href="/contact"
-            variants={variantsPup}
-            initial="initial"
-            whileInView={"animate"}
-            transition={{ duration: 1 }}
-            className="shadow_Button hover:scale-150 cursor-pointer transition-all text-white rounded-full py-4 px-16 shadow-inner "
+          <Link
+            to="/get_started"
+            className="shadow_Button z-50 hover:scale-105 cursor-pointer transition-all text-white rounded-full py-4 px-16 shadow-inner "
           >
             Get Started
-          </motion.a>
+          </Link>
         </div>
 
         <div className="w-full col-span-full lg:col-span-1 bg-black py-10 flex justify-between flex-col gap-6 px-2 md:!px-12">
