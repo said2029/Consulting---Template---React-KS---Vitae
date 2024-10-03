@@ -1,6 +1,25 @@
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import Footer from "../Home_com/Footer";
 import NavBar from "../Home_com/NavBar";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/firebase/firebase";
 export default function Contact() {
+  const ref = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState({});
+
+  const handleChange = (e: ChangeEvent<T>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const sumbit = async (data: FormEvent) => {
+    data.preventDefault();
+    await addDoc(collection(db, "contact"), {
+      ...formData,
+      createAt: Date.now(),
+    });
+    ref.current?.reset();
+  };
   // show popup
   return (
     <div className="bg-[#c63b1e]">
@@ -136,30 +155,65 @@ export default function Contact() {
             <div className="col-lg-5">
               <div className="contact-form-area">
                 <h4>Get In Touch</h4>
-                <div className="row">
+                <form
+                  ref={ref}
+                  onSubmit={sumbit}
+                  className="row"
+                  encType="multipart/form-data"
+                >
                   <div className="col-lg-12">
                     <div className="input-area">
-                      <input type="text" placeholder="First Name" />
+                      <input
+                        onChange={handleChange}
+                        required
+                        name="first_name"
+                        type="text"
+                        placeholder="First Name"
+                      />
                     </div>
                   </div>
                   <div className="col-lg-12">
                     <div className="input-area">
-                      <input type="text" placeholder="Last Name" />
+                      <input
+                        onChange={handleChange}
+                        required
+                        name="last_Name"
+                        type="text"
+                        placeholder="Last Name"
+                      />
                     </div>
                   </div>
                   <div className="col-lg-12">
                     <div className="input-area">
-                      <input type="email" placeholder="Email Address" />
+                      <input
+                        onChange={handleChange}
+                        required
+                        name="Email"
+                        type="email"
+                        placeholder="Email Address"
+                      />
                     </div>
                   </div>
                   <div className="col-lg-12">
                     <div className="input-area">
-                      <input type="number" placeholder="Phone Number" />
+                      <input
+                        onChange={handleChange}
+                        required
+                        type="number"
+                        name="number"
+                        placeholder="Phone Number"
+                      />
                     </div>
                   </div>
                   <div className="col-lg-12">
                     <div className="input-area">
-                      <textarea placeholder="Your Message" defaultValue={""} />
+                      <textarea
+                        name="message"
+                        onChange={handleChange}
+                        required
+                        placeholder="Your Message"
+                        defaultValue={""}
+                      />
                     </div>
                   </div>
                   <div className="col-lg-12">
@@ -172,7 +226,7 @@ export default function Contact() {
                       </button>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>

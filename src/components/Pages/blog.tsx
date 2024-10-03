@@ -1,28 +1,13 @@
 import Footer from "@/components/Home_com/Footer";
 import NavBar from "@/components/Home_com/NavBar";
 import { db } from "@/firebase/firebase";
+import { useGetBlogs } from "@/hooks/Get_blogs";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Blog() {
-  const [blog, setBlogs] = useState([]);
-
-  const Get_blogs = async () => {
-    try {
-      await getDocs(collection(db, "blogs")).then((data) => {
-        const newData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-        setBlogs(newData);
-        console.log(newData);
-      });
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  useEffect(() => {
-    Get_blogs();
-  }, []);
+  const {blog} = useGetBlogs({ limit_value: 10 });
 
   return (
     <>
@@ -107,12 +92,13 @@ export default function Blog() {
                           </li>
                         </ul>
                       </div> */}
-                      <h2>
-                       {blog[0]?.title}
-                      </h2>
+                      <h2>{blog[0]?.title}</h2>
                       <div className="space8" />
                       <div className="btn-area">
-                        <Link to={`/blog/${blog[0]?.id}`} className="header-btn1">
+                        <Link
+                          to={`/blog/${blog[0]?.id}`}
+                          className="header-btn1"
+                        >
                           Read Full Story{" "}
                           <span>
                             <i className="fa-solid fa-arrow-right" />
@@ -138,7 +124,7 @@ export default function Blog() {
         <div className="container_1">
           <div className="row">
             {/* blogs */}
-            {blog.map((blog:any, index) => (
+            {blog.map((blog: any, index) => (
               <div key={index} className="col-lg-4 col-md-6">
                 <div className="blog-author-boxarea">
                   <div className="img1">
@@ -161,12 +147,8 @@ export default function Blog() {
                       </li>
                     </ul>
                   </div> */}
-                    <Link to={`/blog/${blog?.id}`}>
-                      {blog?.title}
-                    </Link>
-                    <p className="line-clamp-3">
-                      {blog?.content}
-                    </p>
+                    <Link to={`/blog/${blog?.id}`}>{blog?.title}</Link>
+                    <p className="line-clamp-3">{blog?.short_des}</p>
                     <Link to={`/blog/${blog?.id}`} className="readmore">
                       Read More <i className="fa-solid fa-arrow-right" />
                     </Link>

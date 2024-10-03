@@ -12,7 +12,11 @@ import Home from "./components/Pages/Home.tsx";
 import Get_started from "./components/Pages/get_started.tsx";
 import Reloader from "./components/Reloader.tsx";
 import Blog_detals from "./components/Pages/blog_detals.tsx";
+import Admin from "./components/Pages/admin.tsx";
+import 'react-quill/dist/quill.snow.css';
+import { ToastContainer } from 'react-toastify';
 // import Lenis from "lenis";
+
 
 export default function App() {
   // const lenis = new Lenis();
@@ -45,6 +49,7 @@ export default function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<Blog_detals />} />
             <Route path="/get_started" element={<Get_started />} />
+            <Route path="/admin" element={<Admin />} />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -60,5 +65,6 @@ export default function App() {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
+    <ToastContainer />
   </StrictMode>
 );
