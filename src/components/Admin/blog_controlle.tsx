@@ -57,7 +57,7 @@ export default function Blog_controlle() {
     if (formState == "Create") {
       await addDoc(collection(db, "blogs"), { ...body, createAt: Date.now() });
     } else if (formState == "Update") {
-      await setDoc(doc(db, "blogs", data.id), body);
+      await setDoc(doc(db, "blogs", data?.id), body);
     }
 
     await Get_blogs();
@@ -72,7 +72,7 @@ export default function Blog_controlle() {
   };
 
   return (
-    <div className="w-full px-10 pt-10">
+    <div className="w-full px-2 sm:!px-10 pt-10">
       <div className="flex justify-between">
         <h1 className="font-bold text-2xl">Blog</h1>
         <button
@@ -93,7 +93,7 @@ export default function Blog_controlle() {
         </button>
       </div>
 
-      <div className="w-full mt-4 ">
+      <div className="w-full mt-4">
         <Table>
           <TableHeader>
             <TableRow className="bg-[#c63b1e] !rounded-3xl">
@@ -112,19 +112,14 @@ export default function Blog_controlle() {
                   className="cursor-pointer"
                   onClick={() => {
                     setFormState("Update");
-                    setData({
-                      id: b?.id,
-                      title: b?.title,
-                      content: b?.content,
-                      image: b?.image,
-                      short_des: b?.short_des,
-                    });
+                    setData({ ...b });
                     dialogButton.current?.click();
                   }}
                 >
                   <FilePenLine />{" "}
                 </TableCell>
                 <TableCell
+                className="cursor-pointer"
                   onClick={() => {
                     deleteBlog(b?.id);
                   }}

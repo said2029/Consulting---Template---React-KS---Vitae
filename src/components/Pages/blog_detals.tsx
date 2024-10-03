@@ -320,6 +320,7 @@ export default function Blog_detals() {
         className="about-header-area !text-white bg-[#c63b1e]"
         style={{
           backgroundRepeat: "no-repeat",
+          backgroundImage:`url(${_blog.image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -338,7 +339,7 @@ export default function Blog_detals() {
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="about-inner-header heading9 text-center ">
-                <h1 className="!text-white">Blog Details</h1>
+                <h1 className="!text-white drop-shadow-2xl shadow-black" >{_blog?.title}</h1>
                 <a className="!text-white" href="index.html">
                   Home <i className="fa-solid fa-angle-right" />{" "}
                   <span>Our Blog</span>
@@ -369,7 +370,7 @@ export default function Blog_detals() {
         <div className="container_1">
           <div className="row">
             {/* blogs */}
-            {blog.map((blog: any, index) => (
+            {blog?.map((blog: any, index) => (
               <div key={index} className="col-lg-4 col-md-6">
                 <div className="blog-author-boxarea">
                   <div className="img1">

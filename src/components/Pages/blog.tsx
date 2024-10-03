@@ -5,9 +5,10 @@ import { useGetBlogs } from "@/hooks/Get_blogs";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../ui/button";
 
 export default function Blog() {
-  const {blog} = useGetBlogs({ limit_value: 10 });
+  const { blog, loadNextPage } = useGetBlogs({ limit_value: 10 });
 
   return (
     <>
@@ -119,12 +120,11 @@ export default function Blog() {
           </div>
         </div>
       </div>
-
       <div className="blog1-scetion-area sp1 bg2">
         <div className="container_1">
           <div className="row">
             {/* blogs */}
-            {blog.map((blog: any, index) => (
+            {blog?.map((blog: any, index) => (
               <div key={index} className="col-lg-4 col-md-6">
                 <div className="blog-author-boxarea">
                   <div className="img1">
@@ -158,6 +158,16 @@ export default function Blog() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="w-full flex justify-center items-center mt-12 transition-all opacity-70 hover:opacity-100">
+          <Button
+            className="text-white font-bold rounded-full text-3xl py-4 "
+            onClick={() => {
+              loadNextPage();
+            }}
+          >
+            More
+          </Button>
         </div>
       </div>
       {/*===== BLOG AREA ENDS =======*/}
