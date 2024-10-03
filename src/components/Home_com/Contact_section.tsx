@@ -128,7 +128,7 @@ export default function Contact_Section() {
         className="flex flex-col bg-[#c63b1e] sticky top-0 w-full h-[100vh] items-center justify-center text-black pt-[50px]"
       >
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 text-[30px] lg:text-[32px]">
-          <section className="h-ful flex flex-col relative justify-between w-full px-3 py-5">
+          <section className="h-ful flex gap-7 lg:gap-0 flex-col relative justify-between w-full px-3 py-5">
             <div className="">
               <h1 className="text-white text-xl font-semibold opacity-30 ">
                 . Contact
@@ -139,7 +139,7 @@ export default function Contact_Section() {
               </p>
             </div>
 
-            <p className="text-xl lg:text-2xl font-semibold max-w-2xl">
+            <p className="text-xl lg:text-2xl font-semibold max-w-2xl opacity-70">
               We do the whole enchilada. Full brand experiences. Highly
               functional, killer design, clear messaging. So that users will
               know what to do. Just by looking. Intuitive design, that s what
@@ -147,7 +147,7 @@ export default function Contact_Section() {
             </p>
           </section>
           {/* Animation move mouse component is in top, hover and ctrl + enter to open */}
-          <section className="h-full relative w-full flex justify-center items-center">
+          <section className="h-full relative w-full flex justify-center items-center ">
             <MouseEffect Ref_perantEffect={ref2} />
             <hr className="w-full border-none bg-white h-[2px]  absolute" />
             <hr className="h-full border-none top-0 bg-white w-[2px] absolute" />

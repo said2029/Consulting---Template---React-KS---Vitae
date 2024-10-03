@@ -11,19 +11,20 @@ import MouseEffect from "./components/globle/MouseEffect.tsx";
 import Home from "./components/Pages/Home.tsx";
 import Get_started from "./components/Pages/get_started.tsx";
 import Reloader from "./components/Reloader.tsx";
-import Lenis from "lenis";
+import Blog_detals from "./components/Pages/blog_detals.tsx";
+// import Lenis from "lenis";
 
 export default function App() {
-  const lenis = new Lenis();
+  // const lenis = new Lenis();
 
   useEffect(() => {
     // smoth scrolle
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    // function raf(time: number) {
+    //   lenis.raf(time);
+    //   requestAnimationFrame(raf);
+    // }
 
-    requestAnimationFrame(raf);
+    // requestAnimationFrame(raf);
     // font
     WebFont.load({
       google: {
@@ -42,6 +43,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/service" element={<Service_page />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<Blog_detals />} />
             <Route path="/get_started" element={<Get_started />} />
           </Route>
         </Routes>

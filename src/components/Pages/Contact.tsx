@@ -61,7 +61,7 @@ export default function Contact() {
       </div>
       {/*===== HERO AREA ENDS =======*/}
       {/* ===== CONTACT AREA STARTS =======*/}
-      <div className="contact-main-inner-area sp1">
+      <div className="contact-main-inner-area sp1 px-2">
         <div className="container_1">
           <div className="row align-items-center">
             <div className="col-lg-6">

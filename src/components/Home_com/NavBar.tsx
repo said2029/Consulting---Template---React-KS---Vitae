@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <div className="sticky w-screen overflow-hidden top-0 z-50 bg-[rgb(198,59,30)] !text-white">
-      <div className="flex w-screen flex-wrap md:flex-nowrap justify-center gap-1 py-2 items-center px-4">
-        <Link to="/" className="text-xl w-fit h-12 text-black font-bold font-[Bungee]">
+    <div className="sticky w-screen overflow-hidden top-0 z-50 bg-[#c63b1e] !text-white">
+      <div className="flex w-screen flex-wrap md:flex-nowrap justify-center gap-1 py-1 items-center px-4">
+        <Link to="/" className="text-xl w-[190px] h-12 max-h-12 text-black font-bold font-[Bungee]">
           <img className="w-full h-full object-cover" src="/assets/img/logo.png"/>
         </Link>
         {/* <div className="flex items-center justify-center sm:gap-3 text-black  h-full">

@@ -26,9 +26,9 @@ const HeroWorld = ({ world, index }: { world: string; index: number }) => {
         setHover(false);
       }}
     >
-      {world.split("").map((c, index) => (
+      {world.split("").map((c, index2) => (
         <motion.span
-          key={index + c}
+          key={index2 + c}
           variants={{
             initial: { y: 0 },
             animate: { y: [0, -50, 0] },
@@ -38,7 +38,7 @@ const HeroWorld = ({ world, index }: { world: string; index: number }) => {
           transition={{
             duration: 0.4,
             ease: "easeInOut",
-            delay: 0.1 * index,
+            delay: 0.1 * index2,
           }}
           className="text-4xl sm:text-6xl xl:text-6xl !font-normal inline-block leading-tight font-['Bungee']"
         >
@@ -56,7 +56,7 @@ const HeroEmpowe = () => {
       initial="initial"
       animate="animate"
       transition={{ duration: 1 }}
-      className="flex max-w-4xl scale-y-150 gap-2 justify-center text-center flex-wrap"
+      className="flex max-w-4xl scale-y-150 gap-3 justify-center text-center flex-wrap"
     >
       {"Empowering Businesses to Thrive".split(" ").map((world, i) => {
         return <HeroWorld index={i} world={world} />;

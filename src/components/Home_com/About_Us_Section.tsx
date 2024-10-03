@@ -19,15 +19,16 @@ export default function About_Us_Section() {
   });
 
   const sm = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const md = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  // const md = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const lg = useTransform(scrollYProgress, [0, 1], [0, -140]);
 
   return (
     <div
       ref={ref}
-      className="container_1 relative w-screen overflow-hidden h-fit place-content-center lg:h-[500px] flex flex-col lg:flex-row gap-10 lg:gap-36 mt-28"
+      className="container_1 relative w-screen overflow-x-hidden h-fit place-content-center lg:h-[500px] flex flex-col lg:flex-row gap-10 lg:gap-10  mt-28"
     >
-      <section className="grid grid-cols-2 gap-2 w-fit flex-shrink-0">
+      {/* images */}
+      <section className="grid grid-cols-2 gap-2 w-fit  px-3 lg:px-0">
         <div className="w-64 h-[500px] gap-2 flex flex-col">
           <div className="w-full h-[12em] flex gap-2 justify-between">
             <div>
@@ -105,9 +106,8 @@ export default function About_Us_Section() {
         </div>
       </section>
 
-      <section className="w-fit h-full flex-shrink flex flex-col items-center lg:items-start justify-center text-center lg:!text-start">
+      <section className="w-fit h-full flex-shrink flex flex-col items-center gap-3 lg:items-start justify-center text-center lg:!text-start">
         <motion.div
-          style={{ y: lg }}
           className="space-y-3"
         >
           <motion.h1
@@ -133,7 +133,7 @@ export default function About_Us_Section() {
           </motion.p>
         </motion.div>
 
-        <motion.div style={{ y: md }} className="mt-6">
+        <motion.div  className="mt-6">
           <motion.h1
             variants={variantsText}
             initial="initial"

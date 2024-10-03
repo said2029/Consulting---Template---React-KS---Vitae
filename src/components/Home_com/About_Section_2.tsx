@@ -11,7 +11,7 @@ export default function About_Section_2() {
     <div className="sticky h-[100vh] top-0">
       <div ref={ref} className="relative overflow-hidden w-screen h-full text-black">
         <div className="w-full h-full bg-[#c63b1e] pt-[50px] ">
-          <div className="w-full  text-center lg:!text-start h-full font-sans font-semibold flex flex-col justify-evenly sm:justify-between lg:py-3 lg:px-7">
+          <div className="w-full text-center lg:!text-start h-full font-sans font-semibold flex flex-col justify-evenly sm:justify-between px-3 lg:py-6 lg:px-7">
             <motion.p
               variants={variantsUp}
               initial="initial"
@@ -24,7 +24,7 @@ export default function About_Section_2() {
               quasi
             </motion.p>
 
-            <p className="md:text-2xl max-w-5xl">
+            <p className="md:text-2xl max-w-5xl opacity-70">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id
               facere aperiam eum molestiae, harum dolorem asperiores ea natus,
               quasi illum tempore ratione quisquam, excepturi eos architecto
