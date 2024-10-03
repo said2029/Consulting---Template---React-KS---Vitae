@@ -1,7 +1,33 @@
+import { useParams } from "react-router-dom";
 import Footer from "../Home_com/Footer";
 import NavBar from "../Home_com/NavBar";
+import { useEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/firebase/firebase";
 
 export default function Blog_detals() {
+  const { id } = useParams();
+
+  const [blog, setBlogs] = useState({
+    id: "",
+    image: "",
+    title: "",
+    content: "",
+  });
+
+  const Get_blogs = async () => {
+    try {
+      const docShot = await getDoc(doc(db, "blogs", "1"));
+      console.log(docShot.data());
+      setBlogs(docShot.data());
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    Get_blogs();
+  }, []);
   return (
     <>
       {/*===== PROGRESS STARTS=======*/}
@@ -327,26 +353,7 @@ export default function Blog_detals() {
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="blog-auhtor-sidebar-area heading2">
-                <div className="tags-area">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <img src="assets/img/icons/contact1.svg" alt="" />
-                        Ben Stokes
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="assets/img/icons/calender1.svg" alt="" />
-                        16 August 2023
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <h2>
-                  The Power Of PPC Advertising:{" "}
-                  <br className="d-lg-block d-none" /> How To Maximize Your ROI
-                </h2>
+                <h2>{blog?.title}</h2>
                 <div className="space34" />
                 <div className="img1">
                   <img src="assets/img/all-images/blog-img23.png" alt="" />
