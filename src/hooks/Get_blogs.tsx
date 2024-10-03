@@ -43,7 +43,10 @@ export const useGetBlogs = ({
     );
     const data = await getDocs(q);
     const newData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-    setBlogs([...blog, newData]);
+    if (newData.length >= 1) {
+      setBlogs([...blog, newData]);
+    }
+
     setLastVisible(data.docs[data.docs.length - 1]); // Update the last document
   };
 
