@@ -8,7 +8,6 @@ export default function RechText({
 }: {
   onChange: (newContent: string) => void;
   placeholder?: string;
-  open: boolean;
   value?: string;
 }) {
   // rech text
@@ -34,7 +33,6 @@ export default function RechText({
     <JoditEditor
       ref={editor}
       value={value || content}
-      tabIndex={5}
       config={config}
       onBlur={(newContent) => setContent(newContent)}
       onChange={onChange}

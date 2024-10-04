@@ -6,7 +6,7 @@ import { db } from "@/firebase/firebase";
 import { toast } from "react-toastify";
 export default function Contact() {
   const ref = useRef<HTMLFormElement>(null);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState<any>({});
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;

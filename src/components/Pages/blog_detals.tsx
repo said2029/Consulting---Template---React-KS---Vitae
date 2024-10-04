@@ -5,13 +5,12 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useGetBlogs } from "@/hooks/Get_blogs";
-import DOMPurify from 'dompurify';
 
 export default function Blog_detals() {
-  const { slug = "null" } = useParams<{ id: string }>();
+  const { slug = "null" } = useParams<{ slug: string }>();
   const { blog } = useGetBlogs({ limit_value: 3 });
 
-  const [_blog, setBlogs] = useState({
+  const [_blog, setBlogs] = useState<any>({
     id: "",
     image: "",
     title: "",
@@ -22,7 +21,7 @@ export default function Blog_detals() {
     try {
       const q = query(collection(db, "blogs"), where("slug", "==", slug));
       const docShot = await getDocs(q);
-      setBlogs({ id: docShot?.docs[0]?.id, ...docShot?.docs[0]?.data() });
+      setBlogs({ ...docShot?.docs[0]?.data() });
     } catch (error) {
       console.error("Error:", error);
     }
@@ -32,7 +31,6 @@ export default function Blog_detals() {
     Get_blogs();
   }, [slug]);
 
-  const sanitizedContent = DOMPurify.sanitize(_blog?.content);
   return (
     <>
       {/*===== PROGRESS STARTS=======*/}
@@ -363,10 +361,10 @@ export default function Blog_detals() {
               <div className="blog-auhtor-sidebar-area heading2">
                 <h2>{_blog?.title}</h2>
                 <div className="space34" />
-                <div >
+                <div>
                   <div
-                  className="w-full"
-                    dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+                    className="w-full"
+                    dangerouslySetInnerHTML={{ __html: _blog?.content }}
                   />
                 </div>
               </div>
