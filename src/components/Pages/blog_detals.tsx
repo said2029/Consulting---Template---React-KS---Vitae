@@ -2,12 +2,13 @@ import { Link, useParams } from "react-router-dom";
 import Footer from "../Home_com/Footer";
 import NavBar from "../Home_com/NavBar";
 import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import { useGetBlogs } from "@/hooks/Get_blogs";
+import DOMPurify from 'dompurify';
 
 export default function Blog_detals() {
-  const { id = "null" } = useParams<{ id: string }>();
+  const { slug = "null" } = useParams<{ id: string }>();
   const { blog } = useGetBlogs({ limit_value: 3 });
 
   const [_blog, setBlogs] = useState({
@@ -19,8 +20,9 @@ export default function Blog_detals() {
 
   const Get_blogs = async () => {
     try {
-      const docShot:any = await getDoc(doc(db, "blogs", id));
-      setBlogs(docShot?.data());
+      const q = query(collection(db, "blogs"), where("slug", "==", slug));
+      const docShot = await getDocs(q);
+      setBlogs({ id: docShot?.docs[0]?.id, ...docShot?.docs[0]?.data() });
     } catch (error) {
       console.error("Error:", error);
     }
@@ -28,7 +30,9 @@ export default function Blog_detals() {
 
   useEffect(() => {
     Get_blogs();
-  }, [id]);
+  }, [slug]);
+
+  const sanitizedContent = DOMPurify.sanitize(_blog?.content);
   return (
     <>
       {/*===== PROGRESS STARTS=======*/}
@@ -359,7 +363,12 @@ export default function Blog_detals() {
               <div className="blog-auhtor-sidebar-area heading2">
                 <h2>{_blog?.title}</h2>
                 <div className="space34" />
-                <div dangerouslySetInnerHTML={{ __html: _blog?.content }}></div>
+                <div >
+                  <div
+                  className="w-full"
+                    dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -371,37 +380,27 @@ export default function Blog_detals() {
         <div className="container_1">
           <div className="row">
             {/* blogs */}
+            {/* blogs */}
             {blog?.map((blog: any, index: number) => (
               <div key={index} className="col-lg-4 col-md-6">
-                <div className="blog-author-boxarea">
-                  <div className="img1">
-                    <img src={blog.image} alt="" />
+                <div className="blog-author-boxarea  !h-[450px]">
+                  <div className="img1 h-[300px]">
+                    <img
+                      className="w-full h-full object-cover"
+                      src={blog.image}
+                      alt=""
+                    />
                   </div>
                   <div className="content-area">
-                    {/* <div className="tags-area">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <img src="assets/img/icons/contact1.svg" alt="" />
-                          Ben Stokes
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/img/icons/calender1.svg" alt="" />
-                          16 August 2023
-                        </a>
-                      </li>
-                    </ul>
-                  </div> */}
-                    <Link to={`/blog/${blog?.id}`}>{blog?.title}</Link>
-                    <p className="line-clamp-3">{blog?.short_des}</p>
-                    <Link to={`/blog/${blog?.id}`} className="readmore">
+                    <Link className="!line-clamp-1" to={`/blog/${blog?.slug}`}>
+                      {blog?.title}
+                    </Link>
+                    <p className="!line-clamp-2">{blog?.short_des}</p>
+                    <Link to={`/blog/${blog?.slug}`} className="readmore">
                       Read More <i className="fa-solid fa-arrow-right" />
                     </Link>
                   </div>
                 </div>
-                <div className="space30" />
               </div>
             ))}
           </div>

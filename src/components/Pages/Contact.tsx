@@ -3,6 +3,7 @@ import Footer from "../Home_com/Footer";
 import NavBar from "../Home_com/NavBar";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
+import { toast } from "react-toastify";
 export default function Contact() {
   const ref = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({});
@@ -19,6 +20,16 @@ export default function Contact() {
       createAt: Date.now(),
     });
     ref.current?.reset();
+    // see thanks to cleant message
+    toast.success(`Thank you ${formData?.first_name+" "+formData?.last_Name},We’ll get back to you shortly.`,{
+      position:"top-center",
+      autoClose:5000,
+      hideProgressBar:false,
+      closeOnClick:true,
+      pauseOnHover:false,
+      draggable:false,
+      progressStyle:{backgroundColor:"red"}
+    });
   };
   // show popup
   return (
@@ -202,6 +213,7 @@ export default function Contact() {
                         type="number"
                         name="number"
                         placeholder="Phone Number"
+                        maxLength={10}
                       />
                     </div>
                   </div>
@@ -232,7 +244,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="location-section-area sp2 bg2">
+      {/* <div className="location-section-area sp2 bg2">
         <div className="container_1">
           <div className="row">
             <div className="col-lg-4 m-auto">
@@ -316,50 +328,13 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/*===== CONTACT AREA ENDS ======= */}
 
       {/*===== FOOTER AREA STARTS =======*/}
       <Footer />
 
-      {/*===== FOOTER AREA ENDS =======*/}
-      {/*===== JS SCRIPT LINK =======*/}
-
-      {/* modil */}
-      {/* {popup && (
-        <div className="fixed hidden md:flex z-50 top-0 bg-black/70 h-[100vh] w-full justify-center items-center">
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 300 },
-              visible: { opacity: 1, scale: 1, y: 0 },
-            }}
-            initial="hidden"
-            animate="visible"
-            transition={{ type: "spring", duration: 1 }}
-            className="w-fit h-fit py-8 px-10 rounded-2xl bg-[#db471e] text-white flex justify-center flex-col items-center gap-4"
-          >
-            <h1 className="text-2xl font-bold text-center">
-              Getting sales is much more difficult then clicking this button
-            </h1>
-            <motion.button
-              onClick={() => {
-                setPopup(false);
-              }}
-              variants={{
-                hidden: { opacity: 0, y: 300 },
-                visible: { opacity: 1, scale: 1, y: 0 },
-              }}
-              initial="hidden"
-              animate="visible"
-              transition={{ type: "spring", duration: 1 }}
-              className="shadow_Button text-white font-bold py-3 px-10 rounded-full"
-            >
-              Contact Us Now
-            </motion.button>
-          </motion.div>
-        </div>
-      )} */}
     </div>
   );
 }

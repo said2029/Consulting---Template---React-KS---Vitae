@@ -195,3 +195,8 @@ a:hover {
   background-color: #000;
   color: #db471e;
 }
+
+
+.jodit-container {
+  z-index: 1050; /* or higher, depending on your modal's z-index */
+}

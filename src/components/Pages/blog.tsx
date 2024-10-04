@@ -94,7 +94,7 @@ export default function Blog() {
                       <div className="space8" />
                       <div className="btn-area">
                         <Link
-                          to={`/blog/${blog[0]?.id}`}
+                          to={`/blog/${blog[0]?.slug}`}
                           className="header-btn1"
                         >
                           Read Full Story{" "}
@@ -123,35 +123,18 @@ export default function Blog() {
             {/* blogs */}
             {blog?.map((blog: any, index:number) => (
               <div key={index} className="col-lg-4 col-md-6">
-                <div className="blog-author-boxarea">
-                  <div className="img1">
-                    <img src={blog.image} alt="" />
+                <div className="blog-author-boxarea  !h-[450px]">
+                  <div className="img1 h-[300px]">
+                    <img className="w-full h-full object-cover" src={blog.image} alt="" />
                   </div>
                   <div className="content-area">
-                    {/* <div className="tags-area">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <img src="assets/img/icons/contact1.svg" alt="" />
-                          Ben Stokes
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img src="assets/img/icons/calender1.svg" alt="" />
-                          16 August 2023
-                        </a>
-                      </li>
-                    </ul>
-                  </div> */}
-                    <Link to={`/blog/${blog?.id}`}>{blog?.title}</Link>
-                    <p className="line-clamp-3">{blog?.short_des}</p>
-                    <Link to={`/blog/${blog?.id}`} className="readmore">
+                    <Link className="!line-clamp-1" to={`/blog/${blog?.slug}`}>{blog?.title}</Link>
+                    <p className="!line-clamp-2">{blog?.short_des}</p>
+                    <Link to={`/blog/${blog?.slug}`} className="readmore">
                       Read More <i className="fa-solid fa-arrow-right" />
                     </Link>
                   </div>
                 </div>
-                <div className="space30" />
               </div>
             ))}
           </div>

@@ -8,35 +8,19 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useGetBlogs } from "@/hooks/Get_blogs";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import ReactQuill from "react-quill";
 import useImageUpload from "@/hooks/upload_Image";
 import { Button } from "../ui/button";
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 import clsx from "clsx";
 import { addDoc, collection, deleteDoc, doc, setDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
+import RechText from "./RechText";
+import slugIfy from "slugify";
 
-const modules = {
-  toolbar: [
-    [{ header: "1" }, { header: "2" }, { font: [] }],
-    [{ list: "ordered" }, { list: "bullet" }],
-    ["bold", "italic", "underline"],
-    [{ align: [] }],
-    ["link", "image", "video"], // Image button included in the toolbar
-    ["clean"], // Remove formatting button
-  ],
-};
 export default function Blog_controlle() {
   const [formState, setFormState] = useState<"Create" | "Update">("Create");
   const [loading, setLoading] = useState(false);
-  const dialogButton = useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
 
   const { blog, Get_blogs } = useGetBlogs({ limit_value: 1000 });
   const [data, setData] = useState<any>({});
@@ -50,7 +34,7 @@ export default function Blog_controlle() {
   const submit = async (value: FormEvent) => {
     setLoading(true);
     value.preventDefault();
-    const body:any = data;
+    const body: any = data;
     body["image"] = Image || data["image"];
 
     if (formState == "Create") {
@@ -62,7 +46,7 @@ export default function Blog_controlle() {
     await Get_blogs();
     setLoading(false);
 
-    dialogButton.current?.click();
+    setOpen(false);
   };
   const deleteBlog = async (id: string) => {
     if (confirm("Are you sure you want to delete this"))
@@ -71,7 +55,7 @@ export default function Blog_controlle() {
   };
 
   return (
-    <div className="w-full px-2 sm:!px-10 pt-10">
+    <div className="w-full px-2 sm:!px-10 pt-10 ">
       <div className="flex justify-between">
         <h1 className="font-bold text-2xl">Blog</h1>
         <button
@@ -84,7 +68,7 @@ export default function Blog_controlle() {
               image: null,
               short_des: "",
             });
-            dialogButton.current?.click();
+            setOpen(true);
           }}
           className="bg-[#c63b1e] text-white p-2 rounded-xl"
         >
@@ -103,7 +87,7 @@ export default function Blog_controlle() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {blog?.map((b:any, index:number) => (
+            {blog?.map((b: any, index: number) => (
               <TableRow key={b?.title}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell>{b?.title}</TableCell>
@@ -112,13 +96,13 @@ export default function Blog_controlle() {
                   onClick={() => {
                     setFormState("Update");
                     setData({ ...b });
-                    dialogButton.current?.click();
+                    setOpen(true);
                   }}
                 >
                   <FilePenLine />{" "}
                 </TableCell>
                 <TableCell
-                className="cursor-pointer"
+                  className="cursor-pointer"
                   onClick={() => {
                     deleteBlog(b?.id);
                   }}
@@ -132,91 +116,121 @@ export default function Blog_controlle() {
       </div>
 
       {/* deloag */}
-      <Dialog>
-        <DialogTrigger ref={dialogButton} className="hidden"></DialogTrigger>
-        <DialogContent className="!w-full h-full  overflow-scroll">
-          <DialogHeader>
-            <DialogTitle>{formState} Blog!</DialogTitle>
-          </DialogHeader>
-          <form onSubmit={submit} className="flex flex-col gap-6" method="post">
-            <input
-              required
-              value={data["title"]}
-              className="text-black placeholder:text-black/70 border py-2 px-1"
-              type="text"
-              onChange={(e) => {
-                handleInputChange("title", e?.target?.value);
-              }}
-              placeholder="Blog title"
-            />
-            <textarea
-              className="text-black placeholder:text-black/70 border py-2 px-1"
-              onChange={(e) => {
-                handleInputChange("short_des", e?.target?.value);
-              }}
-              placeholder="short description"
-              value={data["short_des"]}
-              rows={5}
-            ></textarea>
-            <ReactQuill
-              className="h-full "
-              modules={modules}
-              value={data["content"]}
-              onChange={(e) => {
-                handleInputChange("content", e);
-              }}
-              placeholder="write here"
-            />
-            <div className="flex items-center bg-black relative justify-center mt-16 rounded-xl w-full h-96 overflow-hidden">
-              <label
-                className={clsx(
-                  "z-40 cursor-pointer hover:scale-110 transition-all text-3xl font-bold text-white drop-shadow-lg shadow-black",
-                  {
-                    opacity: isloading ? "30" : "100",
-                    "pointer-events-none": isloading,
-                  }
-                )}
-                htmlFor="uploadIage"
-              >
-                Select Image!
-              </label>
+      {open && (
+        <div className="fixed left-0 top-0 bg-black/50 h-full w-full flex justify-center items-center">
+          <div className="bg-white h-[700px] flex flex-col items-center rounded-xl p-4  overflow-scroll relative">
+            <h1 className="text-2xl font-bold">{formState}</h1>
+            <form
+              onSubmit={submit}
+              className="flex flex-col gap-6 mt-3"
+              method="post"
+            >
               <input
-                accept="image/jpeg ,image/jpg"
-                className="text-white mt-9 border border-black p-1 rounded-xl hidden"
-                type="file"
-                onChange={(e:any) => {
-                  uploadImage(e?.target?.files[0]);
+                required
+                value={data["title"]}
+                className="text-black placeholder:text-black/70 border py-2 px-1"
+                type="text"
+                onChange={(e) => {
+                  // handleInputChange("title", e?.target?.value);
+                  // handleInputChange("slug", slugIfy(e?.target?.value));
+                  setData({
+                    ...data,
+                    title: e?.target?.value,
+                    slug: slugIfy(e?.target?.value),
+                  });
                 }}
-                id="uploadIage"
-                placeholder="blog title"
+                placeholder="Blog title"
+              />
+              <input
+                required
+                value={data["slug"]}
+                className="text-black placeholder:text-black/70 border py-2 px-1"
+                type="text"
+                onChange={(e) => {
+                  handleInputChange("slug", e?.target?.value);
+                }}
+                placeholder="Blog Slug"
+              />
+              <textarea
+                className="text-black placeholder:text-black/70 border py-2 px-1"
+                onChange={(e) => {
+                  handleInputChange("short_des", e?.target?.value);
+                }}
+                placeholder="short description"
+                value={data["short_des"]}
+                rows={5}
+              ></textarea>
+
+              <RechText
+              value={data["content"]}
+                onChange={(value) => {
+                  handleInputChange("content", value);
+                }}
               />
 
-              {Image ? (
-                <img
-                  className={"w-full object-cover absolute h-full opacity-65"}
-                  src={Image}
-                  alt=""
+              <div className="flex items-center bg-black relative justify-center mt-16 rounded-xl w-full h-96 overflow-hidden">
+                <label
+                  className={clsx(
+                    "z-40 cursor-pointer hover:scale-110 transition-all text-3xl font-bold text-white drop-shadow-lg shadow-black",
+                    {
+                      opacity: isloading ? "30" : "100",
+                      "pointer-events-none": isloading,
+                    }
+                  )}
+                  htmlFor="uploadIage"
+                >
+                  Select Image!
+                </label>
+                <input
+                  accept="image/jpeg ,image/jpg"
+                  className="text-white mt-9 border border-black p-1 rounded-xl hidden"
+                  type="file"
+                  onChange={(e: any) => {
+                    uploadImage(e?.target?.files[0]);
+                  }}
+                  id="uploadIage"
+                  placeholder="blog title"
                 />
-              ) : (
-                data["image"] && (
+
+                {Image ? (
                   <img
                     className={"w-full object-cover absolute h-full opacity-65"}
-                    src={data["image"]}
+                    src={Image}
                     alt=""
                   />
-                )
-              )}
-            </div>
+                ) : (
+                  data["image"] && (
+                    <img
+                      className={
+                        "w-full object-cover absolute h-full opacity-65"
+                      }
+                      src={data["image"]}
+                      alt=""
+                    />
+                  )
+                )}
+              </div>
+              <Button
+                size={"lg"}
+                disabled={loading}
+                className="text-white mt-9 py-4 text-xl"
+              >
+                {loading ? " proccessing..." : "send"}
+              </Button>
+            </form>
             <Button
-              size={"lg"}
-              disabled={loading}
-              className="text-white mt-9 py-4 text-xl"
+              className="absolute top-1 right-1"
+              size={"icon"}
+              variant={"ghost"}
+              onClick={() => {
+                setOpen(false);
+              }}
             >
-              {loading ? " proccessing..." : "send"}
+              X
             </Button>
-          </form>
-        </DialogContent>
-      </Dialog>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

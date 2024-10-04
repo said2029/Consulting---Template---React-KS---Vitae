@@ -82,7 +82,7 @@ export default function Blog_Section() {
 
   useEffect(() => {
     if (blog.length <= 5) {
-      setBlogs([blog, ...BlogContant.slice(0, 10 - blog.length)]);
+      setBlogs([...blog, ...BlogContant.slice(0, 10 - blog.length)]);
     }
   }, [blog]);
 
