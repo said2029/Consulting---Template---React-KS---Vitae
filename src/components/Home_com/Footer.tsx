@@ -67,7 +67,7 @@ function Footer() {
             <div className="w-full grid grid-cols-2 mt-10 md:mt-10">
               <ul className="flex flex-col gap-3">
                 <li className="navItem">
-                  <Link to="">Lorem_ipsum</Link>
+                  <Link to="/admin">Dashboard</Link>
                 </li>
                 <li className="navItem">
                   <Link to="">Lorem_ipsum</Link>
