@@ -13,61 +13,51 @@ const BlogContant = [
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/blog-img8.png",
-    id: "/blog",
   },
   {
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/case-img7.png",
-    id: "/blog",
   },
   {
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/blog-img15.png",
-    id: "/blog",
   },
   {
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/header-img12.png",
-    id: "/blog",
   },
   {
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/header-img12.png",
-    id: "/blog",
   },
   {
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/header-img12.png",
-    id: "/blog",
   },
   {
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/header-img12.png",
-    id: "/blog",
   },
   {
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/header-img12.png",
-    id: "/blog",
   },
   {
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/header-img12.png",
-    id: "/blog",
   },
   {
     title: "The Future of Web Development",
     desc: "Discover how the future of web development is shaping the way we build websites.",
     image: "assets/img/all-images/header-img12.png",
-    id: "/blog",
   },
 ];
 
@@ -125,7 +115,7 @@ export default function Blog_Section() {
             >
               {blog?.map((item: any) => (
                 <Link
-                  to={`/blog/${item?.id}`}
+                  to={item.slug ? `/blog/${item.slug}` : "/blog"}
                   key={item?.id + Math.random()}
                   className={`w-[300px] md:w-[500px] text-white h-full bg-red-500 rounded-lg bg-[url(${item?.image})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
                 >
@@ -143,7 +133,7 @@ export default function Blog_Section() {
             >
               {blog?.map((item: any) => (
                 <Link
-                  to={`/blog/${item?.id}`}
+                  to={item?.slug ? `/blog/${item?.slug}` : "/blog"}
                   key={item?.id + Math.random()}
                   className={`w-[300px] text-white md:w-[500px] h-full rounded-lg bg-[url(${item?.image})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
                 >
