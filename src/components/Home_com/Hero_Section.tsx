@@ -59,7 +59,7 @@ const HeroEmpowe = () => {
       className="flex max-w-4xl scale-y-150 gap-3 justify-center text-center flex-wrap"
     >
       {"Empowering Businesses to Thrive".split(" ").map((world, i) => {
-        return <HeroWorld index={i} world={world} />;
+        return <HeroWorld key={i+world} index={i} world={world} />;
       })}
     </motion.h1>
   );

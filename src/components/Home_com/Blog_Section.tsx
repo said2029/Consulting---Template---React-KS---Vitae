@@ -1,80 +1,90 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Button_Hover from "../globle/Button_Hover";
-
-const BlogContant = [
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/blog-img8.png",
-    link: "/blog",
-  },
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/case-img7.png",
-    link: "/blog",
-  },
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/blog-img15.png",
-    link: "/blog",
-  },
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/header-img12.png",
-    link: "/blog",
-  },
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/header-img12.png",
-    link: "/blog",
-  },
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/header-img12.png",
-    link: "/blog",
-  },
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/header-img12.png",
-    link: "/blog",
-  },
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/header-img12.png",
-    link: "/blog",
-  },
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/header-img12.png",
-    link: "/blog",
-  },
-  {
-    title: "The Future of Web Development",
-    desc: "Discover how the future of web development is shaping the way we build websites.",
-    img: "assets/img/all-images/header-img12.png",
-    link: "/blog",
-  },
-];
+import { useGetBlogs } from "@/hooks/Get_blogs";
+import { Link } from "react-router-dom";
 
 const variantsUp = {
   initial: { opacity: 0, y: 200 },
   show: { opacity: 1, y: 0 },
 };
+const BlogContant = [
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/blog-img8.png",
+    id: "/blog",
+  },
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/case-img7.png",
+    id: "/blog",
+  },
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/blog-img15.png",
+    id: "/blog",
+  },
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/header-img12.png",
+    id: "/blog",
+  },
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/header-img12.png",
+    id: "/blog",
+  },
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/header-img12.png",
+    id: "/blog",
+  },
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/header-img12.png",
+    id: "/blog",
+  },
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/header-img12.png",
+    id: "/blog",
+  },
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/header-img12.png",
+    id: "/blog",
+  },
+  {
+    title: "The Future of Web Development",
+    desc: "Discover how the future of web development is shaping the way we build websites.",
+    image: "assets/img/all-images/header-img12.png",
+    id: "/blog",
+  },
+];
+
 export default function Blog_Section() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
+
+  const { blog, setBlogs } = useGetBlogs({ limit_value: 10 });
+
+  useEffect(() => {
+    if (blog.length <= 5) {
+      setBlogs([blog, ...BlogContant.slice(0, 10 - blog.length)]);
+    }
+  }, [blog]);
 
   const to_right = useTransform(scrollYProgress, [0, 1], [-2500, 80]);
   const to_left = useTransform(scrollYProgress, [0, 1], [200, -3200]);
@@ -113,44 +123,44 @@ export default function Blog_Section() {
               style={{ x: to_right }}
               className="w-full py-3 flex gap-2 px-10"
             >
-              {BlogContant.map((item, i) => (
-                <a
-                  key={item.link + i}
-                  href={item.link}
-                  className={`w-[300px] md:w-[500px] text-white h-full bg-red-500 rounded-lg bg-[url(${item.img})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
+              {blog?.map((item: any) => (
+                <Link
+                  to={`/blog/${item?.id}`}
+                  key={item?.id + Math.random()}
+                  className={`w-[300px] md:w-[500px] text-white h-full bg-red-500 rounded-lg bg-[url(${item?.image})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
                 >
                   <div
                     className={`absolute w-full h-full bg-gradient-to-t from-black to-transparent flex items-end p-3`}
                   >
-                    <h1 className="text-2xl">{item.title}</h1>
+                    <h1 className="text-2xl">{item?.title}</h1>
                   </div>
-                </a>
+                </Link>
               ))}
             </motion.div>
             <motion.div
               style={{ x: to_left }}
               className="w-full py-3 flex gap-2 px-10"
             >
-              {BlogContant.map((item, i) => (
-                <a
-                  key={item.link + i}
-                  href={item.link}
-                  className={`w-[300px] text-white md:w-[500px] h-full rounded-lg bg-[url(${item.img})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
+              {blog?.map((item: any) => (
+                <Link
+                  to={`/blog/${item?.id}`}
+                  key={item?.id + Math.random()}
+                  className={`w-[300px] text-white md:w-[500px] h-full rounded-lg bg-[url(${item?.image})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
                 >
                   <div
                     className={`absolute w-full h-full bg-gradient-to-t from-black to-transparent flex items-end p-3`}
                   >
-                    <h1 className="text-2xl">{item.title}</h1>
+                    <h1 className="text-2xl">{item?.title}</h1>
                   </div>
-                </a>
+                </Link>
               ))}
             </motion.div>
             <motion.div
-          style={{ x: buttonMove, rotateZ: Rotate }}
-          className="absolute top-1/3 bottom-1/2 mt-auto"
-        >
-          <Button_Hover href="/blog" text="blog" />
-        </motion.div>
+              style={{ x: buttonMove, rotateZ: Rotate }}
+              className="absolute top-1/3 bottom-1/2 mt-auto"
+            >
+              <Button_Hover href="/blog" text="blog" />
+            </motion.div>
           </div>
         </div>
       </div>

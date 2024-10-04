@@ -53,5 +53,5 @@ export const useGetBlogs = ({
   useEffect(() => {
     Get_blogs();
   }, []);
-  return { blog, loadNextPage, Get_blogs };
+  return { blog, loadNextPage, Get_blogs,setBlogs };
 };
