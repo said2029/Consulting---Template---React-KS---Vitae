@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import Footer from "../Home_com/Footer";
 import NavBar from "../Home_com/NavBar";
 import { addDoc, collection } from "firebase/firestore";
@@ -7,7 +7,7 @@ export default function Contact() {
   const ref = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({});
 
-  const handleChange = (e: ChangeEvent<T>) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };

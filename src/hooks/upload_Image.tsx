@@ -6,7 +6,7 @@ import uuid4 from "uuid4";
 const useImageUpload = () => {
   const [Image, setImage] = useState("");
   const [isloading, setIsLoadign] = useState(false);
-  const uploadImage = async (file) => {
+  const uploadImage = async (file:any) => {
     if (!file) return;
     console.log(file);
 

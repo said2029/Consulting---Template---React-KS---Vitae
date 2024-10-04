@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Get_started() {
   const [step, setStep] = useState(0);
-  const [pos, setPos] = useState({ x: 50, y: 50 });
+  const [pos, setPos] = useState({ x: 50, y: 60 });
   const [scope, animate] = useAnimate();
 
   const steps = [
@@ -47,10 +47,11 @@ export default function Get_started() {
       </h1>
 
       <Link
-        to={"/contact"}
+        to={step>2?"/contact":"#"}
         ref={scope}
         onMouseOver={HandilClick}
-        className={`shadow_Button hidden md:block min-w-80 absolute h-fit text-white rounded-full py-4 px-16 shadow-inner m-auto`}
+        onClick={HandilClick}
+        className={`shadow_Button hidden bottom-1/3 md:block min-w-80 absolute h-fit text-white rounded-full py-4 px-16 shadow-inner m-auto`}
       >
         {steps[step].text}
       </Link>

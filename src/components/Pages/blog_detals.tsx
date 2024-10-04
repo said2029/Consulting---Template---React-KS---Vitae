@@ -7,7 +7,7 @@ import { db } from "@/firebase/firebase";
 import { useGetBlogs } from "@/hooks/Get_blogs";
 
 export default function Blog_detals() {
-  const { id } = useParams();
+  const { id = "null" } = useParams<{ id: string }>();
   const { blog } = useGetBlogs({ limit_value: 3 });
 
   const [_blog, setBlogs] = useState({
@@ -19,9 +19,8 @@ export default function Blog_detals() {
 
   const Get_blogs = async () => {
     try {
-      const docShot = await getDoc(doc(db, "blogs", id));
-      console.log(docShot.data());
-      setBlogs(docShot.data());
+      const docShot:any = await getDoc(doc(db, "blogs", id));
+      setBlogs(docShot?.data());
     } catch (error) {
       console.error("Error:", error);
     }
@@ -29,7 +28,7 @@ export default function Blog_detals() {
 
   useEffect(() => {
     Get_blogs();
-  }, []);
+  }, [id]);
   return (
     <>
       {/*===== PROGRESS STARTS=======*/}
@@ -320,7 +319,7 @@ export default function Blog_detals() {
         className="about-header-area !text-white bg-[#c63b1e]"
         style={{
           backgroundRepeat: "no-repeat",
-          backgroundImage:`url(${_blog.image})`,
+          backgroundImage: `url(${_blog.image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -339,7 +338,9 @@ export default function Blog_detals() {
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="about-inner-header heading9 text-center ">
-                <h1 className="!text-white drop-shadow-2xl shadow-black" >{_blog?.title}</h1>
+                <h1 className="!text-white drop-shadow-2xl shadow-black">
+                  {_blog?.title}
+                </h1>
                 <a className="!text-white" href="index.html">
                   Home <i className="fa-solid fa-angle-right" />{" "}
                   <span>Our Blog</span>
@@ -370,7 +371,7 @@ export default function Blog_detals() {
         <div className="container_1">
           <div className="row">
             {/* blogs */}
-            {blog?.map((blog: any, index) => (
+            {blog?.map((blog: any, index: number) => (
               <div key={index} className="col-lg-4 col-md-6">
                 <div className="blog-author-boxarea">
                   <div className="img1">

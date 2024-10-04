@@ -14,8 +14,8 @@ export const useGetBlogs = ({
 }: {
   limit_value?: number;
 }) => {
-  const [blog, setBlogs] = useState([]);
-  const [lastVisible, setLastVisible] = useState(null);
+  const [blog, setBlogs] = useState<any>([]);
+  const [lastVisible, setLastVisible] = useState<any>(null);
 
   const Get_blogs = async () => {
     try {
@@ -25,7 +25,7 @@ export const useGetBlogs = ({
         orderBy("createAt")
       );
       await getDocs(q).then((data) => {
-        const newData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+        const newData:any = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
         setBlogs(newData);
         setLastVisible(data.docs[data.docs.length - 1]);
       });

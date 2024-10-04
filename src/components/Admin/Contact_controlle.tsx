@@ -16,7 +16,7 @@ export default function Contact_controlle() {
 
   const Get_Contact = async () => {
     const respons = await getDocs(collection(db, "contact"));
-    const data = respons.docs.map((doc) => ({
+    const data:any = respons.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
@@ -41,17 +41,17 @@ export default function Contact_controlle() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {contact?.map((c, index) => (
+            {contact?.map((c:any, index) => (
               <TableRow key={index}>
-                <TableCell className="font-medium">{c.first_name}</TableCell>
-                <TableCell className="font-medium">{c.last_Name}</TableCell>
-                <TableCell className="font-medium">{c.Email}</TableCell>
-                <TableCell className="font-medium">{c.number}</TableCell>
+                <TableCell className="font-medium">{c?.first_name}</TableCell>
+                <TableCell className="font-medium">{c?.last_Name}</TableCell>
+                <TableCell className="font-medium">{c?.Email}</TableCell>
+                <TableCell className="font-medium">{c?.number}</TableCell>
                 <TableCell className="font-medium">
                   <Dialog>
-                    <DialogTrigger className="line-clamp-1 max-w-56 overflow-hidden">{c.message}</DialogTrigger>
+                    <DialogTrigger className="line-clamp-1 max-w-56 overflow-hidden">{c?.message}</DialogTrigger>
                     <DialogContent className="h-fit w-[400px]">
-                    {c.message}
+                    {c?.message}
                     </DialogContent>
                   </Dialog>
                 </TableCell>

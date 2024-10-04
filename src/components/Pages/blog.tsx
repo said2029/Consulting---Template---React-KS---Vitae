@@ -1,9 +1,6 @@
 import Footer from "@/components/Home_com/Footer";
 import NavBar from "@/components/Home_com/NavBar";
-import { db } from "@/firebase/firebase";
 import { useGetBlogs } from "@/hooks/Get_blogs";
-import { collection, getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 
@@ -124,7 +121,7 @@ export default function Blog() {
         <div className="container_1">
           <div className="row">
             {/* blogs */}
-            {blog?.map((blog: any, index) => (
+            {blog?.map((blog: any, index:number) => (
               <div key={index} className="col-lg-4 col-md-6">
                 <div className="blog-author-boxarea">
                   <div className="img1">

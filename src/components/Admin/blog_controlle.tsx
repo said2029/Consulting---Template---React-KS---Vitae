@@ -38,8 +38,8 @@ export default function Blog_controlle() {
   const [loading, setLoading] = useState(false);
   const dialogButton = useRef<HTMLButtonElement>(null);
 
-  const { blog, Get_blogs } = useGetBlogs({ limit_value: 10 });
-  const [data, setData] = useState({});
+  const { blog, Get_blogs } = useGetBlogs({ limit_value: 1000 });
+  const [data, setData] = useState<any>({});
 
   const { uploadImage, Image, isloading, setImage } = useImageUpload();
 
@@ -50,8 +50,7 @@ export default function Blog_controlle() {
   const submit = async (value: FormEvent) => {
     setLoading(true);
     value.preventDefault();
-    console.log(data);
-    const body = data;
+    const body:any = data;
     body["image"] = Image || data["image"];
 
     if (formState == "Create") {
@@ -104,7 +103,7 @@ export default function Blog_controlle() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {blog?.map((b, index) => (
+            {blog?.map((b:any, index:number) => (
               <TableRow key={b?.title}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell>{b?.title}</TableCell>
@@ -185,8 +184,8 @@ export default function Blog_controlle() {
                 accept="image/jpeg ,image/jpg"
                 className="text-white mt-9 border border-black p-1 rounded-xl hidden"
                 type="file"
-                onChange={(e) => {
-                  uploadImage(e.target.files[0]);
+                onChange={(e:any) => {
+                  uploadImage(e?.target?.files[0]);
                 }}
                 id="uploadIage"
                 placeholder="blog title"
