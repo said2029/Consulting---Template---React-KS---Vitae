@@ -214,6 +214,8 @@ export default function Contact() {
                         name="number"
                         placeholder="Phone Number"
                         maxLength={10}
+                        max={10}
+                        
                       />
                     </div>
                   </div>

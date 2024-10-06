@@ -1,4 +1,4 @@
-import { FilePenLine, Plus, Trash2 } from "lucide-react";
+import { FilePenLine, ImageIcon, Loader, Plus, Trash2 } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -11,11 +11,11 @@ import { useGetBlogs } from "@/hooks/Get_blogs";
 import useImageUpload from "@/hooks/upload_Image";
 import { Button } from "../ui/button";
 import { FormEvent, useState } from "react";
-import clsx from "clsx";
 import { addDoc, collection, deleteDoc, doc, setDoc } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 import RechText from "./RechText";
 import slugIfy from "slugify";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 export default function Blog_controlle() {
   const [formState, setFormState] = useState<"Create" | "Update">("Create");
@@ -162,60 +162,60 @@ export default function Blog_controlle() {
               ></textarea>
 
               <RechText
-              value={data["content"]}
+                value={data["content"]}
                 onChange={(value) => {
                   handleInputChange("content", value);
                 }}
               />
-
-              <div className="flex items-center bg-black relative justify-center mt-16 rounded-xl w-full h-96 overflow-hidden">
-                <label
-                  className={clsx(
-                    "z-40 cursor-pointer hover:scale-110 transition-all text-3xl font-bold text-white drop-shadow-lg shadow-black",
-                    {
-                      opacity: isloading ? "30" : "100",
-                      "pointer-events-none": isloading,
-                    }
-                  )}
-                  htmlFor="uploadIage"
-                >
-                  Select Image!
-                </label>
+              <div className="flex items-center">
                 <input
                   accept="image/jpeg ,image/jpg"
-                  className="text-white mt-9 border border-black p-1 rounded-xl hidden"
+                  className="text-white border border-black p-1 rounded-xl"
                   type="file"
                   onChange={(e: any) => {
                     uploadImage(e?.target?.files[0]);
                   }}
-                  id="uploadIage"
-                  placeholder="blog title"
                 />
-
-                {Image ? (
-                  <img
-                    className={"w-full object-cover absolute h-full opacity-65"}
-                    src={Image}
-                    alt=""
-                  />
-                ) : (
-                  data["image"] && (
-                    <img
-                      className={
-                        "w-full object-cover absolute h-full opacity-65"
-                      }
-                      src={data["image"]}
-                      alt=""
-                    />
-                  )
-                )}
+                <Dialog>
+                  <DialogTrigger disabled={isloading} className="w-10 h-10 border flex text-center items-center justify-center">
+                    {isloading ? (
+                      <div className="animate-spin">
+                        <Loader />
+                      </div>
+                    ) : (
+                      <ImageIcon />
+                    )}
+                  </DialogTrigger>
+                  <DialogContent className="w-96 h-96">
+                    {Image ? (
+                      <img
+                        className={
+                          "w-full object-cover absolute h-full aspect-square"
+                        }
+                        src={Image}
+                        alt=""
+                      />
+                    ) : (
+                      data["image"] && (
+                        <img
+                          className={
+                            "w-full object-cover absolute h-full"
+                          }
+                          src={data["image"]}
+                          alt=""
+                        />
+                      )
+                    )}
+                  </DialogContent>
+                </Dialog>
               </div>
+
               <Button
                 size={"lg"}
                 disabled={loading}
-                className="text-white mt-9 py-4 text-xl"
+                className="text-white mt-9 py-4 text-xl bg-primary"
               >
-                {loading ? " proccessing..." : "send"}
+                {loading ? " proccessing..." : "Save"}
               </Button>
             </form>
             <Button

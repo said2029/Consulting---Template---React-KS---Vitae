@@ -29,9 +29,8 @@ export default function Blog() {
 
       {/*===== HERO AREA STARTS =======*/}
       <div
-        className="about-header-area"
+        className="about-header-area bg-[#C63B1E]"
         style={{
-          backgroundImage: "url(assets/img/bg/inner-header.png)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -51,11 +50,11 @@ export default function Blog() {
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="about-inner-header heading9 text-center">
-                <h1>Our Blog</h1>
-                <a href="/">
+                <h1 className="text-white">Our Blog</h1>
+                <Link to="/" className="text-white">
                   Home <i className="fa-solid fa-angle-right" />{" "}
                   <span>Our Blog</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -97,7 +96,7 @@ export default function Blog() {
                           to={`/blog/${blog[0]?.slug}`}
                           className="header-btn1"
                         >
-                          Read Full Story{" "}
+                          Learn More
                           <span>
                             <i className="fa-solid fa-arrow-right" />
                           </span>
@@ -141,12 +140,13 @@ export default function Blog() {
         </div>
         <div className="w-full flex justify-center items-center mt-12 transition-all opacity-70 hover:opacity-100">
           <Button
-            className="text-white font-bold rounded-full text-3xl py-4 "
+            className="text-white font-bold rounded-full text-xl py-4 bg-[#C63B1E]"
             onClick={() => {
               loadNextPage();
             }}
+            size={"sm"}
           >
-            More
+            Show More
           </Button>
         </div>
       </div>

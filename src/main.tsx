@@ -15,11 +15,10 @@ import Blog_detals from "./components/Pages/blog_detals.tsx";
 import Admin from "./components/Pages/admin.tsx";
 import "react-quill/dist/quill.snow.css";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 // import Lenis from "lenis";
 
 export default function App() {
-
   useEffect(() => {
     WebFont.load({
       google: {
@@ -30,20 +29,16 @@ export default function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/service" element={<Service_page />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<Blog_detals />} />
-            <Route path="/get_started" element={<Get_started />} />
-            <Route path="/admin" element={<Admin />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/service" element={<Service_page />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<Blog_detals />} />
+        <Route path="/get_started" element={<Get_started />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
       {/* loading */}
       <Reloader />
 
@@ -56,6 +51,8 @@ export default function App() {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <BrowserRouter basename="/">
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
