@@ -175,7 +175,7 @@ export default function Blog_controlle() {
                   handleInputChange("content", value);
                 }}
               />
-              <div className="flex items-center justify-center">
+              <div className="flex items-center">
                 <input
                   accept="image/jpeg ,image/jpg"
                   className="file-input file-input-bordered  bg-white file-input-warning w-full max-w-md"
