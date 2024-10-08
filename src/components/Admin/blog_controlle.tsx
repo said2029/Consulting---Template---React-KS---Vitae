@@ -131,8 +131,6 @@ export default function Blog_controlle() {
                 className="text-black placeholder:text-black/70 border py-2 px-1"
                 type="text"
                 onChange={(e) => {
-                  // handleInputChange("title", e?.target?.value);
-                  // handleInputChange("slug", slugIfy(e?.target?.value));
                   setData({
                     ...data,
                     title: e?.target?.value,
@@ -140,6 +138,16 @@ export default function Blog_controlle() {
                   });
                 }}
                 placeholder="Blog title"
+              />
+              <input
+                required
+                value={data["category"]}
+                className="text-black placeholder:text-black/70 border py-2 px-1"
+                type="text"
+                onChange={(e) => {
+                  handleInputChange("category", e?.target?.value);
+                }}
+                placeholder="Blog Category"
               />
               <input
                 required
@@ -167,17 +175,21 @@ export default function Blog_controlle() {
                   handleInputChange("content", value);
                 }}
               />
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <input
                   accept="image/jpeg ,image/jpg"
-                  className="text-white border border-black p-1 rounded-xl"
+                  className="file-input file-input-bordered  bg-white file-input-warning w-full max-w-md"
                   type="file"
                   onChange={(e: any) => {
                     uploadImage(e?.target?.files[0]);
                   }}
                 />
+
                 <Dialog>
-                  <DialogTrigger disabled={isloading} className="w-10 h-10 border flex text-center items-center justify-center">
+                  <DialogTrigger
+                    disabled={isloading}
+                    className="w-10 h-10 border flex text-center items-center justify-center"
+                  >
                     {isloading ? (
                       <div className="animate-spin">
                         <Loader />
@@ -198,9 +210,7 @@ export default function Blog_controlle() {
                     ) : (
                       data["image"] && (
                         <img
-                          className={
-                            "w-full object-cover absolute h-full"
-                          }
+                          className={"w-full object-cover absolute h-full"}
                           src={data["image"]}
                           alt=""
                         />

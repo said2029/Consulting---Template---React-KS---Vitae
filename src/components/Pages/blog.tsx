@@ -89,6 +89,7 @@ export default function Blog() {
                           </li>
                         </ul>
                       </div> */}
+
                       <h2>{blog[0]?.title}</h2>
                       <div className="space8" />
                       <div className="btn-area">
@@ -120,14 +121,26 @@ export default function Blog() {
         <div className="container_1">
           <div className="row">
             {/* blogs */}
-            {blog?.map((blog: any, index:number) => (
+            {blog?.map((blog: any, index: number) => (
               <div key={index} className="col-lg-4 col-md-6">
                 <div className="blog-author-boxarea  !h-[450px]">
                   <div className="img1 h-[300px]">
-                    <img className="w-full h-full object-cover" src={blog.image} alt="" />
+                    <img
+                      className="w-full h-full object-cover"
+                      src={blog?.image}
+                      alt=""
+                    />
                   </div>
                   <div className="content-area">
-                    <Link className="!line-clamp-1" to={`/blog/${blog?.slug}`}>{blog?.title}</Link>
+                    <div className="flex w-full justify-between">
+                      <Link
+                        className="!line-clamp-1"
+                        to={`/blog/${blog?.slug}`}
+                      >
+                        {blog?.title}
+                      </Link>
+                      <span className="bg-[#C63B1E] rounded-full text-white h-fit px-2">{blog?.category}</span>
+                    </div>
                     <p className="!line-clamp-2">{blog?.short_des}</p>
                     <Link to={`/blog/${blog?.slug}`} className="readmore">
                       Read More <i className="fa-solid fa-arrow-right" />

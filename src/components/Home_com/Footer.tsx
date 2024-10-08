@@ -5,7 +5,7 @@ const variantsPup = {
 };
 function Footer() {
   return (
-    <div className="w-full relative bg-[#c63b1e]">
+    <div className="w-full relative bg-gradient-to-b from-[#c63b1e] to-transparent">
       <div className="w-full relative h-[500px] grid grid-cols-3 overflow-hidden !text-white bg-black">
         <div className="my-auto col-span-2 w-full h-full hidden relative lg:flex flex-col items-center justify-center gap-7 ">
           <div className="bg-black opacity-65 absolute top-0 w-full h-full ">

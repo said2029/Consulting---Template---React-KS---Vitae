@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 export default function Button_Hover({
   text,
   className,
@@ -12,10 +11,10 @@ export default function Button_Hover({
   className?: string;
 }) {
   const [hover, SetisHover] = useState(false);
-  const navigate = useNavigate();
 
   return (
-    <motion.div
+    <motion.a
+      href={href}
       variants={{
         initial: {
           opacity: 0,
@@ -42,9 +41,6 @@ export default function Button_Hover({
         "border-2 text-[#c63b1e]  hover:text-[#c63b1e] border-white bg-white rounded-full font-semibold px-14 md:text-4xl xl:text-5xl py-4 flex uppercase overflow-hidden cursor-pointer",
         className
       )}
-      onClick={() => {
-        navigate(href);
-      }}
     >
       {text.split("").map((chart, i) => (
         <motion.div
@@ -70,6 +66,6 @@ export default function Button_Hover({
           {chart}
         </motion.div>
       ))}
-    </motion.div>
+    </motion.a>
   );
 }

@@ -22,7 +22,7 @@ export default function Reloader() {
   return (
     <div
       className={clsx(
-        "pointer-events-none w-screen  z-[9999] fixed top-0 h-[100vh]",
+        "w-screen  z-[9999] fixed top-0 h-[100vh]",
         {
           hidden: !isLoading,
         }
