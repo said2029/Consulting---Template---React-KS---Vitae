@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function MouseEffect() {
+export default function CursourEffect() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ref_CoursePointer = useRef<HTMLElement | any>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

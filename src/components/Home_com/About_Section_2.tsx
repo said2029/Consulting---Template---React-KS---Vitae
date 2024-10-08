@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { MouseEffect } from "./Contact_Section";
 import { useRef } from "react";
+import { MouseEffect } from "./Contact_section";
 const variantsUp = {
   initial: { opacity: 0, y: 200 },
   show: { opacity: 1, y: 0 },

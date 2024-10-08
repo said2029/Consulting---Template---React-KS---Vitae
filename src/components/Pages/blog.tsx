@@ -8,7 +8,7 @@ export default function Blog() {
   const { blog, loadNextPage } = useGetBlogs({ limit_value: 10 });
 
   return (
-    <>
+    <div className="[&_*]:!bg-none bg-[#C63B1E]">
       {/*===== PROGRESS STARTS=======*/}
       <div className="paginacontainer_1">
         <div className="progress-wrap">
@@ -90,7 +90,7 @@ export default function Blog() {
                         </ul>
                       </div> */}
 
-                      <h2>{blog[0]?.title}</h2>
+                      <h2 className="text-white">{blog[0]?.title}</h2>
                       <div className="space8" />
                       <div className="btn-area">
                         <Link
@@ -117,14 +117,14 @@ export default function Blog() {
           </div>
         </div>
       </div>
-      <div className="blog1-scetion-area sp1 bg2">
+      <div className="blog1-scetion-area sp1 bg2 bg-[#C63B1E]">
         <div className="container_1">
           <div className="row">
             {/* blogs */}
             {blog?.map((blog: any, index: number) => (
               <div key={index} className="col-lg-4 col-md-6">
                 <div className="blog-author-boxarea  !h-[450px]">
-                  <div className="img1 h-[300px]">
+                  <div className="img1 h-[300px] after:!bg-[#C63B1E]">
                     <img
                       className="w-full h-full object-cover"
                       src={blog?.image}
@@ -133,18 +133,18 @@ export default function Blog() {
                   </div>
                   <div className="content-area">
                     <div className="flex w-full justify-between">
-                      <Link
+                      <a
                         className="!line-clamp-1"
-                        to={`/blog/${blog?.slug}`}
+                        href={`/blog/${blog?.slug}`}
                       >
                         {blog?.title}
-                      </Link>
+                      </a>
                       <span className="bg-[#C63B1E] rounded-full text-white h-fit px-2">{blog?.category}</span>
                     </div>
                     <p className="!line-clamp-2">{blog?.short_des}</p>
-                    <Link to={`/blog/${blog?.slug}`} className="readmore">
+                    <a href={`/blog/${blog?.slug}`} className="readmore">
                       Read More <i className="fa-solid fa-arrow-right" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -207,6 +207,6 @@ export default function Blog() {
       <Footer />
       {/*===== FOOTER AREA ENDS =======*/}
       {/*===== JS SCRIPT LINK =======*/}
-    </>
+    </div>
   );
 }

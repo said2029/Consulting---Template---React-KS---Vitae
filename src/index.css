@@ -181,7 +181,7 @@ a:hover {
 }
 
 *::-webkit-scrollbar {
-  @apply w-0;
+  @apply !w-0;
 }
 *::-webkit-scrollbar-thumb {
   background: rgb(7, 206, 17);
@@ -191,7 +191,7 @@ a:hover {
   display: none;
 }
 
-::selection {
+*::selection {
   background-color: #000;
   color: #db471e;
 }
@@ -200,3 +200,6 @@ a:hover {
 .jodit-container {
   z-index: 1050; /* or higher, depending on your modal's z-index */
 }
+
+
+

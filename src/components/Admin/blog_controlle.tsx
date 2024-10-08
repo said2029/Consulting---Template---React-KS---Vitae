@@ -175,15 +175,23 @@ export default function Blog_controlle() {
                   handleInputChange("content", value);
                 }}
               />
-              <div className="flex items-center">
+              <div className="flex items-center border gap-9 border-black px-2 w-fit">
+                <label
+                  htmlFor="file-upload"
+                  className="bg-[#C63B1E] text-white px-4 py-2 rounded cursor-pointer hover:bg-[#b8533f] focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+                  Choose File
+                </label>
                 <input
                   accept="image/jpeg ,image/jpg"
-                  className="file-input file-input-bordered  bg-white file-input-warning w-full max-w-md"
-                  type="file"
                   onChange={(e: any) => {
                     uploadImage(e?.target?.files[0]);
                   }}
+                  type="file"
+                  id="file-upload"
+                  className="hidden"
                 />
+
 
                 <Dialog>
                   <DialogTrigger
@@ -223,7 +231,7 @@ export default function Blog_controlle() {
               <Button
                 size={"lg"}
                 disabled={loading}
-                className="text-white mt-9 py-4 text-xl bg-primary"
+                className="text-white mt-9 py-4 text-xl bg-[#C63B1E]"
               >
                 {loading ? " proccessing..." : "Save"}
               </Button>

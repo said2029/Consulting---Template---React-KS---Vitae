@@ -32,7 +32,7 @@ export default function Blog_detals() {
   }, [slug]);
 
   return (
-    <>
+    <div className="[&_*]:bg-none bg-[#C63B1E]">
       {/*===== PROGRESS STARTS=======*/}
       <div className="paginacontainer">
         <div className="progress-wrap">
@@ -94,11 +94,13 @@ export default function Blog_detals() {
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="blog-auhtor-sidebar-area heading2">
-                <h2>{_blog?.title}</h2>
+                <h2 className="drop-shadow-lg shadow-black text-white">
+                  {_blog?.title}
+                </h2>
                 <div className="space34" />
                 <div>
                   <div
-                    className="w-full"
+                    className="w-full !text-white"
                     dangerouslySetInnerHTML={{ __html: _blog?.content }}
                   />
                 </div>
@@ -109,15 +111,15 @@ export default function Blog_detals() {
       </div>
       {/*===== BLOG AREA ENDS =======*/}
       {/*===== BLOG AREA STARTS =======*/}
-      <div className="blog1-scetion-area sp1 bg2">
+      <div className="blog1-scetion-area sp1 bg2 bg-[#C63B1E]">
         <div className="container_1">
           <div className="row">
             {/* blogs */}
             {/* blogs */}
             {blog?.map((blog: any, index: number) => (
               <div key={index} className="col-lg-4 col-md-6">
-                <div className="blog-author-boxarea  !h-[450px]">
-                  <div className="img1 h-[300px]">
+                <div className="blog-author-boxarea  !h-[450px] ">
+                  <div className="img1 h-[300px] after:!bg-[#C63B1E]">
                     <img
                       className="w-full h-full object-cover"
                       src={blog.image}
@@ -125,13 +127,21 @@ export default function Blog_detals() {
                     />
                   </div>
                   <div className="content-area">
-                    <Link className="!line-clamp-1" to={`/blog/${blog?.slug}`}>
-                      {blog?.title}
-                    </Link>
+                    <div className="flex w-full justify-between">
+                      <a
+                        className="!line-clamp-1"
+                        href={`/blog/${blog?.slug}`}
+                      >
+                        {blog?.title}
+                      </a>
+                      <span className="bg-[#C63B1E] rounded-full text-white h-fit px-2">
+                        {blog?.category}
+                      </span>
+                    </div>
                     <p className="!line-clamp-2">{blog?.short_des}</p>
-                    <Link to={`/blog/${blog?.slug}`} className="readmore">
+                    <a href={`/blog/${blog?.slug}`} className="readmore">
                       Read More <i className="fa-solid fa-arrow-right" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -182,6 +192,6 @@ export default function Blog_detals() {
       {/*===== FOOTER AREA STARTS =======*/}
       <Footer />
       {/*===== FOOTER AREA ENDS =======*/}
-    </>
+    </div>
   );
 }

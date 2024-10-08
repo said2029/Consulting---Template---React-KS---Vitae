@@ -7,8 +7,6 @@ import Contact from "./components/Pages/Contact.tsx";
 import Service_page from "./components/Pages/Service_page.tsx";
 import Blog from "./components/Pages/blog.tsx";
 import WebFont from "webfontloader";
-import MouseEffect from "./components/globle/MouseEffect.tsx";
-import Home from "./components/Pages/Home.tsx";
 import Get_started from "./components/Pages/get_started.tsx";
 import Reloader from "./components/Reloader.tsx";
 import Blog_detals from "./components/Pages/blog_detals.tsx";
@@ -16,6 +14,8 @@ import Admin from "./components/Pages/admin.tsx";
 import "react-quill/dist/quill.snow.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CursourEffect from "./components/globle/CursourEffect.tsx";
+import Home_4 from "./components/Pages/home.tsx";
 // import Lenis from "lenis";
 
 export default function App() {
@@ -30,7 +30,7 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home_4 />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<Service_page />} />
@@ -43,7 +43,7 @@ export default function App() {
       <Reloader />
 
       {/*  mouse Curser */}
-      <MouseEffect />
+      <CursourEffect />
       <ToastContainer />
     </>
   );
