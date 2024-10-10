@@ -142,7 +142,7 @@ export default function About() {
                     <img src="assets/img/icons/works-icons7.svg" alt="" />
                   </div>
                   <div className="content">
-                    <a href="case.html">Proven Result</a>
+                    <a href="/case">Proven Result</a>
                     <p>
                       We have a track record of delivering tangible results for
                       our clients. From increasing website traffic and improving

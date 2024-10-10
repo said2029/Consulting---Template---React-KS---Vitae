@@ -113,7 +113,7 @@ export default function Blog_Section() {
               style={{ x: to_right }}
               className="w-full py-3 flex gap-2 px-10"
             >
-              {blog?.map((item: any,index) => (
+              {blog?.map((item: any,index:number) => (
                 <Link
                   to={item.slug ? `/blog/${item.slug}` : "/blog"}
                   key={index}
@@ -131,7 +131,7 @@ export default function Blog_Section() {
               style={{ x: to_left }}
               className="w-full py-3 flex gap-2 px-10"
             >
-              {blog?.map((item: any,index) => (
+              {blog?.map((item: any,index:number) => (
                 <Link
                   to={item?.slug ? `/blog/${item?.slug}` : "/blog"}
                   key={index}
