@@ -113,10 +113,10 @@ export default function Blog_Section() {
               style={{ x: to_right }}
               className="w-full py-3 flex gap-2 px-10"
             >
-              {blog?.map((item: any) => (
+              {blog?.map((item: any,index) => (
                 <Link
                   to={item.slug ? `/blog/${item.slug}` : "/blog"}
-                  key={item?.id + Math.random()}
+                  key={index}
                   className={`w-[300px] md:w-[500px] text-white h-full bg-red-500 rounded-lg bg-[url(${item?.image})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
                 >
                   <div
@@ -131,10 +131,10 @@ export default function Blog_Section() {
               style={{ x: to_left }}
               className="w-full py-3 flex gap-2 px-10"
             >
-              {blog?.map((item: any) => (
+              {blog?.map((item: any,index) => (
                 <Link
                   to={item?.slug ? `/blog/${item?.slug}` : "/blog"}
-                  key={item?.id + Math.random()}
+                  key={index}
                   className={`w-[300px] text-white md:w-[500px] h-full rounded-lg bg-[url(${item?.image})] bg-no-repeat bg-cover flex text-start relative overflow-hidden`}
                 >
                   <div

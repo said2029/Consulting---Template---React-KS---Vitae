@@ -88,7 +88,7 @@ export default function Blog_controlle() {
           </TableHeader>
           <TableBody>
             {blog?.map((b: any, index: number) => (
-              <TableRow key={b?.title}>
+              <TableRow key={index}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell>{b?.title}</TableCell>
                 <TableCell
@@ -189,7 +189,7 @@ export default function Blog_controlle() {
                   }}
                   type="file"
                   id="file-upload"
-                  className="hidden"
+                  className="`hidden"
                 />
 
 

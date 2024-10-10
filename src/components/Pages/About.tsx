@@ -138,7 +138,7 @@ export default function About() {
                 </p>
                 <div className="space32" />
                 <div className="works-content-box">
-                  <div className="icons">
+                  <div className="icons flex justify-center items-center">
                     <img src="assets/img/icons/works-icons7.svg" alt="" />
                   </div>
                   <div className="content">
@@ -152,7 +152,7 @@ export default function About() {
                 </div>
                 <div className="space20" />
                 <div className="works-content-box">
-                  <div className="icons">
+                  <div className="icons flex justify-center items-center">
                     <img src="assets/img/icons/works-icons8.svg" alt="" />
                   </div>
                   <div className="content">
@@ -166,7 +166,7 @@ export default function About() {
                 </div>
                 <div className="space20" />
                 <div className="works-content-box">
-                  <div className="icons">
+                  <div className="icons flex justify-center items-center">
                     <img src="assets/img/icons/works-icons9.svg" alt="" />
                   </div>
                   <div className="content">

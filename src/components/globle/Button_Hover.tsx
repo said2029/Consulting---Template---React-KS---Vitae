@@ -44,7 +44,7 @@ export default function Button_Hover({
     >
       {text.split("").map((chart, i) => (
         <motion.div
-          key={i + chart}
+          key={i }
           variants={{
             initial: { opacity: 0, y: 50 },
             animate: { opacity: 1, y: 0 },

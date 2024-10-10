@@ -122,7 +122,7 @@ export default function Contact_Section() {
   const moveUp = useTransform(scrollYProgress, [0, 1], [1000, -400]);
   const Rotate = useTransform(scrollYProgress, [0, 1], [-60, 30]);
   return (
-    <div ref={ref} className="w-screen h-[500vh]">
+    <div ref={ref} className="w-screen h-[300vh] sm:h-[500vh]">
       <div
         ref={ref2}
         className="flex flex-col bg-[#c63b1e] sticky top-0 w-full h-[100vh] items-center justify-center text-black pt-[50px]"

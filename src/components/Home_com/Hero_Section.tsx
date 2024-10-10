@@ -18,7 +18,7 @@ const HeroWorld = ({ world, index }: { world: string; index: number }) => {
   const [hover, setHover] = useState(false);
   return (
     <div
-      key={world + index}
+      key={index}
       onMouseEnter={() => {
         setHover(true);
       }}
@@ -28,7 +28,7 @@ const HeroWorld = ({ world, index }: { world: string; index: number }) => {
     >
       {world.split("").map((c, index2) => (
         <motion.span
-          key={index2 + c}
+          key={index2}
           variants={{
             initial: { y: 0 },
             animate: { y: [0, -50, 0] },
@@ -105,7 +105,7 @@ export default function Hero_Section() {
         >
           {Array.from({ length: 29 }).map(() =>
             brandImages.map((image, i) => (
-              <div key={image + i}>
+              <div key={i}>
                 <span className="bg-red-400 rounded-full w-3 h-3"></span>
                 <div className="h-fit w-[6rem] flex items-center">
                   <img

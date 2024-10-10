@@ -16,7 +16,7 @@ export default function Home_4() {
         <Services_Section />
         <About_Us_Section />
         <Blog_Section />
-        <div className="w-full h-[600vh] relative">
+        <div className="w-full h-[400vh] sm:h-[600vh] relative">
           <About_Section_2 />
           <Contact_Section />
           {/* <Contact_Section /> */}

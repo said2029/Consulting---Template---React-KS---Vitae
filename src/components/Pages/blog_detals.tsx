@@ -75,7 +75,7 @@ export default function Blog_detals() {
           <div className="row">
             <div className="col-lg-8 m-auto">
               <div className="about-inner-header heading9 text-center ">
-                <h1 className="!text-white drop-shadow-2xl shadow-black">
+                <h1 className="!text-black drop-shadow shadow-white">
                   {_blog?.title}
                 </h1>
                 <Link className="!text-white" to="/">

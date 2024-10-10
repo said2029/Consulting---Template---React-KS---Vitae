@@ -4,15 +4,14 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA9ODs2JFIvR3hm2wdx9iWT6TV8XRbAwJs",
-  authDomain: "react-blog-cons.firebaseapp.com",
-  projectId: "react-blog-cons",
-  storageBucket: "react-blog-cons.appspot.com",
-  messagingSenderId: "977268141612",
-  appId: "1:977268141612:web:38321f04b1cdc70b45ab89",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

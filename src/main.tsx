@@ -18,6 +18,7 @@ import CursourEffect from "./components/globle/CursourEffect.tsx";
 import Home_4 from "./components/Pages/home.tsx";
 // import Lenis from "lenis";
 
+
 export default function App() {
   useEffect(() => {
     WebFont.load({
