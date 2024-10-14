@@ -210,12 +210,11 @@ export default function Contact() {
                       <input
                         onChange={handleChange}
                         required
-                        type="number"
+                        type="text"
                         name="number"
                         placeholder="Phone Number"
                         maxLength={10}
-                        max={10}
-                        
+                        min={10}
                       />
                     </div>
                   </div>
