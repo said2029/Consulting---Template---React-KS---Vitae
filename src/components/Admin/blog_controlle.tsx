@@ -82,6 +82,7 @@ export default function Blog_controlle() {
             <TableRow className="bg-[#c63b1e] !rounded-3xl">
               <TableHead className=" !text-white">ID</TableHead>
               <TableHead className=" !text-white">Blog Title</TableHead>
+              <TableHead className=" !text-white">Category</TableHead>
               <TableHead className=" !text-white">Update</TableHead>
               <TableHead className=" !text-white">Remove</TableHead>
             </TableRow>
@@ -91,6 +92,7 @@ export default function Blog_controlle() {
               <TableRow key={index}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell>{b?.title}</TableCell>
+                <TableCell>{b?.category}</TableCell>
                 <TableCell
                   className="cursor-pointer"
                   onClick={() => {
